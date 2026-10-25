@@ -1,38 +1,28 @@
-# Platzhalter-Assets, die ersetzt werden müssen
+# Asset-Stand und verbleibende Art-Abnahme
 
-Alle 3D-Modelle, Klänge und Texturen dieses Prototyps sind **eigene, zur Laufzeit/Editor erzeugte Platzhalter** (keine fremden Ressourcen, keine Lizenzfragen).
-Sie sind funktionierende 3D-Modelle mit echter Animation – aber **keine finale Kunst**.
+Die ausführbare WebApp besitzt sieben echte, animierbare 3D-Figuren und Habitate. Ihre Geometrie ist eigenständig im Projekt erzeugt; eine 2D-Illustration ersetzt keine Figur. Der originale Unity-Suri-Prototyp bleibt erhalten, dort fehlen weiterhin sechs Tiermodelle.
 
-## 3D
+## Vorhanden
 
-| Platzhalter | Erzeugt in | Ersatz (Ziel) | Hinweise |
-|---|---|---|---|
-| Suri (Schnecke) | `Animals/SnailBuilder.cs` | Blender-Modell, Prefab mit Teilen gleichen Namens | s. u. „Rig-Konvention“; ~6–10k Dreiecke; 1 Material + 1 Textur 1024² |
-| Weitere 6 Tiere | – (Phase 3) | je ein Modell mit gleicher Konvention | Fell als Shader-Effekt (`_FurAmount`) oder Shell-Fur, nicht als Haarkarten |
-| Bäume (6 Varianten), Steine, Pilze, Blumen, Farne, Gras | `World/ForestBuilder.cs` | Modelle mit weicher, runder Silhouette | Vertexfarben-Alpha = Wind-Gewicht beibehalten |
-| Baumhäuser, Höhlen | `ForestBuilder.BuildHouses` | modellierte Häuser (Fensterlicht bleibt emissiv) | |
-| Habitat Suri (Steine, Zweige) | `World/HabitatBuilder.cs` | modellierte Steine mit Moos | Höhenfeld in `ForestTerrain` an die Modelle anpassen |
-| Ritual-Props (Blatt, Decke, Eichel, Kissen, Glühwürmchen) | `Interaction/PropFactory.cs` | modellierte Props | Pivot = Mittelpunkt |
-| Himmel/Mond/Sterne | `SkyDome.shader` | beibehalten oder durch gemalte Skybox ersetzen | |
+- Fino: Fuchsohren und Schnauze, Höhle, weich geformte Decke, Schwanzpose.
+- Mila: lange Ohren, Moosnest, Streichelritual und entspannte Schlafpose.
+- Piko: weiche Stacheln, Blätternest, Blättersammeln und Einrollen.
+- Luna: Gesichtsscheiben, Baum/Ast, Glühwürmchen und Kopf ins Gefieder.
+- Nuri: Baumhöhle, Kuscheleichel, Umarmen und Schwanzdecke.
+- Leni: Rehkitzohren, längere Schnauze/Hals, Rückenpunkte, gefaltete Beine und Mooskissen.
+- Suri: Spiralhaus, bewegliche Augen/Fühler, Kriechwelle, gebogenes schützendes Blatt, vollständiger Rückzug.
+- Eigener 3D-Wald mit räumlicher Tiefe, Nebel, Pilzen, Moos, Mond und ruhigen Lichtübergängen.
+- 101 gesprochene deutsche MP3s; erzeugte Klangflächen/Wind. Sprecher-/Musik-Endabnahme offen.
+- App-Icon und Plattformableitungen; echte Browser-Szenenaufnahmen und Video für das Review.
 
-### Rig-Konvention (Suri, gilt sinngemäß für alle Tiere)
+## Qualitätsgrenzen
 
-Wird ein importiertes Modell verwendet, müssen die Teile **exakt so heißen** (siehe `SnailBuilder`), damit `SnailPerformance` unverändert funktioniert:
+Diese Vorabversion ist visuell tatsächlich geprüft. Sie ist noch keine bestätigte Premium-Art-/Store-Abnahme. Prozedurale Baumkronen, wiederholte Farnformen, einfache Fell-/Federoberflächen und Geräusche können weiter künstlerisch verfeinert werden. Alle Änderungen müssen Silhouetten, mobile Budgets und wiederverwendbare Animationsschnittstellen erhalten.
 
-`Body`, `Foot0…Foot5` (vorn→hinten), `Mantle`, `Neck`, `Head`, `EyeL/EyeR` (+ Kinder `SparkL/R`), `CheekL/R`, `FeelerL/FeelerL2`, `FeelerR/FeelerR2`, `Shell`, `ShellOpening`.
+[ART_DIRECTION.md](ART_DIRECTION.md) hält Farben, Materialcharakter und Figurenregeln fest; [ASSET_LICENSES.md](ASSET_LICENSES.md) dokumentiert Herkunft/Lizenzen. Das App-Icon ist eine gekennzeichnete Illustration, die Review-Screenshots sind echte Renders. Gerätespezifische Store-Screenshots werden erst am geprüften Zielgerät abgenommen.
 
-Die Animation arbeitet relativ zur **Ruhepose** (`AnimalRig.CaptureRest`), skaliert/rotiert diese Transforms prozedural (Atmen, Blinzeln, Kriechwelle, Fühler einziehen, ins Haus gleiten).
-Wer lieber mit Animator/Clips arbeitet: `AnimalPerformance` ist die einzige Schnittstelle zur Story (`Cue(string)`, `OnStep*`, `FinishSleep`) – eine Animator-basierte Subklasse genügt.
+## Modell-Austausch
 
-## Audio
+WebApp: `buildAnimal(id, parent)` liefert Rig, `cue(name)` und `update(dt,time)`; Story- und Interaktionssystem dürfen beim Austausch unverändert bleiben. Individuelle Teile benötigen stabile Pivots und Ruheposen. Statische Habitate werden nach Material gebündelt; bewegte Teile davon ausnehmen.
 
-| Platzhalter | Quelle | Ersatz |
-|---|---|---|
-| Erzählerstimme | `FallbackVoice` (Murmeln) | Studioaufnahmen, siehe [AUDIO_PIPELINE.md](AUDIO_PIPELINE.md) |
-| Wind, Grillen | `ProceduralAudio.Wind/Crickets` | Loops (nahtlos, ≥ 20 s) |
-| Klangflächen, Klavier-Plinks | `ProceduralAudio.Pad/Note` | komponierte Musik (Klavier + warme Pads), Loops/Stems |
-| Tiergeräusche (squeak, yawn, snore, tap, rustle, chirp, twinkle) | `ProceduralAudio.Sfx` | Aufnahmen/Foley, **niedlich, leise, ohne Spitzen** |
-
-## 2D / Store
-
-App-Icon, Screenshots, Feature-Grafik, Launch-Screen: **nicht vorhanden** (Phase 6).
+Unity: `AnimalPerformance` (`Cue`, `OnStep*`, `FinishSleep`) und `AnimalRig.CaptureRest` bleiben die Integrationsschnittstelle. Suris benannte Teile sind Body, Foot*, Neck, Head, EyeL/EyeR, FeelerL/R und Shell; genaue bestehende Builder-Hierarchie vor einem Import prüfen. Die sechs `implemented:false`-Flags erst nach tatsächlicher Unity-Implementierung und Tests setzen.

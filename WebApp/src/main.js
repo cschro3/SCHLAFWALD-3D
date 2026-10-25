@@ -13,7 +13,7 @@ el.innerHTML=`<main id="forest-app">
   <canvas id="forest" aria-label="Ein ruhiger, räumlicher Märchenwald. Begleite die Tiere mit deinem Finger in den Schlaf." tabindex="0"></canvas>
   <div class="edge-shade" aria-hidden="true"></div><div id="scene-fade" aria-hidden="true"></div>
   <header class="hud"><span class="wordmark">${svg('leaf')} SCHLAFWALD</span><button id="parent-open" aria-label="Elternbereich – drei Sekunden halten" title="Drei Sekunden halten">${svg('lock')}<span>Eltern</span></button></header>
-  <section id="welcome" class="welcome"><p class="book-note">Wenn die Tiere schlafen</p><h1>Ein kleiner Wald.<br>Ein leises Gute Nacht.</h1><p>Sieben kleine Freunde werden müde.<br>Begleite sie behutsam in den Schlaf.</p><div class="welcome-actions"><button id="start" class="primary">In den Schlafwald ${svg('arrow')}</button><button id="continue" class="quiet" hidden>Nacht fortsetzen</button></div><span class="welcome-foot">Zeit zum Kuscheln. Für euch beide.</span></section>
+  <section id="welcome" class="welcome"><h1>Ein kleiner Wald.<br>Ein leises Gute Nacht.</h1><p>Sieben kleine Freunde werden müde.<br>Begleite sie behutsam in den Schlaf.</p><div class="welcome-actions"><button id="start" class="primary">In den Schlafwald ${svg('arrow')}</button><button id="continue" class="quiet" hidden>Nacht fortsetzen</button></div><span class="welcome-foot">Zeit zum Kuscheln. Für euch beide.</span></section>
   <div id="chapter" class="chapter" hidden><span id="animal-name"></span><span id="animal-species"></span></div>
   <div id="narration" class="narration" aria-live="polite"><p id="subtitle"></p><span id="read-aloud" hidden>Vorlesemodus · Sprachdatei fehlt</span></div>
   <div id="gesture" class="gesture" hidden><span id="gesture-icon">${svg('leaf')}</span><span id="gesture-text"></span></div>
@@ -38,18 +38,19 @@ el.innerHTML=`<main id="forest-app">
   <div id="error" role="alert" hidden><h1>Der Wald braucht einen Moment.</h1><p id="error-message"></p><button class="primary" id="reload">Noch einmal öffnen</button></div>
 </main>`;
 const $=s=>document.querySelector(s), all=s=>[...document.querySelectorAll(s)];
-let settings=sanitizeSettings(readLocal(localStorage,'sw_web_settings_v1',DEFAULTS));
-let progress=readLocal(localStorage,'sw_web_progress_v1',null),active=IDS.slice(),sleeping=[],token=0,running=false,phase='welcome',activeId='suri',stepIndex=-1,endedAt=-1,sessionStart=0,parentPause=false,currentLine='',transition=0,assists=0,hints=0;
+const storage=(()=>{try{return window.localStorage;}catch{return null;}})();
+let settings=sanitizeSettings(readLocal(storage,'sw_web_settings_v1',DEFAULTS));
+let progress=readLocal(storage,'sw_web_progress_v1',null),active=IDS.slice(),sleeping=[],token=0,running=false,phase='welcome',activeId='suri',stepIndex=-1,endedAt=-1,sessionStart=0,parentPause=false,currentLine='',transition=0,assists=0,hints=0,assistedSteps=[],completedSteps=[];
 const clock=new StoryClock(),audio=new ForestAudio(settings);
 let view;
 function showError(msg){$('#error-message').textContent=msg;$('#error').hidden=false;}
-try{const errors=validateStory(story);if(errors.length)throw new Error(errors.join(', '));view=new ForestView($('#forest'));view.showAnimal(story.animals.find(a=>a.id==='suri'));view.animal.root.position.set(.65,.12,.1);view.camera.position.set(2.7,2.3,7);view.cameraTarget.copy(view.camera.position);view.look.set(-.85,.8,0);view.lookTarget.copy(view.look);}catch(e){showError('Dein Browser konnte den 3D-Wald nicht öffnen. Versuche es in Safari oder Chrome mit aktivierter Grafikbeschleunigung.');console.error(e);}
+try{const errors=validateStory(story);if(errors.length)throw new Error(errors.join(', '));view=new ForestView($('#forest'));view.showAnimal(story.animals.find(a=>a.id==='suri'));view.animal.root.position.set(.65,.12,.1);view.setWelcomeLayout(true);}catch(e){showError('Dein Browser konnte den 3D-Wald nicht öffnen. Versuche es in Safari oder Chrome mit aktivierter Grafikbeschleunigung.');console.error(e);}
 $('#reload').onclick=()=>location.reload();
 const audioReady=audio.init();
 $('#continue').hidden=!resumable(progress);$('#resume').disabled=!resumable(progress);
 
-function saveSettings(){settings=sanitizeSettings(settings);audio.settings=settings;const ok=writeLocal(localStorage,'sw_web_settings_v1',settings);$('#local-status').textContent=ok?'Einstellungen auf diesem Gerät gespeichert.':'Speichern ist in diesem Browser gerade nicht möglich. Die Einstellungen gelten für diese Sitzung.';}
-function saveProgress(finished=false){progress={sleeping:[...sleeping],updated:Date.now(),finished};writeLocal(localStorage,'sw_web_progress_v1',progress);}
+function saveSettings(){settings=sanitizeSettings(settings);audio.settings=settings;const ok=writeLocal(storage,'sw_web_settings_v1',settings);$('#local-status').textContent=ok?'Einstellungen auf diesem Gerät gespeichert.':'Speichern ist in diesem Browser gerade nicht möglich. Die Einstellungen gelten für diese Sitzung.';}
+function saveProgress(finished=false){progress={sleeping:[...sleeping],updated:Date.now(),finished};writeLocal(storage,'sw_web_progress_v1',progress);}
 function pause(reason,on){if(on)clock.paused.add(reason);else clock.paused.delete(reason);if(clock.paused.size)audio.pause();else if(running)audio.resume();}
 const cancelled=Symbol('story cancelled');
 function check(t){if(t!==token)throw cancelled;}
@@ -79,12 +80,13 @@ async function run(t,resume){
         phase='ritual';stepIndex=index;const step=view.beginStep(config,index);
         $('#gesture').hidden=settings.audioOnly;$('#gesture-text').textContent=instructions[config.type];
         await lines(phaseLines(a,'step',index),t);
-        const help=new GentleHelp(config.helpAfter??14,config.assistAfter??32);let last=step.progress,lastTick=clock.time;
+        const help=new GentleHelp(config.helpAfter??14,config.assistAfter??32);let last=step.progress,lastActivity=step.activity||0,lastTick=clock.time;
         while(!step.complete){
-          await wait(.08,t);const elapsed=clock.time-lastTick;lastTick=clock.time;const level=help.tick(elapsed*(settings.audioOnly?6:1),{progress:step.progress>last});last=step.progress;
+          await wait(.08,t);const elapsed=clock.time-lastTick;lastTick=clock.time;const level=help.tick(elapsed*(settings.audioOnly?6:1),{progress:step.progress>last||(step.activity||0)>lastActivity});last=step.progress;lastActivity=step.activity||0;
           if(level==='hint'){hints++;await lines(phaseLines(a,'hint',index),t);lastTick=clock.time;}
-          if(level==='assist'){assists++;step.assisting=true;await lines(phaseLines(a,'assist',index),t);lastTick=clock.time;}
+          if(level==='assist'){assists++;assistedSteps.push(a.id+':'+index);step.assisting=true;await lines(phaseLines(a,'assist',index),t);lastTick=clock.time;}
         }
+        completedSteps.push({id:a.id+':'+index,type:config.type,assisted:step.assisting});
         $('#gesture').hidden=true;await lines(phaseLines(a,'success',index),t);await wait(.8,t);
       }
       phase='outro';stepIndex=-1;await lines(phaseLines(a,'outro'),t);view.sleep();await wait(5,t);sleeping.push(a.id);saveProgress();updateJourney();await wait(2,t);
@@ -95,10 +97,10 @@ async function run(t,resume){
   }catch(e){if(e!==cancelled){console.error(e);showError('Die Geschichte wurde unterbrochen. Öffne sie erneut; euer gespeicherter Fortschritt bleibt erhalten.');running=false;audio.stop();}}
 }
 async function start({resume=false,animals=null,scale=1,silent=false}={}){
-  if(!view)return;token++;clock.cancel();audio.stopVoice();clock.paused.clear();clock.time=0;clock.scale=scale;audio.mutedForQA=silent;
+  if(!view)return;view.setWelcomeLayout(false);token++;clock.cancel();audio.stopVoice();clock.paused.clear();clock.time=0;clock.scale=scale;audio.mutedForQA=silent;
   active=(animals??settings.animals).filter(x=>IDS.includes(x));if(!active.length)active=[...IDS];
   sleeping=resume&&resumable(progress)?progress.sleeping.filter(x=>active.includes(x)):[];
-  running=true;phase='intro';endedAt=-1;sessionStart=0;activeId='suri';stepIndex=-1;parentPause=false;assists=0;hints=0;$('#pause').textContent='Geschichte pausieren';
+  running=true;phase='intro';endedAt=-1;sessionStart=0;activeId='suri';stepIndex=-1;parentPause=false;assists=0;hints=0;assistedSteps=[];completedSteps=[];$('#pause').textContent='Geschichte pausieren';
   $('#welcome').hidden=true;$('#finished').hidden=true;$('#dim').style.opacity='0';$('#audio-view').hidden=!settings.audioOnly;$('#journey').hidden=false;updateJourney();
   await audioReady;await audio.unlock();requestWakeLock();run(token,resume);
 }
@@ -145,7 +147,7 @@ function frame(now){
   const dt=clock.paused.size?0:realDt*clock.scale;
   drawDt+=dt;
   const calm=running?(sleeping.length+(phase==='outro'?.6:0))/active.length:0;
-  if(view&&now-lastDraw>=31){frameTimes.push(now-lastDraw);if(frameTimes.length>300)frameTimes.shift();lastDraw=now;view.render(drawDt,phase==='ended'?1:calm);drawDt=0;}
+  if(view&&now-lastDraw>=(clock.paused.size?400:31)){frameTimes.push(now-lastDraw);if(frameTimes.length>300)frameTimes.shift();lastDraw=now;view.render(drawDt,phase==='ended'?1:calm,!settings.audioOnly&&!document.hidden);drawDt=0;}
   audio.update(phase==='ended'?1:calm,clock.time,endedAt);
   $('#scene-fade').style.opacity=String(transition);
   if(endedAt>=0&&settings.dim>0)$('#dim').style.opacity=String(.98*smooth((clock.time-endedAt-settings.dim*60)/45));
@@ -155,4 +157,4 @@ requestAnimationFrame(frame);
 if('serviceWorker' in navigator&&!import.meta.env.DEV)navigator.serviceWorker.register('./sw.js').catch(()=>{});
 
 // Compile-time QA build only. Production bundles have no gate bypass or story skip API.
-if(import.meta.env.MODE==='qa')window.__schlafwald={start,view,clock,audio,get settings(){return settings;},snapshot:()=>({phase,activeId,stepIndex,assists,hints,sleeping:[...sleeping],active:[...active],paused:[...clock.paused],line:currentLine,time:clock.time,step:view?.step?{type:view.step.config.type,progress:view.step.progress,complete:view.step.complete,items:view.step.items.filter(i=>!i.done).map(i=>view.project(i.pos)),target:view.project(view.step.target)}:null,stats:view?.stats(),frames:frameTimes}),pause:(value)=>pause('qa',value),openParents:()=>{pause('parent',true);renderSettings();$('#parents').showModal();},loseContext:()=>view?.renderer.forceContextLoss(),restoreContext:()=>view?.renderer.forceContextRestore()};
+if(import.meta.env.MODE==='qa')window.__schlafwald={start,view,clock,audio,get settings(){return settings;},snapshot:()=>({phase,activeId,stepIndex,assists,hints,assistedSteps:[...assistedSteps],completedSteps:[...completedSteps],sleeping:[...sleeping],active:[...active],paused:[...clock.paused],line:currentLine,time:clock.time,step:view?.step?{type:view.step.config.type,progress:view.step.progress,complete:view.step.complete,items:view.step.items.filter(i=>!i.done).map(i=>view.project(i.pos)),target:view.project(view.step.target)}:null,stats:view?.stats(),frames:frameTimes}),pause:(value)=>pause('qa',value),openParents:()=>{pause('parent',true);renderSettings();$('#parents').showModal();},loseContext:()=>view?.renderer.forceContextLoss(),restoreContext:()=>view?.renderer.forceContextRestore()};

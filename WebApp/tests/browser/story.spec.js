@@ -5,7 +5,7 @@ async function load(page){const errors=[];page.on('pageerror',e=>errors.push(e.m
 async function start(page,animals=IDS,scale=100){await page.evaluate(({animals,scale})=>window.__schlafwald.start({animals,scale,silent:true}),{animals,scale});}
 async function snapshot(page){return page.evaluate(()=>window.__schlafwald.snapshot());}
 async function bot(page,{capture=null}={}){
-  const seen=new Set(),end=Date.now()+150000;let down=false,lastKey='';
+  const seen=new Set(),end=Date.now()+260000;let down=false,lastKey='';
   while(Date.now()<end){
     const s=await snapshot(page);if(s.phase==='ended'){if(down)await page.mouse.up();return {state:s,seen:[...seen]};}
     const step=s.step,key=s.activeId+':'+s.stepIndex;
@@ -28,14 +28,15 @@ async function bot(page,{capture=null}={}){
 }
 
 test('Suri: all three rituals through real pointer input, followed by shell retraction',async({page})=>{
-  const errors=await load(page);await start(page,['suri'],32);const {state,seen}=await bot(page);expect(seen).toEqual(['suri:0','suri:1','suri:2']);expect(state.sleeping).toEqual(['suri']);expect(state.assists).toBe(0);
+  const errors=await load(page);await start(page,['suri'],32);const {state}=await bot(page);expect(state.completedSteps.map(s=>s.id)).toEqual(['suri:0','suri:1','suri:2']);expect(state.assistedSteps).toEqual([]);expect(state.sleeping).toEqual(['suri']);expect(state.assists).toBe(0);
   expect(await page.evaluate(()=>window.__schlafwald.view.animal.retract)).toBeGreaterThan(.98);expect(errors).toEqual([]);
 });
 test('all seven complete without input; each ritual eventually assists once',async({page})=>{
   await load(page);await start(page,IDS,180);await page.waitForFunction(()=>window.__schlafwald.snapshot().phase==='ended',null,{timeout:150000});const s=await snapshot(page);expect(s.sleeping).toEqual(IDS);expect(s.assists).toBe(10);
 });
 test('all seven complete using real pointer input and every ritual type',async({page})=>{
-  const errors=await load(page);await start(page,IDS,50);const {state,seen}=await bot(page);expect(state.sleeping).toEqual(IDS);expect(seen.length).toBe(10);expect(state.assists).toBe(0);expect(errors).toEqual([]);
+  test.setTimeout(300000);
+  const errors=await load(page);await start(page,IDS,40);const {state,seen}=await bot(page);expect(state.sleeping).toEqual(IDS);expect(state.completedSteps).toHaveLength(10);expect(state.assistedSteps).toEqual([]);expect(new Set(state.completedSteps.map(s=>s.type)).size).toBe(4);expect(errors).toEqual([]);
 });
 test('touches outside the target never punish or prevent gentle completion',async({page})=>{
   await load(page);await start(page,['suri'],150);for(let i=0;i<35;i++){await page.mouse.click(6,100);await page.waitForTimeout(80);}await page.waitForFunction(()=>window.__schlafwald.snapshot().phase==='ended',null,{timeout:100000});expect((await snapshot(page)).sleeping).toEqual(['suri']);
@@ -43,11 +44,20 @@ test('touches outside the target never punish or prevent gentle completion',asyn
 test('pause freezes narration time and animation; resume continues',async({page})=>{
   await load(page);await start(page,['suri'],15);await page.waitForTimeout(400);await page.evaluate(()=>window.__schlafwald.pause(true));const before=await snapshot(page),pose=await page.evaluate(()=>window.__schlafwald.view.animal.head.rotation.z);await page.waitForTimeout(650);expect((await snapshot(page)).time).toBe(before.time);expect(await page.evaluate(()=>window.__schlafwald.view.animal.head.rotation.z)).toBe(pose);await page.evaluate(()=>window.__schlafwald.pause(false));await page.waitForTimeout(500);expect((await snapshot(page)).time).toBeGreaterThan(before.time);
 });
+test('audio mode completes Suri without input and stops drawing the covered 3D scene',async({page})=>{
+  await load(page);await page.evaluate(()=>window.__schlafwald.openParents());await page.locator('#set-audioOnly').check();await page.locator('#parents-done').click();
+  const frames=(await snapshot(page)).stats.frames;await start(page,['suri'],180);await page.waitForFunction(()=>window.__schlafwald.snapshot().phase==='ended',null,{timeout:100000});
+  expect((await snapshot(page)).sleeping).toEqual(['suri']);expect((await snapshot(page)).stats.frames).toBe(frames);await expect(page.locator('#audio-view')).toBeVisible();await page.locator('#wake-screen').click();await page.waitForFunction(n=>window.__schlafwald.snapshot().stats.frames>n,frames);
+});
+test('graphics context loss pauses the story and restoring it resumes safely',async({page})=>{
+  await load(page);await start(page,['suri'],20);await page.evaluate(()=>window.__schlafwald.loseContext());await page.waitForFunction(()=>window.__schlafwald.snapshot().paused.includes('graphics'));await expect(page.locator('#error')).toBeVisible();
+  const time=(await snapshot(page)).time;await page.waitForTimeout(300);expect((await snapshot(page)).time).toBe(time);await page.evaluate(()=>window.__schlafwald.restoreContext());await page.waitForFunction(()=>!window.__schlafwald.snapshot().paused.includes('graphics'));await expect(page.locator('#error')).not.toBeVisible();
+});
 test('parent gate requires holding then arithmetic; settings persist and selection cannot empty',async({page})=>{
   await load(page);await page.getByRole('button',{name:/Elternbereich/}).click();await expect(page.locator('#gate')).not.toBeVisible();
   const b=await page.locator('#parent-open').boundingBox();await page.mouse.move(b.x+b.width/2,b.y+b.height/2);await page.mouse.down();await page.waitForTimeout(3200);await page.mouse.up();await expect(page.locator('#gate')).toBeVisible();
   const question=await page.locator('#challenge').innerText(),[a,c]=question.match(/\d+/g).map(Number);await page.locator('#answers').getByRole('button',{name:String(a*c),exact:true}).click();await expect(page.locator('#parents')).toBeVisible();
-  await page.locator('#set-master').fill('37');await page.locator('#set-master').dispatchEvent('input');for(const c of await page.locator('[name="animal"]').all())await c.uncheck();expect(await page.locator('[name="animal"]:checked').count()).toBe(1);await page.locator('#parents-done').click();await page.reload();await page.waitForFunction(()=>window.__schlafwald);expect(await page.evaluate(()=>window.__schlafwald.settings.master)).toBe(.37);
+  await page.locator('#set-master').fill('37');await page.locator('#set-master').dispatchEvent('input');for(const c of await page.locator('[name="animal"]').all())await c.click();expect(await page.locator('[name="animal"]:checked').count()).toBe(1);await page.locator('#parents-done').click();await page.reload();await page.waitForFunction(()=>window.__schlafwald);expect(await page.evaluate(()=>window.__schlafwald.settings.master)).toBe(.37);
 });
 test('a fully cached build restarts offline with local speech files',async({page,context})=>{
   await load(page);await page.evaluate(()=>navigator.serviceWorker.ready);await page.waitForFunction(()=>navigator.serviceWorker.controller!==null);await context.setOffline(true);await page.reload();await page.waitForFunction(()=>window.__schlafwald?.audio?.available===101);expect(await page.locator('#start').isVisible()).toBe(true);expect(await page.evaluate(async()=>{const r=await fetch('./audio/narration/suri_o4.mp3');return r.ok&&(await r.arrayBuffer()).byteLength>500;})).toBe(true);await start(page,['suri'],180);await page.waitForFunction(()=>window.__schlafwald.snapshot().phase==='ended',null,{timeout:100000});

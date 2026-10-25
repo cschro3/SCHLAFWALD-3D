@@ -1,0 +1,20 @@
+{
+  "apk_sha256": "9a7268a0a4ec6c029ed66cbb9fbb20ae173a37c01cd7016de350cd140c52af8e",
+  "bytes": 14233488,
+  "speech_hashes_verified": 101,
+  "qa_hook_absent": true,
+  "internet_permission_absent": true,
+  "debug_signed": true,
+  "device_install_tested": false,
+  "badging": [
+    "package: name='app.schlafwald.nacht' versionCode='1' versionName='1.0' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+    "sdkVersion:'29'",
+    "targetSdkVersion:'36'",
+    "uses-permission: name='app.schlafwald.nacht.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'",
+    "application-label:'Schlafwald'",
+    "application-label-af:'Schlafwald'",
+    "application-label-am:'Schlafwald'",
+    "application-label-ar:'Schlafwald'"
+  ],
+  "permissions": "package: app.schlafwald.nacht\npermission: app.schlafwald.nacht.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION\nuses-permission: name='app.schlafwald.nacht.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'\n"
+}

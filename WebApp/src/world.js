@@ -32,17 +32,26 @@ function face(parent,color,pos,scale,eyeOptions={}){
   return {g,eyes};
 }
 function leaf(parent,color='#a1ba78',size=1){
-  const shape=new T.Shape();shape.moveTo(0,-.6);shape.bezierCurveTo(-.65,-.35,-.62,.33,0,.7);shape.bezierCurveTo(.62,.33,.65,-.35,0,-.6);
+  const shape=new T.Shape();shape.moveTo(0,-.67);shape.bezierCurveTo(-.49,-.35,-.64,.22,0,.76);shape.bezierCurveTo(.56,.25,.48,-.36,0,-.67);
   const geo=new T.ExtrudeGeometry(shape,{depth:.045,bevelEnabled:true,bevelSegments:2,steps:1,bevelSize:.045,bevelThickness:.025,curveSegments:12});geo.rotateX(-Math.PI/2);
+  const height=(x,z)=>.21*(1-(x/.58)**2)-.13*(z/.76)**2;
+  const positions=geo.attributes.position;for(let i=0;i<positions.count;i++)positions.setY(i,positions.getY(i)+height(positions.getX(i),positions.getZ(i)));geo.computeVertexNormals();
   const g=group(parent,'leaf');mesh(g,'leafSurface',geo,mat(color));
-  tube(g,'vein',[[0,.07,.55],[0,.1,0],[0,.07,-.65]],.014,'#cfda9b',12);
-  for(const s of [-1,1])for(let i=0;i<3;i++)tube(g,'vein',[[0,.08,.3-i*.26],[s*.24,.08,.12-i*.22],[s*.34,.08,-.03-i*.2]],.007,'#c3d09a',8);
+  const onLeaf=(x,z)=>[x,height(x,z)+.064,z];
+  tube(g,'vein',[onLeaf(0,.62),onLeaf(0,0),onLeaf(0,-.71)],.014,'#cfda9b',12);
+  for(const s of [-1,1])for(let i=0;i<3;i++)tube(g,'vein',[onLeaf(0,.3-i*.26),onLeaf(s*.22,.12-i*.22),onLeaf(s*.31,-.03-i*.2)],.007,'#c3d09a',8);
+  batchStatic(g);
   g.scale.setScalar(size);return g;
+}
+function pointedEar(parent,color,inner,height=.48,width=.18){
+  const profile=[[width*.7,0],[width,.10*height],[width*.8,.47*height],[width*.35,.83*height],[.012,height]].map(([x,y])=>new T.Vector2(x,y));
+  const outer=mesh(parent,'tapered ear',new T.LatheGeometry(profile,16),mat(color));outer.scale.z=.62;
+  const lining=mesh(parent,'soft inner ear',new T.LatheGeometry(profile,16),mat(inner),[0,.035,.065],[.61,.79,.22]);return outer;
 }
 function rng(seed=42){return()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
 function batchStatic(root,recursive=true){
   root.updateMatrixWorld(true);const byMaterial=new Map(),inverse=root.matrixWorld.clone().invert();
-  const collect=o=>{if(!o.isMesh||o.isInstancedMesh||!o.material.isMeshStandardMaterial||Array.isArray(o.material))return;const key=o.material.uuid;if(!byMaterial.has(key))byMaterial.set(key,[]);byMaterial.get(key).push(o);};
+  const collect=o=>{if(!o.isMesh||o.userData.animated||o.isInstancedMesh||!o.material.isMeshStandardMaterial||Array.isArray(o.material))return;const key=o.material.uuid;if(!byMaterial.has(key))byMaterial.set(key,[]);byMaterial.get(key).push(o);};
   if(recursive)root.traverse(collect);else [...root.children].forEach(collect);
   for(const objects of byMaterial.values()){
     if(objects.length<2)continue;
@@ -70,7 +79,8 @@ export class ForestView {
     this.canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();this.contextLost=true;this.onContextLost?.();});
     this.canvas.addEventListener('webglcontextrestored',()=>{this.contextLost=false;this.onContextRestored?.();});
   }
-  resize(){const w=this.canvas.clientWidth,h=this.canvas.clientHeight;this.renderer.setSize(w,h,false);this.camera.aspect=w/h;this.camera.fov=w/h<1.5?52:42;this.camera.updateProjectionMatrix();}
+  resize(){const w=this.canvas.clientWidth,h=this.canvas.clientHeight;this.renderer.setSize(w,h,false);this.camera.aspect=w/h;this.camera.fov=w/h<1.5?52:42;this.camera.updateProjectionMatrix();if(this.welcome)this.setWelcomeLayout(true);}
+  setWelcomeLayout(enabled){this.welcome=enabled;if(!enabled)return;const portrait=this.camera.aspect<1;this.camera.position.set(...(portrait?[1.6,2.6,7.5]:[2.7,2.3,7]));this.look.set(...(portrait?[.65,-.15,0]:[-.85,.8,0]));this.cameraTarget.copy(this.camera.position);this.lookTarget.copy(this.look);this.camera.lookAt(this.look);}
   buildForest(){
     const skyGeo=new T.SphereGeometry(65,32,16);
     this.sky=new T.ShaderMaterial({side:T.BackSide,depthWrite:false,uniforms:{night:{value:0}},vertexShader:'varying vec3 d;void main(){d=position;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',fragmentShader:'varying vec3 d;uniform float night;void main(){float h=clamp(normalize(d).y,0.,1.);vec3 lo=mix(vec3(.65,.48,.48),vec3(.14,.25,.34),night);vec3 hi=mix(vec3(.13,.27,.34),vec3(.04,.10,.19),night);gl_FragColor=vec4(mix(lo,hi,pow(h,.45)),1.);}' });
@@ -112,7 +122,7 @@ export class ForestView {
     this.buildHabitat(config.id);this.cameraTarget.set(config.id==='suri'?3.2:3.6,config.id==='luna'?3.2:2.9,7.7);this.lookTarget.set(0,config.id==='luna'?1.8:.8,0);
   }
   buildHabitat(id){
-    const h=this.habitat;
+    const h=group(this.habitat,'habitat scenery');
     blob(h,'moss island','#687d55',[0,-.06,0],[2.35,.25,1.55]);
     if(id==='suri'){
       blob(h,'sleep stone','#87948a',[0,.02,-.05],[1.55,.19,.9]);
@@ -131,14 +141,16 @@ export class ForestView {
       if(id==='piko')for(let i=0;i<9;i++){const l=leaf(h,i%2?'#ae9467':'#bdac76',.35);l.position.set(Math.cos(i*2.4)*1.1,.12,Math.sin(i*2.4)*.7);l.rotation.y=i;}
     }
     for(let i=0;i<5;i++)blob(h,'moss tuft','#93a479',[-1.5+i*.64,.13,-.85],[.28,.12,.24],false);
+    batchStatic(h);
   }
   createProp(type){
     const g=group(this.props,type);
-    if(type==='leaf'||type==='bigLeaf'){const l=leaf(g,type==='bigLeaf'?'#91aa72':'#c1ab78',type==='bigLeaf'?1.35:.48);l.rotation.y=.4;}
+    if(type==='leaf'||type==='bigLeaf'){const l=leaf(g,type==='bigLeaf'?'#91aa72':'#c1ab78',type==='bigLeaf'?1.65:.48);l.rotation.y=.4;if(type==='bigLeaf'){l.scale.x*=1.12;l.rotation.z=-.08;}}
     else if(type==='blanket'){
-      const geo=new T.PlaneGeometry(1.7,1.3,20,16);const p=geo.attributes.position;for(let i=0;i<p.count;i++)p.setZ(i,.09*Math.cos(p.getX(i)*5)*Math.sin(p.getY(i)*3));geo.computeVertexNormals();geo.rotateX(-Math.PI/2);
-      const material=mat('#a9b4cb').clone();material.side=T.DoubleSide;mesh(g,'cloth',geo,material);
-      for(let i=0;i<9;i++)tube(g,'stitched hem',[[-.81+i*.20,.07,.61],[-.75+i*.20,.08,.61]],.012,'#e4d3bf',3);
+      const shape=new T.Shape();shape.moveTo(-.72,-.65);shape.lineTo(.72,-.65);shape.quadraticCurveTo(.87,-.65,.87,-.50);shape.lineTo(.87,.50);shape.quadraticCurveTo(.87,.65,.72,.65);shape.lineTo(-.72,.65);shape.quadraticCurveTo(-.87,.65,-.87,.50);shape.lineTo(-.87,-.50);shape.quadraticCurveTo(-.87,-.65,-.72,-.65);
+      const geo=new T.ExtrudeGeometry(shape,{depth:.035,bevelEnabled:true,bevelSize:.035,bevelThickness:.025,bevelSegments:3,curveSegments:12,steps:1});geo.rotateX(-Math.PI/2);
+      const drape=(x,z)=>.18*Math.cos(x*1.7)-.13*(z/.65)**2+.035*Math.cos(x*8+z*2);const p=geo.attributes.position;for(let i=0;i<p.count;i++)p.setY(i,p.getY(i)+drape(p.getX(i),p.getZ(i)));geo.computeVertexNormals();mesh(g,'soft cloth',geo,mat('#a9b4cb'));
+      for(let i=0;i<9;i++){const x=-.76+i*.18;tube(g,'stitched hem',[[x,drape(x,.61)+.06,.61],[x+.065,drape(x+.065,.61)+.06,.61]],.010,'#e4d3bf',3);}batchStatic(g);
     }else if(type==='acorn'){
       blob(g,'nut','#bb8c5c',[0,.16,0],[.17,.23,.17]);blob(g,'cap','#705b47',[0,.31,0],[.20,.09,.20]);branch(g,[0,.35,0],[.05,.43,0],.025);
     }else if(type==='mossPillow'){blob(g,'pillow','#92a77a',[0,.08,0],[.53,.17,.36]);for(let i=0;i<7;i++)blob(g,'soft tuft','#a8b48c',[(i%3-1)*.22,.19,Math.floor(i/3)*.17-.17],[.16,.065,.12],false);}
@@ -176,10 +188,11 @@ export class ForestView {
   pointer(type,x,y){
     const s=this.step;if(!s||s.complete)return;const old=s.lastPointer;s.lastPointer={x,y};s.pointer=type!=='up'&&type!=='cancel';
     if(type==='cancel'){if(s.dragging){s.dragging.returning=true;s.dragging=null;}return;}
-    if(type==='down'&&s.config.type==='DragToTarget')s.dragging=s.items.filter(i=>!i.done&&!i.placing).sort((a,b)=>{const p=this.project(a.pos),q=this.project(b.pos);return Math.hypot(p.x-x,p.y-y)-Math.hypot(q.x-x,q.y-y);}).find(i=>this.near(i.pos,x,y));
+    if(type==='down'&&s.config.type==='DragToTarget'){s.dragging=s.items.filter(i=>!i.done&&!i.placing).sort((a,b)=>{const p=this.project(a.pos),q=this.project(b.pos);return Math.hypot(p.x-x,p.y-y)-Math.hypot(q.x-x,q.y-y);}).find(i=>this.near(i.pos,x,y));if(s.dragging){s.dragging.returning=false;s.activity=(s.activity||0)+1;}}
     if(s.config.type==='Stroke'&&s.pointer&&old&&this.near(s.items[0].pos,x,y,95)){s.stroke+=Math.min(45,Math.hypot(old.x-x,old.y-y))/this.canvas.clientHeight;this.animal.pet=1;}
     if(s.dragging&&s.pointer){
       const it=s.dragging;
+      if(old&&Math.hypot(old.x-x,old.y-y)>1)s.activity=(s.activity||0)+1;
       // A camera-facing plane passes through the goal: a child's drop has no invisible depth mismatch.
       const rect=this.canvas.getBoundingClientRect();this.ray.setFromCamera(new T.Vector2((x-rect.left)/rect.width*2-1,-(y-rect.top)/rect.height*2+1),this.camera);
       const plane=new T.Plane().setFromNormalAndCoplanarPoint(this.camera.getWorldDirection(v()),s.target);const hit=v();if(this.ray.ray.intersectPlane(plane,hit)){it.pos.copy(hit);it.pos.y=Math.max(.15,it.pos.y);}
@@ -198,7 +211,7 @@ export class ForestView {
       if(s.assisting)s.stroke+=dt*.6;s.progress=clamp(s.stroke/(s.config.strokeLength||1.8));
     }else if(s.config.type==='Touch'){
       const target=s.items.find(i=>!i.done&&(s.assisting||(held&&this.near(i.pos,p.x,p.y))));
-      if(target){target.hold+=dt;this.animal.pet=.7;if(target.hold>=(s.config.holdSeconds||1.2)){target.done=true;if(target.go)target.go.scale.setScalar(.3);}}
+      if(target){target.hold+=dt;s.activity=(s.activity||0)+1;this.animal.pet=.7;if(target.hold>=(s.config.holdSeconds||1.2)){target.done=true;if(target.go)target.go.scale.setScalar(.3);}}
       s.progress=s.items.filter(i=>i.done).length/s.items.length;
     }else{
       if(s.assisting){const it=s.items.find(i=>!i.done);if(it)it.placing=true;}
@@ -224,13 +237,13 @@ export class ForestView {
     }
     this.step=null;
   }
-  render(dt,calm=0){
+  render(dt,calm=0,draw=true){
     this.time+=dt;this.calm+=(calm-this.calm)*(1-Math.exp(-dt*.4));const a=atmosphere(this.calm);
     this.key.intensity=3.1*a.light;this.sky.uniforms.night.value=this.calm;this.stars.material.opacity=.35+this.calm*.5;
     this.camera.position.lerp(this.cameraTarget,1-Math.exp(-dt*1.2));this.look.lerp(this.lookTarget,1-Math.exp(-dt*1.2));this.camera.lookAt(this.look);
     for(const f of this.fireflies){f.m.position.x=f.p.x+Math.sin(this.time*.25*a.motion+f.phase)*.3;f.m.position.y=f.p.y+Math.cos(this.time*.32*a.motion+f.phase)*.2;f.m.visible=(f.phase/7)<Math.max(.15,a.particles);}
     this.animal?.update(dt,this.time);this.updateStep(dt);
-    if(!this.contextLost){this.renderer.render(this.scene,this.camera);this.renderedFrames++;}
+    if(draw&&!this.contextLost){this.renderer.render(this.scene,this.camera);this.renderedFrames++;}
   }
   stats(){return {calls:this.renderer.info.render.calls,triangles:this.renderer.info.render.triangles,geometries:this.renderer.info.memory.geometries,frames:this.renderedFrames,renderer:this.renderer.getContext().getParameter(this.renderer.getContext().RENDERER)};}
 }
@@ -248,11 +261,12 @@ export function buildAnimal(id,parent){
     tube(head,'smile',[[-.09,-.11,.28],[0,-.15,.30],[.09,-.11,.28]],.012,'#946b63',14);
     for(const s of [-1,1]){const g=group(head,'Feeler'+s,[s*.19,.24,-.04]);branch(g,[0,0,0],[s*.08,.32,-.015],.034,'#dfbd9d');blob(g,'feeler tip','#dca99e',[s*.08,.33,-.015],[.065,.07,.065]);feelers.push(g);}
   }else if(id==='fino'||id==='nuri'){
-    const color=id==='fino'?'#cf9671':'#be9478';blob(body,'body',color,[0,.5,0],[.68,.48,.51]);blob(body,'bib','#e3ccaa',[0,.55,.39],[.40,.40,.18]);
+    const color=id==='fino'?'#c98853':'#be9478';blob(body,'body',color,[0,.5,0],[.68,.48,.51]);blob(body,'bib','#e3ccaa',[0,.55,.39],[.40,.40,.18]);
     for(const s of [-1,1])blob(body,'paw',color,[s*.39,.20,.36],[.21,.14,.31]);
     faceAt(color,[0,1.06,.16],[.48,.42,.39],{spacing:.205,y:.08,z:.33,r:.12});
-    for(const s of [-1,1]){const ear=group(head,'Ear'+s,[s*.34,.31,-.05]);blob(ear,'ear',color,[0,.13,0],[.17,.29,.16]);blob(ear,'inner','#dbb3a4',[0,.13,.11],[.10,.19,.06]);ear.rotation.z=-s*.24;ears.push(ear);blob(head,'muzzle','#edd5b5',[s*.12,-.14,.35],[.19,.13,.16]);}
-    blob(head,'nose','#554c4a',[0,-.10,.49],[.08,.06,.06]);tail=group(body,'Tail',[.50,.32,-.30]);
+    for(const s of [-1,1]){const ear=group(head,'Ear'+s,[s*.34,.29,-.05]);if(id==='fino')pointedEar(ear,color,'#e3b39a',.46,.18);else{blob(ear,'ear',color,[0,.13,0],[.17,.29,.16]);blob(ear,'inner','#dbb3a4',[0,.13,.11],[.10,.19,.06]);}ear.rotation.z=-s*.24;ears.push(ear);blob(head,'muzzle','#edd5b5',[s*.13,-.15,.36],[.20,.13,id==='fino'?.22:.16]);}
+    if(id==='fino')blob(head,'long cream snout','#edd5b5',[0,-.15,.48],[.17,.11,.20]);
+    blob(head,'nose','#554c4a',[0,-.10,id==='fino'?.65:.49],[.08,.06,.06]);tail=group(body,'Tail',[.50,.32,-.30]);
     const tp=id==='fino'?[[0,0,0],[.6,.08,.15],[.9,.18,.55],[.68,.25,1.0]]:[[0,0,0],[.65,.5,-.2],[.6,1.25,-.3],[.05,1.55,-.3]];
     tube(tail,'fluffy tail',tp,id==='fino'?.24:.30,color,26);blob(tail,'tail tip',id==='fino'?'#eddbb7':color,tp.at(-1),[.25,.25,.26]);
     if(id==='nuri'){const nut=group(body,'hug acorn',[0,.65,.65]);blob(nut,'acorn','#bc8a59',[0,0,0],[.18,.23,.17]);blob(nut,'cap','#715b46',[0,.17,0],[.2,.08,.19]);nut.visible=false;parts.nut=nut;for(const s of [-1,1]){const paw=blob(body,'arm',color,[s*.24,.56,.55],[.14,.24,.14]);paw.rotation.z=s*.5;}}
@@ -274,10 +288,11 @@ export function buildAnimal(id,parent){
     for(const s of [-1,1]){blob(body,'talon','#b99365',[s*.25,.06,.21],[.17,.09,.2]);const e=blob(head,'ear tuft','#aa947b',[s*.4,.37,-.10],[.13,.24,.12]);e.rotation.z=-s*.3;}
   }else if(id==='leni'){
     blob(body,'body','#c6a17d',[0,.55,-.05],[.79,.48,.47]);blob(body,'bib','#e2c6a1',[.36,.62,.28],[.33,.35,.21]);
-    for(const s of [-1,1]){blob(body,'front leg','#c8a17e',[s*.33,.25,.38],[.14,.30,.14]);blob(body,'back leg','#c49c77',[s*.52,.23,-.24],[.26,.21,.26]);}
-    faceAt('#d1ad87',[.35,1.04,.27],[.37,.40,.34],{spacing:.155,y:.07,z:.29,r:.12});
-    for(const s of [-1,1]){const e=group(head,'Ear'+s,[s*.29,.23,-.04]);blob(e,'ear','#c3a07e',[s*.10,.15,0],[.24,.29,.11]);blob(e,'inner','#d3b2a3',[s*.11,.16,.08],[.14,.19,.05]);e.rotation.z=-s*.55;ears.push(e);}
-    blob(head,'muzzle','#e2c7a4',[0,-.13,.29],[.23,.18,.23]);blob(head,'nose','#5c514b',[0,-.1,.48],[.08,.055,.065]);
+    for(const s of [-1,1]){blob(body,'folded foreleg','#c8a17e',[s*.33,.22,.46],[.13,.15,.39]);blob(body,'small hoof','#7f6b59',[s*.33,.17,.76],[.12,.10,.13]);blob(body,'back leg','#c49c77',[s*.52,.23,-.24],[.26,.21,.26]);}
+    parts.neck=blob(body,'slender neck','#cba681',[.33,.90,.20],[.23,.48,.24]);parts.neck.userData.animated=true;
+    faceAt('#d1ad87',[.35,1.34,.27],[.32,.39,.34],{spacing:.155,y:.07,z:.29,r:.12});
+    for(const s of [-1,1]){const e=group(head,'Ear'+s,[s*.25,.23,-.04]);pointedEar(e,'#c3a07e','#dfbaa8',.58,.19);e.rotation.z=-s*.55;ears.push(e);}
+    blob(head,'forehead blaze','#ead1ad',[0,.19,.30],[.07,.20,.045]);blob(head,'muzzle','#e2c7a4',[0,-.17,.42],[.20,.17,.28]);blob(head,'nose','#5c514b',[0,-.11,.66],[.095,.06,.06]);
     for(const s of [-1,1])for(let i=0;i<5;i++)blob(body,'fawn spot','#f2dfb4',[-.5+i*.19,.77+(i%2)*.04,s*.33],[.065,.04,.032],false);
   }
   const rest={head:head.position.clone(),body:body.position.clone(),tail:tail?.rotation.clone()};
@@ -303,7 +318,7 @@ export function buildAnimal(id,parent){
     state.pet=Math.max(0,state.pet-dt*.4);state.yawn=Math.max(0,state.yawn-dt*.22);state.wobble=Math.max(0,state.wobble-dt*.32);
     const breath=Math.sin(time*(state.asleep?.85:1.15))*(state.asleep?.013:.016);
     body.scale.set(1+breath*.5,1+breath,1+breath*.7);body.position.y=-state.curl*.14;
-    head.position.copy(rest.head);head.position.y-=state.curl*(id==='luna'?.13:.15);head.rotation.z=Math.sin(time*.55)*.025*(1-state.sleepAmount)+state.pet*.035;head.rotation.x=state.curl*.16+state.yawn*.11;
+    head.position.copy(rest.head);head.position.y-=state.curl*(id==='leni'?.48:id==='luna'?.13:.15);head.rotation.z=Math.sin(time*.55)*.025*(1-state.sleepAmount)+state.pet*.035;head.rotation.x=state.curl*.16+state.yawn*.11;
     let blink=0;const bt=time%6.4;if(bt>6.05)blink=Math.sin((bt-6.05)/.35*Math.PI);
     const shut=Math.max(state.closed,blink);for(const e of eyes){e.scale.y=Math.max(.035,1-shut*.96);e.getObjectByName('ClosedLid').visible=shut>.9;}
     for(const [i,e] of ears.entries()){const side=i===0?-1:1;e.rotation.z=-side*(.14+state.earDrop*.68);}
@@ -315,6 +330,7 @@ export function buildAnimal(id,parent){
       shell.rotation.z=Math.sin(time*6)*state.wobble*.06;shell.scale.setScalar(1+breath*.4);
     }
     if(id==='piko'){head.scale.setScalar(1-state.curl*.7);head.position.z-=state.curl*.26;}
+    if(id==='leni'){parts.neck.scale.y=.48*(1-state.curl*.55);parts.neck.position.y=.90-state.curl*.22;}
     if(id==='luna')head.rotation.x+=state.earDrop*.28;
   };
   return state;

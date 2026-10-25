@@ -1,58 +1,55 @@
-# Qualitätssicherung
+# Qualitätssicherung – 25.10.2026
 
-Status-Legende: ✅ ausgeführt und bestanden · 🟡 geschrieben/kompiliert, aber **nicht ausgeführt** · ⬜ noch nicht erstellt · ❌ fehlgeschlagen
+Die ausführbare Vorabversion ist die ergänzende Three.js-/Capacitor-Laufzeit in `WebApp/`. Das ursprüngliche Unity-Projekt bleibt erhalten. **Kompilation, ausgeführte Tests, Rendering und reale Geräte sind getrennte Nachweise.**
 
-## Automatisiert
+## Tatsächlich ausgeführte Prüfungen
 
-| Prüfung | Wie | Status |
+| Prüfung | Nachweis | Ergebnis |
 |---|---|---|
-| Story-Daten vollständig & konsistent (7 Tiere, Phasen, Hinweise, Hilfen, Kapitel, Shots) | `dotnet test tools/CoreTests` (`StoryTests`) | ✅ |
-| Suri-Wortlaut entspricht der Mission | `StoryTests.SuriTextMatchesMissionWording` | ✅ |
-| Finale nennt alle Tiere in Reihenfolge, endet mit „Schlaf schön.“ | `StoryTests` | ✅ |
-| Kleinkind-Touch-Zonen ≥ 0.6 m, Hilfe ≤ 40 s | `StoryTests.EveryStepHasChildFriendlyTouchZone…` | ✅ |
-| Hilfe-Eskalation: nie Abbruch, Hinweise dann genau eine Selbsthilfe | `HelpEscalatorTests` | ✅ |
-| Wald wird monoton ruhiger/dunkler, ohne Überschwingen | `AtmosphereTests` | ✅ |
-| Pacing (Wunschdauer), Tierauswahl verkürzt Geschichte | `PacingTests` | ✅ |
-| Fortsetzen, Bildschirm-Ausblenden, Elterngate (genau eine richtige Antwort, 3 s halten), Einstellungs-Grenzen | `ParentTests` | ✅ |
-| Zeilenfilter (Singular/Plural-Intro, Finale nur mit teilnehmenden Tieren) | `LineFilterTests` | ✅ |
-| Core + Runtime kompilieren gegen Unity-2021.3-API | `dotnet build tools/RuntimeCompileCheck` | ✅ (Compile-Check, **kein** Funktionstest) |
-| PlayMode-Tests kompilieren | `dotnet build tools/PlayModeCompileCheck` | ✅ |
-| Kameraeinstellungen zeigen alle Ritual-Objekte (16:9, 19.5:9, 4:3, 3:2) | `python3 tools/check_camera_framing.py …` | ✅ (rechnerisch) |
-| Komplettdurchlauf ohne jede Eingabe (Selbsthilfe) | PlayMode `StoryCompletesWithoutAnyInput_ChildNeverFails` | 🟡 |
-| Berührungen nur außerhalb der Ziele | PlayMode `StoryCompletesWhenChildOnlyTouchesOutsideTargets` | 🟡 |
-| Bot löst alle Rituale ohne Hilfe | PlayMode `StoryCompletesWithBotSolvingEveryRitual_WithoutHelp` | 🟡 |
-| Pause/Fortsetzen | PlayMode `PauseFreezesTheStoryAndResumeContinues` | 🟡 |
-| Audiomodus ohne Bildschirm | PlayMode `AudioOnlyModeFinishesAndLeavesNoCameraRendering` | 🟡 |
-| EditMode-Tests im Unity Test Runner (dieselben Dateien wie oben) | Unity → Test Runner | 🟡 |
+| C#-Logik und Story, Hilfe, Pacing, Elternregeln | NUnit/NUnitLite; zusätzlich echter GitHub-Actions-Testlauf | 27 bestanden |
+| JavaScript-Logik, sieben Tiere, zehn Rituale, Cue-Reihenfolge, Audioabdeckung | `npm test` | 26 bestanden |
+| Unity-Runtime-API-Kompilation | RuntimeCompileCheck gegen Unity-2021.3-Referenzassemblies | bestanden; kein Unity-Editorlauf |
+| PlayMode-Testcode kompilieren | PlayModeCompileCheck | bestanden; Tests nicht in Unity ausgeführt |
+| Metadaten, Audiohashes, Storydaten | `unity_metadata.py --check`, `verify_assets.py` | bestanden |
+| Unity-Kameraziele rechnerisch | `check_camera_framing.py` | 8 Prüfungen bestanden; kein Renderbeweis |
+| Browser: Suris drei Rituale mit Zeigereingabe | gerendertes Chromium, Playwright | bestanden; keine Selbsthilfe |
+| Browser: alle sieben, alle zehn Rituale mit Zeigereingabe | gerendertes Chromium, Playwright | bestanden; keine Selbsthilfe |
+| Browser: alle sieben ohne Eingabe | gerendertes Chromium, Playwright | bestanden; zehn Selbsthilfen |
+| Browser: falsche Berührungen, Pause/Fortsetzen, Elterngate, Auswahl und lokale Speicherung | Playwright | bestanden |
+| Browser: Offline-Neustart und lokale Sprachdateien, beschädigter Speicher, fehlende Sprachdateien | Playwright | bestanden |
+| Browser: Touch-Ereignisse und zweiter Finger | Chromium Touch-Emulation | bestanden; kein physisches Gerät |
+| Android-Debug-APK | lokales Gradle/JDK-21-/API-36-Buildsystem | gebaut, Paket und 101 Audiohashes geprüft |
+| iOS, unsignierter Geräte-Build | GitHub Actions, Xcode 26.6 / 17F113 | bestanden; kein signiertes IPA und kein Gerätetest |
+| Tatsächliches Rendering | 15 originale Browser-Screenshots, Suri-Ablaufvideo | visuell geprüft; Software-WebGL2 |
 
-## Manuell (Checkliste für das erste Unity-/Geräte-Review)
+Die abschließenden Berichtdateien und der CI-Lauf sind in [evidence/VERIFICATION.md](evidence/VERIFICATION.md) aufgeführt. Zwei zusätzliche Browserfälle prüfen den GPU-Stopp im Audiomodus und die Wiederherstellung nach Grafik-Kontextverlust; ihr abschließendes Ergebnis steht ebenfalls dort.
 
-| # | Prüfung | Soll | Status |
-|---|---|---|---|
-| 1 | Projekt öffnet ohne Compilerfehler; Shader kompilieren (kein Pink) | | 🟡 |
-| 2 | Menü *Schlafwald → Projekt einrichten* läuft fehlerfrei durch | | 🟡 |
-| 3 | Suri-Ablauf spielen: Pfad folgen → Blätterdach → Häuschen → Einschlafen | Fühler zuerst, dann ins Haus, Haus wackelt, Ruhe | 🟡 |
-| 4 | Erzählzeilen ↔ Animationen synchron (Cues) | ±0.3 s | 🟡 |
-| 5 | Finale: Überflug, Mond, Musik blendet aus, Bild bleibt ruhig | | 🟡 |
-| 6 | Elternbereich: Gate, alle Regler, Pause, „Neue Nacht“ | | 🟡 |
-| 7 | App in Hintergrund/Vordergrund, Anruf/Unterbrechung, Bildschirm sperren | Pause + sauberes Fortsetzen | 🟡 |
-| 8 | Flugmodus (offline) | identisches Verhalten | 🟡 |
-| 9 | Displays: iPhone SE/15 Pro Max, iPad, Android 16:9 bis 21:9, Tablets | Ritual-Objekte sichtbar, Touch-Zonen bequem | 🟡 |
-| 10 | Kleinkind-Test (2–3 Jahre, mit Elternteil): wird die Aufforderung ohne Text verstanden? | Halo/Erzähler genügt | ⬜ |
-| 11 | Lautheit: keine Spitzen, Erzähler klar über Musik | | ⬜ |
+## Ausdrücklich nicht ausgeführt
 
-## Performance-Messung (offen)
+- Unity-2022.3.50f1-Baseline im Editor, Unity EditMode und Unity PlayMode: **blockiert**, kein ausführbarer aktivierter Editor und kein vollständiger sicherer Unity-Secrets-Satz. Die Lizenz-Vorprüfung ist kein Test-Pass.
+- Unity-Shader-/URP-Rendering und Unity-Mobilbuilds: nicht ausgeführt. Die echte Browser-Renderprüfung belegt ausschließlich die Three.js-Laufzeit.
+- Unity-6.3-LTS-Migration: nicht vorgenommen, weil keine ausgeführte Unity-Baseline vorliegt.
+- Physische iOS-/Android-Geräte, Safari-/WebView-Matrix, Installations-/Touch-Tests, Energie/RAM/FPS, gesperrter Bildschirm, Tonunterbrechungen und VoiceOver/TalkBack: offen.
+- Endgültige Sprecher-, Art- und Eltern-/Kind-Abnahme: offen. Das QA-Video ist beschleunigt und ohne Ton; keine Abnahme natürlicher Bewegungsdauer oder Audioqualität daraus ableiten.
 
-Ziele: 30 fps stabil (Frametime-Spitzen < 50 ms), ≤ 150 Draw-Calls, ≤ 250 MB RAM, geringe Erwärmung, ≤ 5 % Akku/10 min.
-Vorgehen: Development Build → Unity Profiler (Frame Debugger, Memory Profiler) am Gerät, danach Xcode Instruments (Energy) bzw. Android Studio Energy-Profiler/`dumpsys batterystats`.
-Bekannte Risiken, die zuerst zu prüfen sind: ~300 Gras-Büschel + ~200 Bäume als einzelne Objekte (SRP-Batcher), Partikel-Overdraw (Additiv), IMGUI-Allokationen (`OnGUI`), prozedurale Audio-Generierung beim Start (< 1 s erwartet),
-`MaterialPropertyBlock` an Halos/Nebel (bricht SRP-Batching für diese wenigen Objekte).
+## Referenzgeräte und Grenzen
 
-## Bekannte Einschränkungen
+iPhone SE (2020, A13), aktuelles iPhone, iPad mit 4:3; Galaxy A52/6 GB und Android 10+ mit aktuellem System-WebView. Minimum: iOS 16 und Android 10/API 29; Build-Target API 36.
 
-- Nur Suri hat eine 3D-Figur; die anderen sechs sind als Daten vorhanden (`implemented: false`) und im Elternbereich als „folgt in Phase 3“ markiert.
-- Keine Sprecherstimme/Musik – nur gekennzeichneter Fallback und generierte Platzhalterklänge.
-- Der Elternbereich nutzt IMGUI (Prototyp); vor Release durch UI Toolkit/uGUI ersetzen (Barrierefreiheit, Dynamic Type, saubere Skalierung).
-- Barrierefreiheit (VoiceOver/TalkBack) für den Elternbereich fehlt noch.
-- Nur Deutsch; die Struktur (`story_<sprache>.json`) ist für weitere Sprachen vorbereitet.
-- Unity-`.meta`-Dateien fehlen noch (werden beim ersten Öffnen erzeugt und sollten eingecheckt werden).
+Ziel: stabile 30 FPS, P95-Framezeit ≤40 ms, keine anhaltenden Phasen >50 ms; ≤150 Draw Calls, ≤250.000 sichtbare Dreiecke, RAM-Ziel ≤250 MB. Temperatur und Akkuverbrauch über mindestens zehn Minuten am Gerät messen. SwiftShader auf diesem Host ist ein funktionaler Rendernachweis, kein Performance-Pass auf einem Mobilgerät.
+
+## Reproduzieren
+
+```sh
+npm --prefix WebApp ci
+npm --prefix WebApp test
+cd WebApp
+node tools/sync-content.mjs
+npx vite build --mode qa
+node tools/offline-manifest.mjs
+npx playwright install --with-deps chromium
+npx playwright test
+SCHLAFWALD_EVIDENCE=/tmp/schlafwald-evidence node tools/capture.mjs
+```
+
+`npm run build` baut die Produktion ohne QA-Steuerung. Die CI lädt Logikberichte, Browserberichte, echte Renderaufnahmen, Offline-Webbuild, Android-APK und Xcode-Log als Artefakte hoch. Unity-Jobs werden bei fehlender Aktivierung ausdrücklich übersprungen.

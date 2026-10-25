@@ -2,6 +2,8 @@
 
 Interaktive, deutschsprachige 3D-Einschlafgeschichte für Kinder von 2 bis 6 Jahren. Sieben Waldtiere, zehn behutsame Rituale, ein Abend, der immer leiser wird. Offline, ohne Kinderkonto, Werbung, Tracking oder Punkte.
 
+Private Vorschau: https://schlafwald-gute-nacht-3d.speedysnow4.chatgpt.site · [Prüfbericht](docs/evidence/VERIFICATION.md) · [Pull Request](https://github.com/cschro3/SCHLAFWALD-3D/pull/1)
+
 ## Ausprobierbare Laufzeit
 
 `WebApp/` enthält die ergänzende, tatsächlich renderbare Three.js-App und die Capacitor-Projekte für iOS/Android. Sie verwendet **direkt dieselbe Story-Datei** wie das bestehende Unity-Projekt. Das Unity-Projekt und sein Ausgangsstand bleiben erhalten. Gründe und Grenzen: [Engine-Entscheidung](docs/ENGINE_DECISION.md).

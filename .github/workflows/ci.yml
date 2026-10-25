@@ -10,7 +10,7 @@ on:
         default: false
 
 concurrency:
-  group: schlafwald-${{ github.workflow }}-${{ github.ref }}
+  group: schlafwald-${{ github.workflow }}-${{ github.head_ref || github.ref_name }}
   cancel-in-progress: true
 permissions:
   contents: read
@@ -54,6 +54,8 @@ jobs:
         working-directory: WebApp
       - run: npx playwright test
         working-directory: WebApp
+      - run: SCHLAFWALD_EVIDENCE="$GITHUB_WORKSPACE/artifacts/render" node tools/capture.mjs
+        working-directory: WebApp
       - run: npm run build
         working-directory: WebApp
       - uses: actions/upload-artifact@v4
@@ -61,6 +63,9 @@ jobs:
         with: { name: browser-reports, path: "WebApp/test-results/\nWebApp/playwright-report/" }
       - uses: actions/upload-artifact@v4
         with: { name: schlafwald-offline-web, path: WebApp/dist/ }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: actual-render-captures, path: artifacts/render/ }
 
   android:
     name: Android 10+ debug APK (no release signing)
@@ -71,7 +76,10 @@ jobs:
         with: { node-version: "22", cache: npm, cache-dependency-path: WebApp/package-lock.json }
       - uses: actions/setup-java@v4
         with: { distribution: temurin, java-version: "21" }
-      - uses: android-actions/setup-android@v3
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: platform-tools
+          log-accepted-android-sdk-licenses: false
       - run: sdkmanager "platforms;android-36" "build-tools;35.0.0"
       - run: npm ci && npm run build && npx cap sync android
         working-directory: WebApp
