@@ -80,9 +80,9 @@ namespace Schlafwald.EditorTools
             PlayerSettings.SetScriptingBackend(NamedBuildTarget.Android, ScriptingImplementation.IL2CPP);
             PlayerSettings.SetScriptingBackend(NamedBuildTarget.iOS, ScriptingImplementation.IL2CPP);
             PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64;
-            PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel26;
+            PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel29;
             PlayerSettings.Android.forceInternetPermission = false;   // Datenschutz: App braucht kein Netz
-            PlayerSettings.iOS.targetOSVersionString = "13.0";
+            PlayerSettings.iOS.targetOSVersionString = "16.0";
             PlayerSettings.iOS.sdkVersion = iOSSdkVersion.DeviceSDK;
             PlayerSettings.gpuSkinning = true;
             PlayerSettings.SetUseDefaultGraphicsAPIs(BuildTarget.Android, true);
@@ -110,10 +110,18 @@ namespace Schlafwald.EditorTools
         static void CreateMainScene()
         {
             Directory.CreateDirectory(Path.GetDirectoryName(ScenePath));
-            var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
-            // Absichtlich leer: AppComposer baut Wald, Tiere und Systeme zur Laufzeit (Szene bleibt austauschbar).
-            EditorSceneManager.SaveScene(scene, ScenePath);
-            EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene(ScenePath, true) };
+            if (!File.Exists(ScenePath))
+            {
+                var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Additive);
+                EditorSceneManager.SaveScene(scene, ScenePath);
+                EditorSceneManager.CloseScene(scene, true);
+            }
+            // Setup/build must never overwrite an authored scene or discard other build scenes.
+            var scenes = new System.Collections.Generic.List<EditorBuildSettingsScene>(EditorBuildSettings.scenes);
+            int existing = scenes.FindIndex(s => s.path == ScenePath);
+            if (existing < 0) scenes.Insert(0, new EditorBuildSettingsScene(ScenePath, true));
+            else scenes[existing] = new EditorBuildSettingsScene(ScenePath, true);
+            EditorBuildSettings.scenes = scenes.ToArray();
         }
     }
 }

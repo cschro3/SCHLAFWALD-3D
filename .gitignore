@@ -17,3 +17,22 @@ UnityProject/.idea/
 bin/
 obj/
 TestResults/
+# Browser/mobile build products and secrets
+**/node_modules/
+WebApp/dist/
+WebApp/playwright-report/
+WebApp/test-results/
+WebApp/android/.gradle/
+WebApp/android/local.properties
+WebApp/android/app/build/
+WebApp/android/build/
+WebApp/ios/App/Pods/
+WebApp/ios/App/App/public/
+WebApp/android/app/src/main/assets/public/
+*.keystore
+*.jks
+*.p12
+*.mobileprovision
+.env
+.env.*
+core

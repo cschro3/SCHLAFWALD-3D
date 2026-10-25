@@ -95,6 +95,7 @@ namespace Schlafwald.Tests
             var app = Start(new ScriptedPointerSource(), s);
             yield return WaitFinished(app, 240f);
             AssertEndState(app);
+            Assert.IsTrue(app.Services.Settings.Current.audioOnlyMode);
         }
     }
 
@@ -131,8 +132,8 @@ namespace Schlafwald.Tests
 
         StepConfig CurrentConfig(AnimalInteractionController ic)
         {
-            foreach (var a in app.Services.Story.animals) if (a.implemented && ic.CurrentStepIndex < a.steps.Count) return a.steps[ic.CurrentStepIndex];
-            return null;
+            var a = ic.CurrentAnimalConfig;
+            return a != null && ic.CurrentStepIndex >= 0 && ic.CurrentStepIndex < a.steps.Count ? a.steps[ic.CurrentStepIndex] : null;
         }
     }
 }

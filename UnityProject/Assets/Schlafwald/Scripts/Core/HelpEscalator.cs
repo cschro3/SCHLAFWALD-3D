@@ -46,5 +46,12 @@ namespace Schlafwald.Core
             }
             return HelpLevel.None;
         }
+
+        /// <summary>Speaking suspends waiting without erasing time accumulated before the hint.</summary>
+        public HelpLevel Tick(float dt, bool progressed, bool isNarrating)
+        {
+            if (progressed) { NotifyProgress(); return HelpLevel.None; }
+            return isNarrating ? HelpLevel.None : Tick(dt, false);
+        }
     }
 }
