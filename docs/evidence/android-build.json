@@ -16,5 +16,7 @@
     "application-label-am:'Schlafwald'",
     "application-label-ar:'Schlafwald'"
   ],
-  "permissions": "package: app.schlafwald.nacht\npermission: app.schlafwald.nacht.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION\nuses-permission: name='app.schlafwald.nacht.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'\n"
+  "permissions": "package: app.schlafwald.nacht\npermission: app.schlafwald.nacht.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION\nuses-permission: name='app.schlafwald.nacht.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'\n",
+  "apk_signature_v2_verified": true,
+  "zipalign_4_verified": true
 }

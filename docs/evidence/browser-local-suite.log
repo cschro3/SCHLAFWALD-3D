@@ -1,0 +1,62 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+[2m[WebServer] [22m(node:32) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 11 tests using 1 worker
+
+(node:44) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:44) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   1 tests/browser/story.spec.js:30:1 › Suri: all three rituals through real pointer input, followed by shell retraction (45.9s)
+(node:132) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:132) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 tests/browser/story.spec.js:34:1 › all seven complete without input; each ritual eventually assists once (1.9m)
+  ✓   3 tests/browser/story.spec.js:37:1 › all seven complete using real pointer input and every ritual type (4.1m)
+  ✓   4 tests/browser/story.spec.js:41:1 › touches outside the target never punish or prevent gentle completion (1.0m)
+  ✓   5 tests/browser/story.spec.js:44:1 › pause freezes narration time and animation; resume continues (10.4s)
+  ✓   6 tests/browser/story.spec.js:47:1 › audio mode completes Suri without input and stops drawing the covered 3D scene (8.3s)
+  ✓   7 tests/browser/story.spec.js:52:1 › graphics context loss pauses the story and restoring it resumes safely (5.3s)
+  ✓   8 tests/browser/story.spec.js:56:1 › parent gate requires holding then arithmetic; settings persist and selection cannot empty (19.0s)
+  ✓   9 tests/browser/story.spec.js:62:1 › a fully cached build restarts offline with local speech files (46.1s)
+  ✓  10 tests/browser/story.spec.js:65:1 › an unreadable save and unavailable narration recover without a crash (39.3s)
+  ✓  11 tests/browser/story.spec.js:69:1 › touch pointer events drive the shell interaction and ignore a second finger (38.2s)
+
+
+  1) tests/browser/story.spec.js:30:1 › Suri: all three rituals through real pointer input, followed by shell retraction 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 0[39m
+
+    [2m  Array [[22m
+    [2m    "suri:0",[22m
+    [2m    "suri:1",[22m
+    [32m-   "suri:2",[39m
+    [2m  ][22m
+
+      29 |
+      30 | test('Suri: all three rituals through real pointer input, followed by shell retraction',async({page})=>{
+    > 31 |   const errors=await load(page);await start(page,['suri'],32);const {state,seen}=await bot(page);expect(seen).toEqual(['suri:0','suri:1','suri:2']);expect(state.sleeping).toEqual(['suri']);expect(state.assists).toBe(0);
+         |                                                                                                               ^
+      32 |   expect(await page.evaluate(()=>window.__schlafwald.view.animal.retract)).toBeGreaterThan(.98);expect(errors).toEqual([]);
+      33 | });
+      34 | test('all seven complete without input; each ritual eventually assists once',async({page})=>{
+        at /workspace/scratch/ac08fee55a3a/SCHLAFWALD-3D/WebApp/tests/browser/story.spec.js:31:111
+
+    Error Context: test-results/story-Suri-all-three-ritua-5cdac-ollowed-by-shell-retraction/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/story-Suri-all-three-ritua-5cdac-ollowed-by-shell-retraction/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/story-Suri-all-three-ritua-5cdac-ollowed-by-shell-retraction/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests/browser/story.spec.js:30:1 › Suri: all three rituals through real pointer input, followed by shell retraction 
+  10 passed (10.8m)

@@ -22,7 +22,7 @@ Die ausführbare Vorabversion ist die ergänzende Three.js-/Capacitor-Laufzeit i
 | iOS, unsignierter Geräte-Build | GitHub Actions, Xcode 26.6 / 17F113 | bestanden; kein signiertes IPA und kein Gerätetest |
 | Tatsächliches Rendering | 15 originale Browser-Screenshots, Suri-Ablaufvideo | visuell geprüft; Software-WebGL2 |
 
-Die abschließenden Berichtdateien und der CI-Lauf sind in [evidence/VERIFICATION.md](evidence/VERIFICATION.md) aufgeführt. Zwei zusätzliche Browserfälle prüfen den GPU-Stopp im Audiomodus und die Wiederherstellung nach Grafik-Kontextverlust; ihr abschließendes Ergebnis steht ebenfalls dort.
+Die abschließenden Berichtdateien und der CI-Lauf sind in [evidence/VERIFICATION.md](evidence/VERIFICATION.md) aufgeführt. Zwei zusätzliche Browserfälle für den GPU-Stopp im Audiomodus und die Wiederherstellung nach Grafik-Kontextverlust sind ebenfalls bestanden. Lokal sind elf unterschiedliche Fälle ausgeführt und nach einer korrigierten Schrittzählungs-Assertion bestanden (zehn im Gesamtlauf, Suri im gezielten Wiederholungslauf). Der vollständige GitHub-Lauf ist ebenfalls erfolgreich: **11/11 Browsertests**, anschließend echte automatisierte Aufnahmen und Produktionsbuild. C#, Android und iOS sind grün; Unity wurde ausdrücklich übersprungen.
 
 ## Ausdrücklich nicht ausgeführt
 

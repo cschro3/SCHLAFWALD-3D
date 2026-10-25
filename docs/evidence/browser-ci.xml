@@ -1,0 +1,26 @@
+<testsuites id="" name="" tests="11" failures="0" skipped="0" errors="0" time="485.634831">
+<testsuite name="story.spec.js" timestamp="2026-10-25T17:20:38.058Z" hostname="" tests="11" failures="0" skipped="0" time="478.738" errors="0">
+<testcase name="Suri: all three rituals through real pointer input, followed by shell retraction" classname="story.spec.js" time="34.62">
+</testcase>
+<testcase name="all seven complete without input; each ritual eventually assists once" classname="story.spec.js" time="90.902">
+</testcase>
+<testcase name="all seven complete using real pointer input and every ritual type" classname="story.spec.js" time="196.212">
+</testcase>
+<testcase name="touches outside the target never punish or prevent gentle completion" classname="story.spec.js" time="33.645">
+</testcase>
+<testcase name="pause freezes narration time and animation; resume continues" classname="story.spec.js" time="6.995">
+</testcase>
+<testcase name="audio mode completes Suri without input and stops drawing the covered 3D scene" classname="story.spec.js" time="8.086">
+</testcase>
+<testcase name="graphics context loss pauses the story and restoring it resumes safely" classname="story.spec.js" time="2.84">
+</testcase>
+<testcase name="parent gate requires holding then arithmetic; settings persist and selection cannot empty" classname="story.spec.js" time="12.113">
+</testcase>
+<testcase name="a fully cached build restarts offline with local speech files" classname="story.spec.js" time="29.693">
+</testcase>
+<testcase name="an unreadable save and unavailable narration recover without a crash" classname="story.spec.js" time="33.361">
+</testcase>
+<testcase name="touch pointer events drive the shell interaction and ignore a second finger" classname="story.spec.js" time="30.271">
+</testcase>
+</testsuite>
+</testsuites>
