@@ -1,0 +1,1 @@
+{ "name": "Schlafwald.Editor", "rootNamespace": "Schlafwald.EditorTools", "references": ["Schlafwald.Core", "Schlafwald.Runtime", "Unity.RenderPipelines.Universal.Runtime"], "includePlatforms": ["Editor"], "excludePlatforms": [], "autoReferenced": true, "defineConstraints": [], "versionDefines": [], "noEngineReferences": false }

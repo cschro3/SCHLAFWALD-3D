@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    Übersetzt Core + Runtime gegen die echten Unity-Referenz-Assemblies (NuGet "UnityEngine.Modules").
+    Das ist NUR ein Compile-Check (Syntax/Typen/API), kein Ersatz für Unity Play-/EditMode-Tests.
+    Ausführen: dotnet build tools/RuntimeCompileCheck
+  -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>9</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn>CS0649;CS0414;CS0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../UnityProject/Assets/Schlafwald/Scripts/Core/*.cs" />
+    <Compile Include="../../UnityProject/Assets/Schlafwald/Scripts/Runtime/**/*.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="UnityEngine.Modules" Version="2021.3.33" />
+  </ItemGroup>
+</Project>

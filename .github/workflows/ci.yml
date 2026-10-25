@@ -1,0 +1,43 @@
+name: CI
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      unity:
+        description: "Unity-Tests ausführen (benötigt Secrets UNITY_LICENSE, UNITY_EMAIL, UNITY_PASSWORD)"
+        type: boolean
+        default: false
+
+jobs:
+  logic:
+    name: Logik-Tests, Compile-Checks, Daten-Tools
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with: { dotnet-version: "8.0.x" }
+      - run: dotnet test tools/CoreTests
+      - run: dotnet build tools/RuntimeCompileCheck
+      - run: dotnet build tools/PlayModeCompileCheck
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install numpy
+      - run: python3 tools/check_camera_framing.py UnityProject/Assets/Schlafwald/Resources/Story/story_de.json
+      - run: python3 tools/export_recording_script.py /tmp/recording
+
+  unity:
+    name: Unity EditMode + PlayMode
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.unity }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: game-ci/unity-test-runner@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          projectPath: UnityProject
+          unityVersion: 2022.3.50f1
+          testMode: all

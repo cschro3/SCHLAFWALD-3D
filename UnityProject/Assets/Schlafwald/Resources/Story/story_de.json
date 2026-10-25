@@ -1,0 +1,1485 @@
+{
+  "version": 1,
+  "language": "de",
+  "title": "SCHLAFWALD – Wenn die Tiere schlafen",
+  "narrators": [
+    {
+      "id": "warm",
+      "displayName": "Warme Stimme",
+      "description": "Hauptsprecher/in, langsam und warm"
+    },
+    {
+      "id": "soft",
+      "displayName": "Zweite Stimme",
+      "description": "Alternative, noch ruhigere Stimme"
+    }
+  ],
+  "world": {
+    "path": [
+      {
+        "x": 0,
+        "y": 0,
+        "z": -8
+      },
+      {
+        "x": 0.5,
+        "y": 0,
+        "z": 0
+      },
+      {
+        "x": -0.5,
+        "y": 0,
+        "z": 10
+      },
+      {
+        "x": 0.3,
+        "y": 0,
+        "z": 20
+      },
+      {
+        "x": 0.8,
+        "y": 0,
+        "z": 30
+      },
+      {
+        "x": -0.6,
+        "y": 0,
+        "z": 40
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "z": 50
+      },
+      {
+        "x": 0.6,
+        "y": 0,
+        "z": 60
+      },
+      {
+        "x": 0.3,
+        "y": 0,
+        "z": 70
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "z": 80
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "z": 90
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "id": "ch1",
+      "title": "Der Abend kommt",
+      "kind": "intro",
+      "animalId": "",
+      "lines": [
+        {
+          "id": "ch1_01",
+          "text": "Guten Abend, kleiner Schatz.",
+          "phase": "",
+          "pauseAfter": 1.8,
+          "tone": "warm",
+          "shotId": "sunset"
+        },
+        {
+          "id": "ch1_02",
+          "text": "Die Sonne geht langsam schlafen. Sie malt den Himmel ganz sanft orange.",
+          "phase": "",
+          "pauseAfter": 1.6,
+          "tone": "warm"
+        },
+        {
+          "id": "ch1_03",
+          "text": "Hörst du? Der Wind flüstert leise durch die Blätter.",
+          "phase": "",
+          "pauseAfter": 1.6,
+          "tone": "warm",
+          "shotId": "gate"
+        },
+        {
+          "id": "ch1_04",
+          "text": "Komm, wir gehen zusammen in den Schlafwald.",
+          "phase": "",
+          "pauseAfter": 1.8,
+          "tone": "warm"
+        },
+        {
+          "id": "ch1_05",
+          "text": "Dort warten sieben kleine Freunde auf dich. Sie sind schon ein bisschen müde.",
+          "phase": "",
+          "pauseAfter": 1.5,
+          "tone": "warm",
+          "when": "all"
+        },
+        {
+          "id": "ch1_05b",
+          "text": "Dort wartet ein kleiner Freund auf dich. Er ist schon ein bisschen müde.",
+          "phase": "",
+          "pauseAfter": 1.5,
+          "tone": "warm",
+          "when": "partial"
+        },
+        {
+          "id": "ch1_06",
+          "text": "Wollen wir ihnen helfen, einzuschlafen?",
+          "phase": "",
+          "pauseAfter": 2.0,
+          "tone": "warm",
+          "when": "all"
+        },
+        {
+          "id": "ch1_06b",
+          "text": "Wollen wir ihm helfen, einzuschlafen?",
+          "phase": "",
+          "pauseAfter": 2.0,
+          "tone": "warm",
+          "when": "partial"
+        }
+      ],
+      "shots": [
+        {
+          "id": "sunset",
+          "position": {
+            "x": -3,
+            "y": 1.7,
+            "z": -14
+          },
+          "lookAt": {
+            "x": 0,
+            "y": 3.2,
+            "z": 6
+          },
+          "fov": 52,
+          "duration": 10
+        },
+        {
+          "id": "gate",
+          "position": {
+            "x": 0.2,
+            "y": 1.5,
+            "z": -6.5
+          },
+          "lookAt": {
+            "x": 0,
+            "y": 1.6,
+            "z": 10
+          },
+          "fov": 50,
+          "duration": 9
+        }
+      ]
+    },
+    {
+      "id": "ch2",
+      "title": "Fino",
+      "kind": "animal",
+      "animalId": "fino",
+      "lines": [],
+      "shots": []
+    },
+    {
+      "id": "ch3",
+      "title": "Mila",
+      "kind": "animal",
+      "animalId": "mila",
+      "lines": [],
+      "shots": []
+    },
+    {
+      "id": "ch4",
+      "title": "Piko",
+      "kind": "animal",
+      "animalId": "piko",
+      "lines": [],
+      "shots": []
+    },
+    {
+      "id": "ch5",
+      "title": "Luna",
+      "kind": "animal",
+      "animalId": "luna",
+      "lines": [],
+      "shots": []
+    },
+    {
+      "id": "ch6",
+      "title": "Nuri",
+      "kind": "animal",
+      "animalId": "nuri",
+      "lines": [],
+      "shots": []
+    },
+    {
+      "id": "ch7",
+      "title": "Leni",
+      "kind": "animal",
+      "animalId": "leni",
+      "lines": [],
+      "shots": []
+    },
+    {
+      "id": "ch8",
+      "title": "Suri",
+      "kind": "animal",
+      "animalId": "suri",
+      "lines": [],
+      "shots": []
+    },
+    {
+      "id": "ch9",
+      "title": "Der ganze Wald schläft",
+      "kind": "finale",
+      "animalId": "",
+      "lines": [
+        {
+          "id": "fin_01",
+          "text": "Schau mal …",
+          "phase": "",
+          "pauseAfter": 2.0,
+          "tone": "warm",
+          "shotId": "overview"
+        },
+        {
+          "id": "fin_fino",
+          "text": "Fino schläft.",
+          "phase": "",
+          "pauseAfter": 1.4,
+          "tone": "warm",
+          "animalId": "fino",
+          "shotId": "@fino.sleep"
+        },
+        {
+          "id": "fin_mila",
+          "text": "Mila träumt.",
+          "phase": "",
+          "pauseAfter": 1.4,
+          "tone": "warm",
+          "animalId": "mila",
+          "shotId": "@mila.sleep"
+        },
+        {
+          "id": "fin_piko",
+          "text": "Piko liegt warm in seinen Blättern.",
+          "phase": "",
+          "pauseAfter": 1.4,
+          "tone": "warm",
+          "animalId": "piko",
+          "shotId": "@piko.sleep"
+        },
+        {
+          "id": "fin_luna",
+          "text": "Luna hat ihre Augen geschlossen.",
+          "phase": "",
+          "pauseAfter": 1.4,
+          "tone": "warm",
+          "animalId": "luna",
+          "shotId": "@luna.sleep"
+        },
+        {
+          "id": "fin_nuri",
+          "text": "Nuri kuschelt mit seiner kleinen Eichel.",
+          "phase": "",
+          "pauseAfter": 1.4,
+          "tone": "warm",
+          "animalId": "nuri",
+          "shotId": "@nuri.sleep"
+        },
+        {
+          "id": "fin_leni",
+          "text": "Leni ruht ganz friedlich.",
+          "phase": "",
+          "pauseAfter": 1.4,
+          "tone": "warm",
+          "animalId": "leni",
+          "shotId": "@leni.sleep"
+        },
+        {
+          "id": "fin_suri",
+          "text": "Und sogar die kleine Suri ist in ihrem Schneckenhaus eingeschlafen.",
+          "phase": "",
+          "pauseAfter": 2.0,
+          "tone": "warm",
+          "animalId": "suri",
+          "shotId": "@suri.sleep"
+        },
+        {
+          "id": "fin_02",
+          "text": "Jetzt ist der ganze Wald still.",
+          "phase": "",
+          "pauseAfter": 1.8,
+          "tone": "soft",
+          "shotId": "moon"
+        },
+        {
+          "id": "fin_03",
+          "text": "Die Blätter rascheln nur noch ganz leise.",
+          "phase": "",
+          "pauseAfter": 1.8,
+          "tone": "soft"
+        },
+        {
+          "id": "fin_04",
+          "text": "Der Mond passt auf alle auf.",
+          "phase": "",
+          "pauseAfter": 2.2,
+          "tone": "soft"
+        },
+        {
+          "id": "fin_05",
+          "text": "Und vielleicht … ist es jetzt auch für dich Zeit, die Augen zu schließen.",
+          "phase": "",
+          "pauseAfter": 2.5,
+          "tone": "whisper"
+        },
+        {
+          "id": "fin_06",
+          "text": "Gute Nacht, kleiner Schatz.",
+          "phase": "",
+          "pauseAfter": 2.5,
+          "tone": "whisper"
+        },
+        {
+          "id": "fin_07",
+          "text": "Schlaf schön.",
+          "phase": "",
+          "pauseAfter": 4.0,
+          "tone": "whisper"
+        }
+      ],
+      "shots": [
+        {
+          "id": "overview",
+          "position": {
+            "x": -4,
+            "y": 11,
+            "z": -2
+          },
+          "lookAt": {
+            "x": 0,
+            "y": 1,
+            "z": 40
+          },
+          "fov": 55,
+          "duration": 12
+        },
+        {
+          "id": "moon",
+          "position": {
+            "x": 0.5,
+            "y": 2.4,
+            "z": 64
+          },
+          "lookAt": {
+            "x": 2.5,
+            "y": 16,
+            "z": 110
+          },
+          "fov": 55,
+          "duration": 14
+        }
+      ]
+    }
+  ],
+  "animals": [
+    {
+      "id": "fino",
+      "displayName": "Fino",
+      "species": "fox",
+      "order": 1,
+      "implemented": false,
+      "modelId": "proto_fino",
+      "sleepSpot": {
+        "position": {
+          "x": -3.6,
+          "y": 0,
+          "z": 12
+        },
+        "yaw": 0
+      },
+      "steps": [
+        {
+          "id": "fino_s0",
+          "type": "DragToTarget",
+          "prop": "blanket",
+          "points": [
+            {
+              "x": -2.0,
+              "y": 0.05,
+              "z": 10.8
+            }
+          ],
+          "radius": 0.8,
+          "target": {
+            "x": -3.6,
+            "y": 0.45,
+            "z": 12
+          },
+          "successTrigger": "blanketOnFino"
+        }
+      ],
+      "animationStates": [
+        "idle",
+        "watchBlanket",
+        "yawn",
+        "curlUp",
+        "tailOverNose",
+        "sleep"
+      ],
+      "lines": [
+        {
+          "id": "fino_i1",
+          "text": "Hörst du das leise Gähnen?",
+          "phase": "intro",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "fino_i2",
+          "text": "Da vorne, in der warmen Höhle, sitzt Fino, der kleine Fuchs.",
+          "phase": "intro",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "fino_i3",
+          "text": "Seine Ohren hängen schon ein bisschen. Er ist so müde.",
+          "phase": "intro",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "fino_p0",
+          "text": "Fino friert ein kleines bisschen. Kannst du seine kuschelige Decke über ihn ziehen?",
+          "phase": "step0",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "fino_h",
+          "text": "Nimm die Decke mit deinem Finger … und zieh sie ganz sanft zu Fino.",
+          "phase": "hint",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "fino_a",
+          "text": "Ich helfe dir ein kleines bisschen. Schau, die Decke wandert ganz von allein.",
+          "phase": "assist",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "fino_o1",
+          "text": "Hach, wie warm.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "warm",
+          "cue": "yawn"
+        },
+        {
+          "id": "fino_o2",
+          "text": "Fino rollt sich ganz klein zusammen.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "warm",
+          "cue": "curlUp"
+        },
+        {
+          "id": "fino_o3",
+          "text": "Sein flauschiger Schwanz deckt die Nase zu.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "warm",
+          "cue": "tailOverNose"
+        },
+        {
+          "id": "fino_o4",
+          "text": "Gute Nacht, kleiner Fino.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "soft",
+          "cue": "sleep"
+        }
+      ],
+      "audio": {
+        "idleSfx": "",
+        "sleepSfx": "",
+        "narrationFolder": "fino"
+      },
+      "shots": [],
+      "successTrigger": "blanketOnFino+eyesClosed"
+    },
+    {
+      "id": "mila",
+      "displayName": "Mila",
+      "species": "rabbit",
+      "order": 2,
+      "implemented": false,
+      "modelId": "proto_mila",
+      "sleepSpot": {
+        "position": {
+          "x": 3.4,
+          "y": 0,
+          "z": 23
+        },
+        "yaw": 0
+      },
+      "steps": [
+        {
+          "id": "mila_s0",
+          "type": "Stroke",
+          "prop": "",
+          "points": [
+            {
+              "x": 3.4,
+              "y": 0.35,
+              "z": 23
+            }
+          ],
+          "radius": 0.9,
+          "target": {
+            "x": 3.4,
+            "y": 0.35,
+            "z": 23
+          },
+          "strokeLength": 1.8
+        }
+      ],
+      "animationStates": [
+        "idle",
+        "petReact",
+        "earsDown",
+        "blink",
+        "headDown",
+        "sleep"
+      ],
+      "lines": [
+        {
+          "id": "mila_i1",
+          "text": "Und wer sitzt da im weichen Moosnest?",
+          "phase": "intro",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "mila_i2",
+          "text": "Das ist Mila, das Kaninchen. Ihre langen Ohren lauschen noch.",
+          "phase": "intro",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "mila_p0",
+          "text": "Mila mag es, wenn man sie streichelt. Magst du sie ganz sanft streicheln?",
+          "phase": "step0",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "mila_h",
+          "text": "Fahr mit dem Finger ganz langsam über ihr weiches Fell.",
+          "phase": "hint",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "mila_a",
+          "text": "Mila kuschelt sich auch so schon gemütlich ein.",
+          "phase": "assist",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "mila_o1",
+          "text": "Schau, ihre Ohren werden ganz schwer.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "warm",
+          "cue": "earsDown"
+        },
+        {
+          "id": "mila_o2",
+          "text": "Sie blinzelt … und noch einmal …",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "warm",
+          "cue": "blink"
+        },
+        {
+          "id": "mila_o3",
+          "text": "Gute Nacht, liebe Mila.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "soft",
+          "cue": "sleep"
+        }
+      ],
+      "audio": {
+        "idleSfx": "",
+        "sleepSfx": "",
+        "narrationFolder": "mila"
+      },
+      "shots": [],
+      "successTrigger": "petted+headDown"
+    },
+    {
+      "id": "piko",
+      "displayName": "Piko",
+      "species": "hedgehog",
+      "order": 3,
+      "implemented": false,
+      "modelId": "proto_piko",
+      "sleepSpot": {
+        "position": {
+          "x": -3.4,
+          "y": 0,
+          "z": 33
+        },
+        "yaw": 0
+      },
+      "steps": [
+        {
+          "id": "piko_s0",
+          "type": "DragToTarget",
+          "prop": "leaf",
+          "points": [
+            {
+              "x": -2.0,
+              "y": 0.05,
+              "z": 31.8
+            },
+            {
+              "x": -1.6,
+              "y": 0.05,
+              "z": 33.0
+            },
+            {
+              "x": -2.2,
+              "y": 0.05,
+              "z": 34.2
+            }
+          ],
+          "radius": 0.8,
+          "target": {
+            "x": -3.6,
+            "y": 0.15,
+            "z": 33
+          },
+          "successTrigger": "threeLeavesDelivered"
+        }
+      ],
+      "animationStates": [
+        "idle",
+        "nudgeLeaf",
+        "burrowIn",
+        "curlBall",
+        "snore",
+        "sleep"
+      ],
+      "lines": [
+        {
+          "id": "piko_i1",
+          "text": "Tapp, tapp, tapp … wer trippelt denn da?",
+          "phase": "intro",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "piko_i2",
+          "text": "Das ist Piko, der kleine Igel. Er möchte sein Nest für die Nacht bauen.",
+          "phase": "intro",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "piko_p0",
+          "text": "Für ein weiches Bett braucht er drei Blätter. Schiebst du sie zu ihm?",
+          "phase": "step0",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "piko_h",
+          "text": "Schieb ein Blatt nach dem anderen zu Pikos Nest.",
+          "phase": "hint",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "piko_a",
+          "text": "Piko holt sich die Blätter jetzt selbst. Das macht er ganz geschickt.",
+          "phase": "assist",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "piko_o1",
+          "text": "Piko schiebt die Blätter mit der Nase zurecht.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "warm",
+          "cue": "nudgeLeaf"
+        },
+        {
+          "id": "piko_o2",
+          "text": "Er kuschelt sich ein und rollt sich zusammen.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "warm",
+          "cue": "curlBall"
+        },
+        {
+          "id": "piko_o3",
+          "text": "Hörst du? Er schnarcht ganz leise.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "warm",
+          "cue": "snore"
+        },
+        {
+          "id": "piko_o4",
+          "text": "Gute Nacht, kleiner Piko.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "soft",
+          "cue": "sleep"
+        }
+      ],
+      "audio": {
+        "idleSfx": "",
+        "sleepSfx": "",
+        "narrationFolder": "piko"
+      },
+      "shots": [],
+      "successTrigger": "nestBuilt+curled"
+    },
+    {
+      "id": "luna",
+      "displayName": "Luna",
+      "species": "owl",
+      "order": 4,
+      "implemented": false,
+      "modelId": "proto_luna",
+      "sleepSpot": {
+        "position": {
+          "x": 3.6,
+          "y": 2.3,
+          "z": 43
+        },
+        "yaw": 0
+      },
+      "steps": [
+        {
+          "id": "luna_s0",
+          "type": "Touch",
+          "prop": "firefly",
+          "points": [
+            {
+              "x": 3.0,
+              "y": 2.6,
+              "z": 42.0
+            },
+            {
+              "x": 4.0,
+              "y": 2.9,
+              "z": 43.2
+            },
+            {
+              "x": 3.4,
+              "y": 3.2,
+              "z": 41.6
+            }
+          ],
+          "radius": 0.9,
+          "target": {
+            "x": 3.6,
+            "y": 2.4,
+            "z": 43
+          },
+          "holdSeconds": 0.4
+        }
+      ],
+      "animationStates": [
+        "idle",
+        "turnHead",
+        "slowBlink",
+        "fluffFeathers",
+        "headInFeathers",
+        "sleep"
+      ],
+      "lines": [
+        {
+          "id": "luna_i1",
+          "text": "Huhu … ganz leise, hoch oben auf dem Lieblingsast sitzt Luna, die kleine Eule.",
+          "phase": "intro",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "luna_i2",
+          "text": "Ihre großen Augen sind noch hellwach.",
+          "phase": "intro",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "luna_p0",
+          "text": "Die Glühwürmchen tanzen um sie herum. Kannst du sie ganz sanft berühren?",
+          "phase": "step0",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "luna_h",
+          "text": "Tippe die leuchtenden Glühwürmchen ganz vorsichtig an.",
+          "phase": "hint",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "luna_a",
+          "text": "Die Glühwürmchen werden von allein müde und leuchten leiser.",
+          "phase": "assist",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "luna_o1",
+          "text": "Das Licht wird weicher … und weicher.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "warm",
+          "cue": "fluffFeathers"
+        },
+        {
+          "id": "luna_o2",
+          "text": "Luna blinzelt immer langsamer.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "warm",
+          "cue": "slowBlink"
+        },
+        {
+          "id": "luna_o3",
+          "text": "Sie steckt den Kopf ins warme Gefieder.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "warm",
+          "cue": "headInFeathers"
+        },
+        {
+          "id": "luna_o4",
+          "text": "Gute Nacht, kleine Luna.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "soft",
+          "cue": "sleep"
+        }
+      ],
+      "audio": {
+        "idleSfx": "",
+        "sleepSfx": "",
+        "narrationFolder": "luna"
+      },
+      "shots": [],
+      "successTrigger": "threeFirefliesDimmed+eyesClosed"
+    },
+    {
+      "id": "nuri",
+      "displayName": "Nuri",
+      "species": "squirrel",
+      "order": 5,
+      "implemented": false,
+      "modelId": "proto_nuri",
+      "sleepSpot": {
+        "position": {
+          "x": -3.6,
+          "y": 0,
+          "z": 53
+        },
+        "yaw": 0
+      },
+      "steps": [
+        {
+          "id": "nuri_s0",
+          "type": "DragToTarget",
+          "prop": "acorn",
+          "points": [
+            {
+              "x": -2.2,
+              "y": 0.1,
+              "z": 51.6
+            }
+          ],
+          "radius": 0.8,
+          "target": {
+            "x": -3.6,
+            "y": 0.5,
+            "z": 53
+          },
+          "successTrigger": "acornInPaws"
+        }
+      ],
+      "animationStates": [
+        "idle",
+        "searching",
+        "holdAcorn",
+        "stretchYawn",
+        "tailBlanket",
+        "sleep"
+      ],
+      "lines": [
+        {
+          "id": "nuri_i1",
+          "text": "Huch, was raschelt denn da?",
+          "phase": "intro",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "nuri_i2",
+          "text": "Das ist Nuri, das Eichhörnchen. Er sucht und sucht.",
+          "phase": "intro",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "nuri_i3",
+          "text": "Sein liebstes Kuschelnüsschen ist weg.",
+          "phase": "intro",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "nuri_p0",
+          "text": "Siehst du die kleine Eichel dort? Bringst du sie zu Nuri?",
+          "phase": "step0",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "nuri_h",
+          "text": "Nimm die Eichel und leg sie in Nuris Pfoten.",
+          "phase": "hint",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "nuri_a",
+          "text": "Die Eichel kullert ganz von allein zu Nuri. Wie schön.",
+          "phase": "assist",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "nuri_o1",
+          "text": "Nuri hält sie ganz fest.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "warm",
+          "cue": "holdAcorn"
+        },
+        {
+          "id": "nuri_o2",
+          "text": "Er streckt sich und gähnt.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "warm",
+          "cue": "stretchYawn"
+        },
+        {
+          "id": "nuri_o3",
+          "text": "Sein flauschiger Schwanz wird zur Decke.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "warm",
+          "cue": "tailBlanket"
+        },
+        {
+          "id": "nuri_o4",
+          "text": "Gute Nacht, kleiner Nuri.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "soft",
+          "cue": "sleep"
+        }
+      ],
+      "audio": {
+        "idleSfx": "",
+        "sleepSfx": "",
+        "narrationFolder": "nuri"
+      },
+      "shots": [],
+      "successTrigger": "acornInPaws+tailOver"
+    },
+    {
+      "id": "leni",
+      "displayName": "Leni",
+      "species": "deer",
+      "order": 6,
+      "implemented": false,
+      "modelId": "proto_leni",
+      "sleepSpot": {
+        "position": {
+          "x": 3.6,
+          "y": 0,
+          "z": 63
+        },
+        "yaw": 0
+      },
+      "steps": [
+        {
+          "id": "leni_s0",
+          "type": "Stroke",
+          "prop": "",
+          "points": [
+            {
+              "x": 3.6,
+              "y": 0.5,
+              "z": 63
+            }
+          ],
+          "radius": 1.0,
+          "target": {
+            "x": 3.6,
+            "y": 0.5,
+            "z": 63
+          },
+          "strokeLength": 2.0
+        },
+        {
+          "id": "leni_s1",
+          "type": "DragToTarget",
+          "prop": "mossPillow",
+          "points": [
+            {
+              "x": 2.2,
+              "y": 0.1,
+              "z": 61.8
+            }
+          ],
+          "radius": 0.8,
+          "target": {
+            "x": 3.6,
+            "y": 0.3,
+            "z": 63.4
+          },
+          "successTrigger": "pillowUnderHead"
+        }
+      ],
+      "animationStates": [
+        "idle",
+        "lieDown",
+        "earsRelax",
+        "slowBreath",
+        "heavyLids",
+        "sleep"
+      ],
+      "lines": [
+        {
+          "id": "leni_i1",
+          "text": "Im Mondlicht, auf einer weichen Lichtung, liegt Leni, das kleine Rehkitz.",
+          "phase": "intro",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "leni_i2",
+          "text": "Sie schaut sich noch ein wenig um.",
+          "phase": "intro",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "leni_p0",
+          "text": "Streichelst du ihr ganz sanft über den Rücken?",
+          "phase": "step0",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "leni_h0",
+          "text": "Fahr mit dem Finger langsam über Lenis Rücken.",
+          "phase": "hint",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "leni_a0",
+          "text": "Leni kuschelt sich auch so schon hin.",
+          "phase": "assist",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "leni_s0",
+          "text": "Das tut gut.",
+          "phase": "success0",
+          "pauseAfter": 0.8,
+          "tone": "warm"
+        },
+        {
+          "id": "leni_p1",
+          "text": "Und ein weiches Mooskissen für ihren Kopf? Schiebst du es unter?",
+          "phase": "step1",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "leni_h1",
+          "text": "Nimm das Mooskissen und schieb es unter Lenis Kopf.",
+          "phase": "hint",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "leni_a1",
+          "text": "Das Kissen schwebt ganz sanft zu Leni.",
+          "phase": "assist",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "leni_o1",
+          "text": "Leni legt sich ganz hin.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "warm",
+          "cue": "lieDown"
+        },
+        {
+          "id": "leni_o2",
+          "text": "Ihre Ohren werden weich.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "warm",
+          "cue": "earsRelax"
+        },
+        {
+          "id": "leni_o3",
+          "text": "Ihre Augen werden schwer.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "warm",
+          "cue": "heavyLids"
+        },
+        {
+          "id": "leni_o4",
+          "text": "Gute Nacht, liebe Leni.",
+          "phase": "outro",
+          "pauseAfter": 1.2,
+          "tone": "soft",
+          "cue": "sleep"
+        }
+      ],
+      "audio": {
+        "idleSfx": "",
+        "sleepSfx": "",
+        "narrationFolder": "leni"
+      },
+      "shots": [],
+      "successTrigger": "pillowUnderHead+lyingDown"
+    },
+    {
+      "id": "suri",
+      "displayName": "Suri",
+      "species": "snail",
+      "order": 7,
+      "implemented": true,
+      "modelId": "proto_suri",
+      "sleepSpot": {
+        "position": {
+          "x": 3.3,
+          "y": 0,
+          "z": 72.9
+        },
+        "yaw": 0
+      },
+      "steps": [
+        {
+          "id": "suri_s0",
+          "type": "FollowPath",
+          "prop": "guideOrb",
+          "points": [
+            {
+              "x": 1.7,
+              "y": 0,
+              "z": 73.35
+            },
+            {
+              "x": 2.05,
+              "y": 0,
+              "z": 73.3
+            },
+            {
+              "x": 2.45,
+              "y": 0,
+              "z": 73.12
+            },
+            {
+              "x": 2.85,
+              "y": 0,
+              "z": 72.98
+            },
+            {
+              "x": 3.25,
+              "y": 0,
+              "z": 72.9
+            }
+          ],
+          "radius": 0.9,
+          "helpAfter": 12,
+          "assistAfter": 30,
+          "successTrigger": "suriAtSleepSpot"
+        },
+        {
+          "id": "suri_s1",
+          "type": "DragToTarget",
+          "prop": "bigLeaf",
+          "points": [
+            {
+              "x": 4.3,
+              "y": 0.05,
+              "z": 72.1
+            }
+          ],
+          "radius": 0.8,
+          "target": {
+            "x": 3.3,
+            "y": 1.0,
+            "z": 72.9
+          },
+          "helpAfter": 14,
+          "assistAfter": 34,
+          "successTrigger": "leafRoofPlaced"
+        },
+        {
+          "id": "suri_s2",
+          "type": "Touch",
+          "prop": "",
+          "points": [
+            {
+              "x": 3.3,
+              "y": 0.58,
+              "z": 72.9
+            }
+          ],
+          "radius": 0.8,
+          "target": {
+            "x": 3.3,
+            "y": 0.58,
+            "z": 72.9
+          },
+          "holdSeconds": 1.2,
+          "helpAfter": 10,
+          "assistAfter": 24,
+          "successTrigger": "shellTouched"
+        }
+      ],
+      "animationStates": [
+        "idle",
+        "crawl",
+        "feelersCurious",
+        "lookAtChild",
+        "retractFeelers",
+        "enterShell",
+        "shellWobble",
+        "sleep"
+      ],
+      "lines": [
+        {
+          "id": "suri_i1",
+          "text": "Und wer kommt denn da so langsam angeschlichen?",
+          "phase": "intro",
+          "pauseAfter": 1.5,
+          "tone": "warm"
+        },
+        {
+          "id": "suri_i2",
+          "text": "Ach, das ist Suri, unsere kleine Schnecke.",
+          "phase": "intro",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "suri_i3",
+          "text": "Sie hat sich heute ganz viel Zeit genommen, um den Wald zu entdecken.",
+          "phase": "intro",
+          "pauseAfter": 1.2,
+          "tone": "warm",
+          "cue": "feelersCurious"
+        },
+        {
+          "id": "suri_i4",
+          "text": "Jetzt ist sie aber schrecklich müde.",
+          "phase": "intro",
+          "pauseAfter": 1.6,
+          "tone": "warm",
+          "cue": "lookAtChild"
+        },
+        {
+          "id": "suri_p0",
+          "text": "Suri möchte zu ihrem Schlafplatz. Zeig ihr den Weg … ganz langsam, mit deinem Finger.",
+          "phase": "step0",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "suri_h0",
+          "text": "Lege deinen Finger auf das leuchtende Licht und gehe ganz langsam voran. Suri folgt dir.",
+          "phase": "hint",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "suri_a0",
+          "text": "Suri findet den Weg auch ganz allein. Sie ist ja eine kluge kleine Schnecke.",
+          "phase": "assist",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "suri_s0",
+          "text": "Da ist sie schon.",
+          "phase": "success0",
+          "pauseAfter": 1.0,
+          "tone": "warm"
+        },
+        {
+          "id": "suri_p1",
+          "text": "Schau mal, ihr Schlafplatz braucht noch ein Blätterdach.",
+          "phase": "step1",
+          "pauseAfter": 1.0,
+          "tone": "warm"
+        },
+        {
+          "id": "suri_p1b",
+          "text": "Kannst du ihr helfen?",
+          "phase": "step1",
+          "pauseAfter": 0.6,
+          "tone": "warm"
+        },
+        {
+          "id": "suri_h1",
+          "text": "Nimm das große Blatt und leg es über den Stein.",
+          "phase": "hint",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "suri_a1",
+          "text": "Ich helfe dir ein kleines bisschen. Schau, das Blatt schwebt ganz sanft hinauf.",
+          "phase": "assist",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "suri_s1",
+          "text": "… Wie gemütlich!",
+          "phase": "success1",
+          "pauseAfter": 1.4,
+          "tone": "warm"
+        },
+        {
+          "id": "suri_p2",
+          "text": "Berühre ganz sanft ihr Häuschen.",
+          "phase": "step2",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "suri_h2",
+          "text": "Du kannst ihr Häuschen ganz leicht berühren.",
+          "phase": "hint",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "suri_a2",
+          "text": "Das Häuschen freut sich auch so über dich.",
+          "phase": "assist",
+          "pauseAfter": 1.2,
+          "tone": "warm"
+        },
+        {
+          "id": "suri_o1",
+          "text": "Suri zieht ihre kleinen Fühler ein.",
+          "phase": "outro",
+          "pauseAfter": 1.8,
+          "tone": "warm",
+          "cue": "retractFeelers"
+        },
+        {
+          "id": "suri_o2",
+          "text": "Ganz langsam …",
+          "phase": "outro",
+          "pauseAfter": 2.0,
+          "tone": "soft",
+          "cue": "enterShell"
+        },
+        {
+          "id": "suri_o3",
+          "text": "Und noch ein kleines Stückchen …",
+          "phase": "outro",
+          "pauseAfter": 2.5,
+          "tone": "soft",
+          "cue": "enterShellDeep"
+        },
+        {
+          "id": "suri_o4",
+          "text": "Gute Nacht, kleine Suri.",
+          "phase": "outro",
+          "pauseAfter": 2.5,
+          "tone": "whisper",
+          "cue": "shellWobble",
+          "cueDelay": 1.2
+        }
+      ],
+      "audio": {
+        "idleSfx": "",
+        "sleepSfx": "",
+        "narrationFolder": "suri"
+      },
+      "shots": [
+        {
+          "id": "interact",
+          "position": {
+            "x": 2.2,
+            "y": 1.3,
+            "z": 70.1
+          },
+          "lookAt": {
+            "x": 3.5,
+            "y": 0.15,
+            "z": 73.1
+          },
+          "fov": 50,
+          "duration": 8
+        },
+        {
+          "id": "sleep",
+          "position": {
+            "x": 2.5,
+            "y": 0.7,
+            "z": 70.9
+          },
+          "lookAt": {
+            "x": 3.3,
+            "y": 0.55,
+            "z": 72.9
+          },
+          "fov": 42,
+          "duration": 7
+        }
+      ],
+      "successTrigger": "suriInShell+roofPlaced"
+    }
+  ]
+}

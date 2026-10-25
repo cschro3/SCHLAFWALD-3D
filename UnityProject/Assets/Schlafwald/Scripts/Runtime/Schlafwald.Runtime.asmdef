@@ -1,0 +1,1 @@
+{ "name": "Schlafwald.Runtime", "rootNamespace": "Schlafwald", "references": ["Schlafwald.Core"], "includePlatforms": [], "excludePlatforms": [], "allowUnsafeCode": false, "autoReferenced": true, "defineConstraints": [], "versionDefines": [], "noEngineReferences": false }
