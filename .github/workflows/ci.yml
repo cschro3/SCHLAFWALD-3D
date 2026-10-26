@@ -56,6 +56,8 @@ jobs:
         working-directory: WebApp
       - run: SCHLAFWALD_EVIDENCE="$GITHUB_WORKSPACE/artifacts/render" node tools/capture.mjs
         working-directory: WebApp
+      - run: SCHLAFWALD_EVIDENCE="$GITHUB_WORKSPACE/artifacts/render" node tools/capture-visits.mjs
+        working-directory: WebApp
       - run: npm run build
         working-directory: WebApp
       - uses: actions/upload-artifact@v4

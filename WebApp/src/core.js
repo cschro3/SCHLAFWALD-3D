@@ -1,12 +1,13 @@
 export const IDS = ['fino','mila','piko','luna','nuri','leni','suri'];
 export const clamp = (x,lo=0,hi=1) => Math.max(lo, Math.min(hi, Number.isFinite(+x)?+x:lo));
 export const smooth = x => {x=clamp(x);return x*x*(3-2*x);};
-export const DEFAULTS = Object.freeze({master:0.75,narration:1,music:0.3,ambience:0.4,minutes:0,dim:1,timer:0,audioOnly:false,background:false,subtitles:true,animals:IDS});
+export const DEFAULTS = Object.freeze({master:0.75,narration:1,music:0.3,ambience:0.4,minutes:0,dim:1,timer:0,audioOnly:false,background:false,subtitles:true,voiceMode:'device',voiceURI:'',animals:IDS});
 export function sanitizeSettings(raw={}) {
   const s={...DEFAULTS,...raw};
   for(const k of ['master','narration','music','ambience']) s[k]=clamp(s[k]);
   for(const k of ['minutes','dim','timer']) s[k]=clamp(s[k],0,k==='minutes'?60:90);
   for(const k of ['audioOnly','background','subtitles']) s[k]=s[k]===true;
+  s.voiceMode=s.voiceMode==='legacy'?'legacy':'device';s.voiceURI=typeof s.voiceURI==='string'?s.voiceURI.slice(0,200):'';
   s.animals=IDS.filter(x=>Array.isArray(s.animals)&&s.animals.includes(x));
   if(!s.animals.length) s.animals=[...IDS];
   return s;

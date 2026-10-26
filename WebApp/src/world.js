@@ -51,7 +51,7 @@ function pointedEar(parent,color,inner,height=.48,width=.18){
 function rng(seed=42){return()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
 function batchStatic(root,recursive=true){
   root.updateMatrixWorld(true);const byMaterial=new Map(),inverse=root.matrixWorld.clone().invert();
-  const collect=o=>{if(!o.isMesh||o.userData.animated||o.isInstancedMesh||!o.material.isMeshStandardMaterial||Array.isArray(o.material))return;const key=o.material.uuid;if(!byMaterial.has(key))byMaterial.set(key,[]);byMaterial.get(key).push(o);};
+  const collect=o=>{for(let ancestor=o;ancestor;ancestor=ancestor.parent){if(!ancestor.visible)return;if(ancestor===root)break;}if(!o.isMesh||o.userData.animated||o.isInstancedMesh||!o.material.isMeshStandardMaterial||Array.isArray(o.material))return;const key=o.material.uuid;if(!byMaterial.has(key))byMaterial.set(key,[]);byMaterial.get(key).push(o);};
   if(recursive)root.traverse(collect);else [...root.children].forEach(collect);
   for(const objects of byMaterial.values()){
     if(objects.length<2)continue;
@@ -71,7 +71,7 @@ export class ForestView {
     this.hemi=new T.HemisphereLight('#e1d5e8','#42615a',2.5);this.scene.add(this.hemi);
     this.key=new T.DirectionalLight('#ffe1b5',3.1);this.key.position.set(-4,7,5);this.scene.add(this.key);
     const rim=new T.DirectionalLight('#a1cce5',1.5);rim.position.set(4,5,-5);this.scene.add(rim);
-    this.habitat=group(this.scene,'habitat');this.props=group(this.scene,'ritualProps');this.fireflies=[];this.leaves=[];this.time=0;
+    this.habitat=group(this.scene,'habitat');this.props=group(this.scene,'ritualProps');this.clearing=group(this.scene,'Besuchslichtung');this.clearing.visible=false;this.clearingEntries=[];this.fireflies=[];this.leaves=[];this.time=0;
     this.buildForest();this.resize();
     this.onResize=()=>this.resize();window.addEventListener('resize',this.onResize);
     this.ray=new T.Raycaster();this.plane=new T.Plane(v(0,1,0),-.14);
@@ -79,7 +79,7 @@ export class ForestView {
     this.canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();this.contextLost=true;this.onContextLost?.();});
     this.canvas.addEventListener('webglcontextrestored',()=>{this.contextLost=false;this.onContextRestored?.();});
   }
-  resize(){const w=this.canvas.clientWidth,h=this.canvas.clientHeight;this.renderer.setSize(w,h,false);this.camera.aspect=w/h;this.camera.fov=w/h<1.5?52:42;this.camera.updateProjectionMatrix();if(this.welcome)this.setWelcomeLayout(true);}
+  resize(){const w=this.canvas.clientWidth,h=this.canvas.clientHeight;this.renderer.setSize(w,h,false);this.camera.aspect=w/h;this.camera.fov=w/h<1.5?52:42;this.camera.updateProjectionMatrix();if(this.welcome)this.setWelcomeLayout(true);if(this.isClearing)this.layoutClearing();}
   setWelcomeLayout(enabled){this.welcome=enabled;if(!enabled)return;const portrait=this.camera.aspect<1;this.camera.position.set(...(portrait?[1.6,2.6,7.5]:[2.7,2.3,7]));this.look.set(...(portrait?[.65,-.15,0]:[-.85,.8,0]));this.cameraTarget.copy(this.camera.position);this.lookTarget.copy(this.look);this.camera.lookAt(this.look);}
   buildForest(){
     const skyGeo=new T.SphereGeometry(65,32,16);
@@ -118,9 +118,37 @@ export class ForestView {
   mushrooms(x,z,size){const g=group(this.scene,'mushrooms',[x,0,z]);g.scale.setScalar(size);for(let i=0;i<3;i++){const a=i*2.3,h=.16+i*.09;blob(g,'stem','#cfc6a1',[Math.sin(a)*.3,h*.5,Math.cos(a)*.2],[.05,h*.6,.05],false);const cap=blob(g,'cap',i%2?'#c59576':'#b3837d',[Math.sin(a)*.3,h,Math.cos(a)*.2],[.18,h*.4,.17],false);for(let j=0;j<3;j++)blob(cap,'spot','#e9d7b2',[(j-1)*.4,.75,.2],[.10,.05,.13],false);}}
   clear(parent){while(parent.children.length){const c=parent.children[0];parent.remove(c);c.traverse(o=>{if(o.isMesh&&o.geometry!==sphere&&o.geometry!==lowSphere)o.geometry.dispose();});}}
   showAnimal(config){
+    this.isClearing=false;this.clearing.visible=false;
     this.clear(this.habitat);this.clear(this.props);this.step=null;this.current=config;this.animal=buildAnimal(config.id,this.habitat);this.animal.config=config;
     this.buildHabitat(config.id);this.cameraTarget.set(config.id==='suri'?3.2:3.6,config.id==='luna'?3.2:2.9,7.7);this.lookTarget.set(0,config.id==='luna'?1.8:.8,0);
   }
+  showClearing(configs,sleeping=[]){
+    this.welcome=false;this.clear(this.habitat);this.clear(this.props);this.clear(this.clearing);this.step=null;this.animal=null;this.isClearing=true;this.clearing.visible=true;
+    this.clearingEntries=configs.map((config,index)=>{
+      const node=group(this.clearing,config.id+' home'),home=group(node,'shelter');
+      blob(home,'moss bed','#687d55',[0,-.03,0],[1.03,.15,.83]);
+      if(config.id==='fino'){
+        mesh(home,'den entrance',new T.TorusGeometry(.88,.23,10,20,Math.PI),mat('#77756c'),[0,.05,-.35]);blob(home,'den interior','#394d49',[0,.43,-.45],[.72,.54,.08]);
+      }else if(['luna','nuri'].includes(config.id)){
+        branch(home,[0,0,-.55],[0,3.0,-.55],.49,'#796454');blob(home,'tree hollow','#38433f',[0,.95,-.04],[.37,.51,.06]);
+        if(config.id==='luna')branch(home,[-.8,.92,.1],[.9,.96,.1],.08);
+      }else for(let i=0;i<7;i++){const a=i/7*Math.PI*2;blob(home,'nest edge','#91a373',[Math.cos(a)*.82,.07,Math.sin(a)*.56],[.24,.12,.20],false);}
+      if(config.id==='suri'&&sleeping.includes(config.id)){for(const x of [-.65,.65])branch(home,[x,0,-.38],[x,1.13,-.38],.025);const roof=leaf(home,'#91aa72',1.1);roof.position.set(0,1.17,0);roof.rotation.y=.4;}
+      batchStatic(home);
+      const rig=buildAnimal(config.id,node),scale=config.id==='suri'?.70:config.id==='luna'?.61:.72;rig.root.scale.setScalar(scale);rig.root.position.y=config.id==='luna'?.96:config.id==='nuri'?.22:.07;
+      const asleep=sleeping.includes(config.id);if(asleep){rig.cue('sleep');for(let i=0;i<160;i++)rig.update(.08,i*.08);}
+      rig.root.traverse(o=>{if(o.isMesh)o.userData.animated=false;});batchStatic(rig.root);
+      return {id:config.id,node,root:rig.root,scale,asleep,index};
+    });this.layoutClearing();
+    this.camera.position.copy(this.cameraTarget);this.look.copy(this.lookTarget);this.camera.lookAt(this.look);this.scene.updateMatrixWorld(true);
+  }
+  layoutClearing(){
+    const portrait=this.camera.aspect<1;
+    const positions=portrait?[[-2.1,0,-11],[2.1,0,-11],[-2.1,0,-6],[2.1,0,-6],[-2.1,0,-1],[2.1,0,-1],[0,0,4]]:[[-3,0,1],[0,0,1],[3,0,1],[-4.2,0,-5],[-1.4,0,-5],[1.4,0,-5],[4.2,0,-5]];
+    for(const [i,e] of this.clearingEntries.entries())e.node.position.set(...positions[i]);
+    this.cameraTarget.set(...(portrait?[0,16,17]:[0,8.0,12.6]));this.lookTarget.set(0,.25,portrait?-3:-1.7);
+  }
+  clearingTargets(){this.clearing.updateMatrixWorld(true);return this.clearingEntries.map(e=>({id:e.id,...this.project(e.node.localToWorld(v(0,-.04,1.9)))}));}
   buildHabitat(id){
     const h=group(this.habitat,'habitat scenery');
     blob(h,'moss island','#687d55',[0,-.06,0],[2.35,.25,1.55]);
@@ -242,7 +270,7 @@ export class ForestView {
     this.key.intensity=3.1*a.light;this.sky.uniforms.night.value=this.calm;this.stars.material.opacity=.35+this.calm*.5;
     this.camera.position.lerp(this.cameraTarget,1-Math.exp(-dt*1.2));this.look.lerp(this.lookTarget,1-Math.exp(-dt*1.2));this.camera.lookAt(this.look);
     for(const f of this.fireflies){f.m.position.x=f.p.x+Math.sin(this.time*.25*a.motion+f.phase)*.3;f.m.position.y=f.p.y+Math.cos(this.time*.32*a.motion+f.phase)*.2;f.m.visible=(f.phase/7)<Math.max(.15,a.particles);}
-    this.animal?.update(dt,this.time);this.updateStep(dt);
+    if(this.isClearing){for(const e of this.clearingEntries)e.root.scale.setScalar(e.scale*(1+Math.sin(this.time*.8+e.index)*.002));}else{this.animal?.update(dt,this.time);this.updateStep(dt);}
     if(draw&&!this.contextLost){this.renderer.render(this.scene,this.camera);this.renderedFrames++;}
   }
   stats(){return {calls:this.renderer.info.render.calls,triangles:this.renderer.info.render.triangles,geometries:this.renderer.info.memory.geometries,frames:this.renderedFrames,renderer:this.renderer.getContext().getParameter(this.renderer.getContext().RENDERER)};}

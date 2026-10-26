@@ -54,3 +54,6 @@ QA-Builds enthalten ausschließlich für die Tests eine Steuer-Schnittstelle. No
 Unity Hub → 2022.3.50f1 → `UnityProject/`; Menü Schlafwald → Projekt einrichten. Bestehende Szenen werden dabei nicht überschrieben. Für einen vollständigen Unity-Release sind die sechs zusätzlichen Unity-Tiermodelle weiterhin nicht implementiert. Eine Migration nach Unity 6.3 wurde ohne aktivierbaren Baseline-Lauf bewusst nicht vorgenommen.
 
 Die App ist noch nicht für die Stores freigegeben. Reale Mobilgeräte, finales Sprecher-/Art-Review, Hintergrund-Audio und Signierung sind verbindliche Release-Schritte. Es wurde kein öffentlicher Store-Upload vorgenommen.
+
+
+Aktualisierung 26.10.2026: Freie Tierbesuche und ausgewählte Emma-Hörprobe siehe [docs/VISITS_AND_VOICE.md](docs/VISITS_AND_VOICE.md). Die vollständige neue Emma-Vertonung ist noch offen.

@@ -1,6 +1,6 @@
 # SCHLAFWALD
 
-Festgelegtes Produkt: ruhige, deutschsprachige 3D-Einschlafgeschichte für Kinder 2–6 und ihre Eltern. Querformat, iOS 16+ / Android 10+, offline, ohne Kinderkonto, Werbung, Tracking oder Käufe im Kinderbereich. Sieben Freunde auf einem zusammenhängenden Abendpfad; Fürsorge statt Punkte und Niederlagen. Eltern steuern Ton, Dauer, Auswahl, Fortsetzen, Abdunklung und Audiomodus. Suri wird zuerst spielbar und visuell geprüft.
+Festgelegtes Produkt: ruhige, deutschsprachige 3D-Einschlafgeschichte für Kinder 2–6 und ihre Eltern. Querformat, iOS 16+ / Android 10+, offline, ohne Kinderkonto, Werbung, Tracking oder Käufe im Kinderbereich. Sieben frei besuchbare Freunde in einem gemeinsamen Wald; jedes Tier erzählt seine eigene kleine Geschichte in der Ich-Form. Das Kind wählt die Reihenfolge und darf den Abend jederzeit beenden; Fürsorge statt Punkte und Niederlagen. Eltern steuern Ton, Dauer, Auswahl, Fortsetzen, Abdunklung und Audiomodus. Suri wird zuerst spielbar und visuell geprüft.
 
 Das existierende Unity-Projekt bleibt erhalten. Eine ergänzende Three.js-Laufzeit im selben Repository ist die autorisierte Ausweichlösung bei fehlender aktivierbarer Unity-Umgebung. Keine öffentliche Bereitstellung, kein Store-Upload ohne Freigabe. Technische Fertigstellung und Beweis durch echte Renderaufnahmen, Tests und Builds haben Vorrang. Physische Geräte und Hintergrund-Audio dürfen nur nach tatsächlichem Nachweis als getestet gelten.
 

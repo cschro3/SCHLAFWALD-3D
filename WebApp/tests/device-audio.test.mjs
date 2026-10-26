@@ -1,0 +1,16 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {ForestAudio} from '../src/audio.js';
+import {DEFAULTS} from '../src/core.js';
+function setup(voices=[{name:'Anna',lang:'de-DE',localService:true,voiceURI:'local:de'}]){
+ globalThis.Audio=class{pause(){}load(){}removeAttribute(){}getAttribute(){return null;}};
+ globalThis.SpeechSynthesisUtterance=class{constructor(text){this.text=text;}};
+ const spoken=[];globalThis.speechSynthesis={getVoices:()=>voices,addEventListener(){},speak:u=>spoken.push(u),cancel(){},pause(){},resume(){}};
+ return {audio:new ForestAudio({...DEFAULTS}),spoken};
+}
+test('local speech waits for its actual end instead of truncating to a guessed text duration',async()=>{const {audio,spoken}=setup();const p=audio.play({id:'visit_suri_01',text:'Hallo, ich bin Suri.',speaker:'suri'});let finished=false;p.finished.then(()=>finished=true);await Promise.resolve();assert.equal(finished,false);assert.equal(spoken[0].lang,'de-DE');spoken[0].onend();assert.equal(await p.finished,true);});
+test('cancelling a visit releases speech waiters so another visit can start',async()=>{const {audio}=setup();const p=audio.play({text:'Ich bin Fino.'});audio.stopVoice();assert.equal(await p.finished,true);});
+test('voice audition preserves a paused story and repeats that line after returning',async()=>{const {audio,spoken}=setup();const p=audio.play({text:'Meine Decke ist weich.',speaker:'fino'});audio.pause();const preview=audio.previewDevice('Hallo, ich bin Suri.');assert.equal(spoken.length,2);spoken[1].onend();assert.equal(await preview,true);audio.resume();assert.equal(spoken.length,3);assert.equal(spoken[2].text,'Meine Decke ist weich.');spoken[2].onend();assert.equal(await p.finished,true);});
+test('unavailable or network-only German voices give a labelled read-aloud fallback, never the rejected Piper voice',()=>{const {audio,spoken}=setup([{name:'Online German',lang:'de-DE',localService:false}]);const duration=audio.play({text:'Gute Nacht.',voiceSource:'device'});assert.equal(typeof duration,'number');assert.equal(audio.fallback,true);assert.equal(audio.source,'none');assert.equal(spoken.length,0);});
+test('device speech errors release the story into its text fallback',async()=>{const {audio,spoken}=setup();const p=audio.play({text:'Schlaf schön.'});spoken[0].onerror();assert.equal(await p.finished,false);assert.equal(audio.fallback,true);});
+test('approved Emma audition uses bundled audio even without a device speech voice and releases on cancel',async()=>{const clips=[];globalThis.Audio=class{constructor(src){this.src=src;clips.push(this);}play(){return Promise.resolve();}pause(){}load(){}removeAttribute(){}getAttribute(){return null;}};globalThis.speechSynthesis=undefined;const audio=new ForestAudio({...DEFAULTS});const finished=audio.previewEmma();assert.equal(clips.at(-1).src,'./audio/visits/emma-reference.mp3');audio.stopPreview();assert.equal(await finished,true);});

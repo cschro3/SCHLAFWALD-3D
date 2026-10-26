@@ -21,3 +21,7 @@ Icon-Prompt (built-in Imagegen; Referenz: echter Suri-Screenshot):
 > A polished square mobile app icon for SCHLAFWALD, ages 2–6: a single adorable sleeping snail, cream body, peach rose spiral shell, tucked under one soft sage green leaf in a tiny moss nest; a small warm crescent moon above, deep muted teal blue forest background. Soft 3D children’s storybook materials, tender bedtime mood, readable silhouette at 60px. Fully opaque edge-to-edge square, no text, no rounded-corner mask, no copyrighted character. An icon illustration, never an application screenshot.
 
 Die Stimme ist synthetisch; Aufnahmen wurden weder aus kommerziellen Hörbüchern extrahiert noch von einer fremden bekannten Stimme nachgeahmt. Daten-/Modell-Lizenznachweise ersetzen keine abschließende Prüfung der Store-Pakete und sämtlicher transitiver Softwarelizenzen vor Veröffentlichung.
+
+## Emma-Auswahl vom 26.10.2026
+
+`WebApp/assets/voice-reference/suri-emma-take-2.mp3` und die identische private Vorschau-Kopie `WebApp/public/audio/visits/emma-reference.mp3`: vom Nutzer ausgewählte ElevenLabs-Stimme Emma, Generation Sdnyrtn7A56rGWPlL7q3. Herkunft/Hash/Prompt: selection.json neben der Referenz. Dies dokumentiert die Aufnahme und redaktionelle Auswahl, keine pauschale kommerzielle Lizenzfreigabe. Tarif-/Stimmrechte sind vor öffentlichem Vertrieb zu bestätigen. Keine Schlüssel oder temporären Download-URLs gespeichert.

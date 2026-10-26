@@ -53,3 +53,6 @@ SCHLAFWALD_EVIDENCE=/tmp/schlafwald-evidence node tools/capture.mjs
 ```
 
 `npm run build` baut die Produktion ohne QA-Steuerung. Die CI lädt Logikberichte, Browserberichte, echte Renderaufnahmen, Offline-Webbuild, Android-APK und Xcode-Log als Artefakte hoch. Unity-Jobs werden bei fehlender Aktivierung ausdrücklich übersprungen.
+
+
+Aktualisierung 26.10.2026: Freie Tierbesuche und ausgewählte Emma-Hörprobe siehe [VISITS_AND_VOICE.md](VISITS_AND_VOICE.md). Die vollständige neue Emma-Vertonung ist noch offen.
