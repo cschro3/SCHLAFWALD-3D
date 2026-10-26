@@ -1,0 +1,10 @@
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="96.887697">
+<testsuite name="visits.spec.js" timestamp="2026-10-26T10:13:11.080Z" hostname="" tests="3" failures="0" skipped="0" time="81.806" errors="0">
+<testcase name="parent voice audition uses the chosen offline German voice; fake speech verifies controls only" classname="visits.spec.js" time="10.165">
+</testcase>
+<testcase name="Emma visit recording plays to its real end after an offline restart" classname="visits.spec.js" time="40.691">
+</testcase>
+<testcase name="a saved robot voice cannot override the real Emma MP3" classname="visits.spec.js" time="30.95">
+</testcase>
+</testsuite>
+</testsuites>

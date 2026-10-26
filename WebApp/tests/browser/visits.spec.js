@@ -1,4 +1,5 @@
 import {test,expect} from '@playwright/test';
+import {writeFile} from 'node:fs/promises';
 const snap=page=>page.evaluate(()=>window.__schlafwald.snapshot());
 async function load(page){const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');await page.waitForFunction(()=>window.__schlafwald?.view?.renderedFrames>1);return errors;}
 async function forest(page){await page.evaluate(()=>window.__schlafwald.enterForest({scale:180,silent:true}));await expect(page.locator('#forest-menu')).toBeVisible();}
@@ -29,4 +30,15 @@ test('parent voice audition uses the chosen offline German voice; fake speech ve
 test('Emma visit recording plays to its real end after an offline restart',async({page,context})=>{
  await load(page);await page.evaluate(()=>navigator.serviceWorker.ready);await page.waitForFunction(()=>navigator.serviceWorker.controller!==null);await context.setOffline(true);await page.reload();await page.waitForFunction(()=>Object.keys(window.__schlafwald?.audio?.visitCoverage?.lines||{}).length===82);
  await page.locator('#start').click();await page.evaluate(()=>{window.__emmaEnded=[];window.__schlafwald.audio.voice.addEventListener('ended',()=>window.__emmaEnded.push(window.__schlafwald.audio.voice.currentSrc));});await page.locator('[data-visit="suri"]').click();await page.waitForFunction(()=>window.__schlafwald.audio.source==='emma-preview-recording'&&window.__schlafwald.audio.voice.currentTime>.1);await page.waitForFunction(()=>window.__emmaEnded.length>0,null,{timeout:45000});expect(await page.evaluate(()=>window.__emmaEnded[0])).toContain('visit_suri_01.mp3');expect(await page.evaluate(()=>window.__schlafwald.audio.failures.size)).toBe(0);
+});
+test('a saved robot voice cannot override the real Emma MP3',async({page})=>{
+ await page.addInitScript(()=>{localStorage.setItem('sw_emma_v1','true');localStorage.setItem('sw_web_settings_v1',JSON.stringify({voiceURI:'stale:robot',voiceMode:'device'}));window.__robotCalls=0;Object.defineProperty(window,'speechSynthesis',{value:{getVoices:()=>[{name:'Robot',lang:'de-DE',localService:true,voiceURI:'stale:robot'}],addEventListener(){},cancel(){},resume(){},pause(){},speak(){window.__robotCalls++;}}});});
+ await load(page);await page.locator('#start').click();await page.locator('[data-visit="suri"]').click();await page.waitForFunction(()=>window.__schlafwald.audio.source==='emma-preview-recording'&&window.__schlafwald.audio.voice.currentTime>.1);expect(await page.evaluate(()=>window.__robotCalls)).toBe(0);expect(await page.evaluate(()=>window.__schlafwald.audio.voice.playbackRate)).toBe(1);
+});
+test('fresh Emma entry bypasses an old cached start page and empty recording manifest',async({page})=>{
+ const legacy='const CACHE="schlafwald-legacy-fixture";self.addEventListener("install",e=>e.waitUntil(caches.open(CACHE).then(async c=>{await c.put("/",new Response("<h1>Old robot app</h1>",{headers:{"Content-Type":"text/html"}}));await c.put("/audio/visits/manifest.json",new Response(JSON.stringify({lines:{}})));}).then(()=>self.skipWaiting())));self.addEventListener("activate",e=>e.waitUntil(self.clients.claim()));self.addEventListener("fetch",e=>e.respondWith(caches.open(CACHE).then(async c=>(await c.match(new URL(e.request.url).pathname))||fetch(e.request))));';
+ await writeFile(new URL('../../dist/legacy-sw.js',import.meta.url),legacy);
+ await load(page);await page.evaluate(async()=>{await navigator.serviceWorker.register('./legacy-sw.js',{scope:'./'});await navigator.serviceWorker.ready;});await page.waitForFunction(()=>navigator.serviceWorker.controller?.scriptURL.endsWith('/legacy-sw.js'));
+ await page.goto('/');await expect(page.getByRole('heading',{name:'Old robot app'})).toBeVisible();expect(await page.evaluate(async()=>Object.keys((await (await fetch('./audio/visits/manifest.json')).json()).lines).length)).toBe(0);
+ await page.goto('/emma.html');await page.waitForFunction(()=>window.__schlafwald?.view?.renderedFrames>1);expect(await page.evaluate(()=>Object.keys(window.__schlafwald.audio.visitCoverage.lines).length)).toBe(82);await page.locator('#start').click();await page.locator('[data-visit="suri"]').click();await page.waitForFunction(()=>window.__schlafwald.audio.source==='emma-preview-recording'&&window.__schlafwald.audio.voice.currentTime>.1);
 });

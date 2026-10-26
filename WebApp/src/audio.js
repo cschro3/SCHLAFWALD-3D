@@ -1,5 +1,6 @@
 import {estimate,clamp} from './core.js';
 import {germanLocalVoices} from './visits.js';
+import visitRecordings from '../public/audio/visits/manifest.json' with {type:'json'};
 
 // No runtime speech service, microphone permission, analytics, or remote request.
 // Legacy clips remain bundled. New visits use bundled Emma preview recordings; local German voices remain an optional alternative.
@@ -7,7 +8,8 @@ export class ForestAudio {
   constructor(settings){this.settings=settings;this.coverage={};this.voice=new Audio();this.voice.preload='auto';this.voice.playsInline=true;this.system=globalThis.speechSynthesis;this.system?.addEventListener('voiceschanged',()=>this.onVoicesChanged?.());this.source='none';this.mutedForQA=false;this.paused=false;this.failures=new Set();this.noteAt=0;this.notes=[196,220,261.63,329.63,293.66,261.63,220,196];}
   async init(){
     try{const r=await fetch('./audio/manifest.json');if(r.ok)this.coverage=await r.json();}catch{/* visible read-aloud fallback */}
-    try{const r=await fetch('./audio/visits/manifest.json');if(r.ok)this.visitCoverage=await r.json();}catch{/* device voice remains available offline */}
+    // Bundle metadata with the hashed app code: an old service worker must not return an empty visit manifest.
+    this.visitCoverage=visitRecordings;
   }
   async unlock(){
     this.paused=false;this.system?.resume();
@@ -26,7 +28,9 @@ export class ForestAudio {
     this.stopVoice();const entry=this.coverage.lines?.[line.id];this.fallback=!entry;this.toneGain=line.tone==='whisper'?.78:line.tone==='soft'?.9:1;
     if(this.mutedForQA){this.source='qa';return entry?.duration??estimate(line.text);}
     const approved=['approved','generated-preview'].includes(this.visitCoverage?.editorial_status)&&this.visitCoverage.lines?.[line.id];
-    if(approved&&!this.settings.voiceURI){this.fallback=false;this.source=this.visitCoverage.editorial_status==='approved'?'approved-recording':'emma-preview-recording';this.voice.src='./audio/visits/'+line.id+'.mp3';this.voice.volume=clamp(this.settings.master*this.settings.narration*this.toneGain);return {duration:approved.duration,finished:new Promise(resolve=>{let done=false;const finish=ok=>{if(done)return;done=true;this.finishClip=null;this.voice.onended=null;this.voice.onerror=null;if(!ok)this.fallback=true;resolve(ok);};this.finishClip=()=>finish(true);this.voice.onended=()=>finish(true);this.voice.onerror=()=>finish(false);this.voice.play().catch(()=>finish(false));})};}
+    if(approved){this.fallback=false;this.source=this.visitCoverage.editorial_status==='approved'?'approved-recording':'emma-preview-recording';this.voice.playbackRate=1;this.voice.defaultPlaybackRate=1;this.voice.preservesPitch=true;this.voice.src='./audio/visits/'+line.id+'.mp3';this.voice.volume=clamp(this.settings.master*this.settings.narration*this.toneGain);return {duration:approved.duration,finished:new Promise(resolve=>{let done=false;const finish=ok=>{if(done)return;done=true;this.finishClip=null;this.voice.onended=null;this.voice.onerror=null;if(!ok)this.fallback=true;resolve(ok);};this.finishClip=()=>finish(true);this.voice.onended=()=>finish(true);this.voice.onerror=()=>finish(false);this.voice.play().catch(()=>finish(false));})};}
+    // Visit narration must never silently become the device's synthetic voice.
+    if(line.id?.startsWith('visit_')){this.fallback=true;this.source='none';return estimate(line.text);}
     if(line.voiceSource==='device'||this.settings.voiceMode!=='legacy')return this.speakDevice(line);
     if(!entry){this.source='none';return estimate(line.text);}
     this.source='legacy';
