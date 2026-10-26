@@ -25,3 +25,5 @@ Die Stimme ist synthetisch; Aufnahmen wurden weder aus kommerziellen Hörbücher
 ## Emma-Auswahl vom 26.10.2026
 
 `WebApp/assets/voice-reference/suri-emma-take-2.mp3` und die identische private Vorschau-Kopie `WebApp/public/audio/visits/emma-reference.mp3`: vom Nutzer ausgewählte ElevenLabs-Stimme Emma, Generation Sdnyrtn7A56rGWPlL7q3. Herkunft/Hash/Prompt: selection.json neben der Referenz. Dies dokumentiert die Aufnahme und redaktionelle Auswahl, keine pauschale kommerzielle Lizenzfreigabe. Tarif-/Stimmrechte sind vor öffentlichem Vertrieb zu bestätigen. Keine Schlüssel oder temporären Download-URLs gespeichert.
+
+Die 82 `WebApp/public/audio/visits/visit*.mp3` wurden zusätzlich mit derselben Emma-Stimme erzeugt (Flow sncQgTKzi5gXTIjoK48G, Modell eleven_v4). Generationen/Quellhashes: assets/voice-reference/generation-batch.json und generated-source-receipt.json; normalisierte Ausgabe und Texthashes: public/audio/visits/manifest.json. 13.376 vorhandene Credits, kein Zukauf. Vorschaufassung; abschließende Hörabnahme und kommerzielle Stimm-/Tarifrechte vor öffentlichem Vertrieb offen.

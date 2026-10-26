@@ -31,4 +31,4 @@ Die Elternoption erlaubt Hintergrundwiedergabe, kann aber Browser-/Betriebssyste
 Unity kann die MP3s über seine vorhandene Resources-Pipeline laden. Externe Austauschaufnahmen können wie bisher in `Audio/Narration/<stimme>/<ID>` liegen. Unitys `FallbackVoice` erzeugt nur Murmeln und bleibt ein Entwicklungs-Fallback. Der Unity-Release-Gate verlangt vollständige Aufnahmen und implementierte Tiere. Kein ausgeführter Unity-Audio-Test liegt vor.
 
 
-Aktualisierung 26.10.2026: Freie Tierbesuche und ausgewählte Emma-Hörprobe siehe [VISITS_AND_VOICE.md](VISITS_AND_VOICE.md). Die vollständige neue Emma-Vertonung ist noch offen.
+Aktualisierung 26.10.2026: Freie Tierbesuche und ausgewählte Emma-Hörprobe siehe [VISITS_AND_VOICE.md](VISITS_AND_VOICE.md). Alle 82 neuen Textabschnitte sind als lokale Emma-Vorschaufassung vertont; die abschließende Hörabnahme bleibt offen.

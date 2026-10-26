@@ -1,0 +1,8 @@
+<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="64.675477">
+<testsuite name="visits.spec.js" timestamp="2026-10-26T09:36:50.256Z" hostname="" tests="2" failures="0" skipped="0" time="52.638" errors="0">
+<testcase name="parent voice audition uses the chosen offline German voice; fake speech verifies controls only" classname="visits.spec.js" time="10.944">
+</testcase>
+<testcase name="Emma visit recording plays to its real end after an offline restart" classname="visits.spec.js" time="41.694">
+</testcase>
+</testsuite>
+</testsuites>

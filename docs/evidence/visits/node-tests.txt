@@ -1,0 +1,52 @@
+
+> schlafwald-3d@0.2.0 test
+> node --test tests/*.test.mjs
+
+✔ the canonical Unity story supplies all seven complete browser rituals (7.290792ms)
+✔ all 101 narration IDs are unique (1.558912ms)
+✔ invalid ritual data is rejected before starting (1.211243ms)
+✔ Suri keeps all three original ritual types and text (2.055183ms)
+✔ generic hint/assist lines support every numbered ritual (0.87423ms)
+✔ partial finale mentions only participating animals (0.490668ms)
+✔ one-animal introduction uses the original singular recording (0.222365ms)
+✔ settings recover malformed/hostile local values and cannot disable every animal (2.396651ms)
+✔ an unfinished same-night save resumes; future, expired and finished saves do not (1.158602ms)
+✔ invalid progress cannot resume (0.67061ms)
+✔ unavailable storage yields a session-only mode without crashing (0.770789ms)
+✔ a spoken hint pauses idle time without making self-help unreachable (0.194186ms)
+✔ real progress restarts the wait without imposing a failure or deadline (0.261318ms)
+✔ every atmosphere channel grows calmer monotonically (2.227461ms)
+✔ 5000 parent challenges each contain exactly one correct answer (25.22936ms)
+✔ nested pause reasons freeze time until every reason is removed (1.042808ms)
+✔ cancelling a story releases old waiters (0.262853ms)
+✔ fino: an actual animated 3D rig closes its eyes and settles into sleep (53.877167ms)
+✔ mila: an actual animated 3D rig closes its eyes and settles into sleep (9.891742ms)
+✔ piko: an actual animated 3D rig closes its eyes and settles into sleep (98.272569ms)
+✔ luna: an actual animated 3D rig closes its eyes and settles into sleep (14.324053ms)
+✔ nuri: an actual animated 3D rig closes its eyes and settles into sleep (14.785506ms)
+✔ leni: an actual animated 3D rig closes its eyes and settles into sleep (21.809858ms)
+✔ suri: an actual animated 3D rig closes its eyes and settles into sleep (29.983316ms)
+✔ Suri retracts feelers before entering the shell; animation preserves neck dimensions (23.473042ms)
+✔ narration manifest covers every canonical line with real MP3 durations (551.69564ms)
+✔ local speech waits for its actual end instead of truncating to a guessed text duration (7.944284ms)
+✔ cancelling a visit releases speech waiters so another visit can start (0.395892ms)
+✔ voice audition preserves a paused story and repeats that line after returning (2.321704ms)
+✔ unavailable or network-only German voices give a labelled read-aloud fallback, never the rejected Piper voice (0.442054ms)
+✔ device speech errors release the story into its text fallback (0.67126ms)
+✔ approved Emma audition uses bundled audio even without a device speech voice and releases on cancel (0.779859ms)
+✔ bundled Emma preview waits for real clip end and cancellation releases the waiter (1.026735ms)
+✔ all 82 new visit texts have matching bundled Emma audio, hashes and plausible durations (35.004816ms)
+✔ seven independent first-person visits retain all ten canonical rituals without mutating Unity data (11.124635ms)
+✔ a missing or duplicate visit fails validation before the user can enter (1.513979ms)
+✔ multi-step visits provide an instruction and relevant help for every individual ritual (7.213066ms)
+✔ visits can be completed in arbitrary order and repeated without duplicate progress (1.472308ms)
+✔ old, future, completed or hostile visit saves start a fresh night (0.372572ms)
+✔ device voice selection only includes installed German voices and prefers enhanced voices (0.852172ms)
+ℹ tests 40
+ℹ suites 0
+ℹ pass 40
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2503.839228

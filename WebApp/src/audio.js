@@ -2,7 +2,7 @@ import {estimate,clamp} from './core.js';
 import {germanLocalVoices} from './visits.js';
 
 // No runtime speech service, microphone permission, analytics, or remote request.
-// Legacy clips remain bundled. New visits use local German device voices until approved recordings exist.
+// Legacy clips remain bundled. New visits use bundled Emma preview recordings; local German voices remain an optional alternative.
 export class ForestAudio {
   constructor(settings){this.settings=settings;this.coverage={};this.voice=new Audio();this.voice.preload='auto';this.voice.playsInline=true;this.system=globalThis.speechSynthesis;this.system?.addEventListener('voiceschanged',()=>this.onVoicesChanged?.());this.source='none';this.mutedForQA=false;this.paused=false;this.failures=new Set();this.noteAt=0;this.notes=[196,220,261.63,329.63,293.66,261.63,220,196];}
   async init(){
@@ -25,8 +25,8 @@ export class ForestAudio {
   play(line){
     this.stopVoice();const entry=this.coverage.lines?.[line.id];this.fallback=!entry;this.toneGain=line.tone==='whisper'?.78:line.tone==='soft'?.9:1;
     if(this.mutedForQA){this.source='qa';return entry?.duration??estimate(line.text);}
-    const approved=this.visitCoverage?.editorial_status==='approved'&&this.visitCoverage.lines?.[line.id];
-    if(approved&&!this.settings.voiceURI){this.fallback=false;this.source='approved-recording';this.voice.src='./audio/visits/'+line.id+'.mp3';this.voice.volume=clamp(this.settings.master*this.settings.narration*this.toneGain);this.voice.onerror=()=>{this.fallback=true;};this.voice.play().catch(()=>{this.fallback=true;});return approved.duration;}
+    const approved=['approved','generated-preview'].includes(this.visitCoverage?.editorial_status)&&this.visitCoverage.lines?.[line.id];
+    if(approved&&!this.settings.voiceURI){this.fallback=false;this.source=this.visitCoverage.editorial_status==='approved'?'approved-recording':'emma-preview-recording';this.voice.src='./audio/visits/'+line.id+'.mp3';this.voice.volume=clamp(this.settings.master*this.settings.narration*this.toneGain);return {duration:approved.duration,finished:new Promise(resolve=>{let done=false;const finish=ok=>{if(done)return;done=true;this.finishClip=null;this.voice.onended=null;this.voice.onerror=null;if(!ok)this.fallback=true;resolve(ok);};this.finishClip=()=>finish(true);this.voice.onended=()=>finish(true);this.voice.onerror=()=>finish(false);this.voice.play().catch(()=>finish(false));})};}
     if(line.voiceSource==='device'||this.settings.voiceMode!=='legacy')return this.speakDevice(line);
     if(!entry){this.source='none';return estimate(line.text);}
     this.source='legacy';
@@ -62,7 +62,7 @@ export class ForestAudio {
     return new Promise(resolve=>{let done=false;const finish=ok=>{if(done)return;done=true;clip.pause();clip.onended=null;clip.onerror=null;this.previewFinish=null;resolve(ok);};this.previewFinish=()=>finish(true);clip.onended=()=>finish(true);clip.onerror=()=>finish(false);clip.play().catch(()=>finish(false));});
   }
   stopPreview(){if(this.previewFinish){this.previewFinish();this.system?.cancel();}}
-  stopVoice(){this.stopPreview();this.finishSpeech?.();this.system?.cancel();this.voice.pause();this.voice.removeAttribute('src');this.voice.load();}
+  stopVoice(){this.finishClip?.();this.stopPreview();this.finishSpeech?.();this.system?.cancel();this.voice.pause();this.voice.removeAttribute('src');this.voice.load();}
   pause(){this.paused=true;this.system?.pause();this.voice.pause();this.ctx?.suspend().catch(()=>{});}
   resume(){this.paused=false;this.stopPreview();this.system?.resume();const task=this.activeSpeech;if(task?.replay){task.replay=false;const u=this.makeUtterance(task.line);if(u){task.utterance=u;u.onend=task.end;u.onerror=task.fail;this.system.speak(u);}else task.fail();}if(this.voice.getAttribute('src')&&!this.voice.ended)this.voice.play().catch(()=>{});this.ctx?.resume().catch(()=>{});}
   stop(){this.pause();this.stopVoice();}

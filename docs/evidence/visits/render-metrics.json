@@ -1,0 +1,34 @@
+{
+  "type": "Actual Chromium/SwiftShader renders. Device speech quality is not tested by these silent QA captures.",
+  "metrics": {
+    "forest-tablet": {
+      "calls": 171,
+      "triangles": 291360,
+      "geometries": 87,
+      "frames": 26,
+      "renderer": "WebKit WebGL"
+    },
+    "forest-phone": {
+      "calls": 170,
+      "triangles": 291192,
+      "geometries": 87,
+      "frames": 27,
+      "renderer": "WebKit WebGL"
+    },
+    "forest-portrait": {
+      "calls": 165,
+      "triangles": 290352,
+      "geometries": 87,
+      "frames": 28,
+      "renderer": "WebKit WebGL"
+    },
+    "forest-desktop": {
+      "calls": 170,
+      "triangles": 291192,
+      "geometries": 87,
+      "frames": 27,
+      "renderer": "WebKit WebGL"
+    }
+  },
+  "errors": []
+}

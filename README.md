@@ -56,4 +56,4 @@ Unity Hub → 2022.3.50f1 → `UnityProject/`; Menü Schlafwald → Projekt einr
 Die App ist noch nicht für die Stores freigegeben. Reale Mobilgeräte, finales Sprecher-/Art-Review, Hintergrund-Audio und Signierung sind verbindliche Release-Schritte. Es wurde kein öffentlicher Store-Upload vorgenommen.
 
 
-Aktualisierung 26.10.2026: Freie Tierbesuche und ausgewählte Emma-Hörprobe siehe [docs/VISITS_AND_VOICE.md](docs/VISITS_AND_VOICE.md). Die vollständige neue Emma-Vertonung ist noch offen.
+Aktualisierung 26.10.2026: Freie Tierbesuche und ausgewählte Emma-Hörprobe siehe [docs/VISITS_AND_VOICE.md](docs/VISITS_AND_VOICE.md). Alle 82 neuen Textabschnitte sind als lokale Emma-Vorschaufassung vertont; die abschließende Hörabnahme bleibt offen.
