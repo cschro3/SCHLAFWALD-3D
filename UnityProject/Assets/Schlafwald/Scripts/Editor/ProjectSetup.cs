@@ -22,6 +22,9 @@ namespace Schlafwald.EditorTools
         [MenuItem("Schlafwald/1. Projekt einrichten")]
         public static void Run()
         {
+            // Unity rejects additive scene creation while any loaded scene has no saved path,
+            // including the clean default Untitled scene (isDirty alone is insufficient).
+            if (!File.Exists(ScenePath) && !SaveUntitledScenes()) return;
             CreateUrpAsset();
             ApplyPlayerSettings();
             IncludeShaders();
@@ -29,6 +32,21 @@ namespace Schlafwald.EditorTools
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             Debug.Log("[SCHLAFWALD] Projekt eingerichtet. Szene: " + ScenePath);
+        }
+
+        static bool SaveUntitledScenes()
+        {
+            for (int i = 0; i < UnityEngine.SceneManagement.SceneManager.sceneCount; i++)
+            {
+                var scene = UnityEngine.SceneManagement.SceneManager.GetSceneAt(i);
+                if (!scene.isLoaded || !string.IsNullOrEmpty(scene.path)) continue;
+                if (Application.isBatchMode)
+                    throw new BuildFailedException("[SCHLAFWALD] Ungespeicherte Szene vor der Einrichtung. Szenen zuerst speichern; keine Benutzerdaten werden verworfen.");
+                if (EditorSceneManager.SaveScene(scene)) continue;
+                Debug.LogWarning("[SCHLAFWALD] Einrichtung abgebrochen: Die unbenannte Szene wurde nicht gespeichert. Erst speichern, dann erneut einrichten.");
+                return false;
+            }
+            return true;
         }
 
         static void CreateUrpAsset()
@@ -113,7 +131,8 @@ namespace Schlafwald.EditorTools
             if (!File.Exists(ScenePath))
             {
                 var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Additive);
-                EditorSceneManager.SaveScene(scene, ScenePath);
+                if (!EditorSceneManager.SaveScene(scene, ScenePath))
+                    throw new BuildFailedException("[SCHLAFWALD] Main-Szene konnte nicht gespeichert werden; die offene Szene bleibt zur Wiederherstellung erhalten.");
                 EditorSceneManager.CloseScene(scene, true);
             }
             // Setup/build must never overwrite an authored scene or discard other build scenes.
