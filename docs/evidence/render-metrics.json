@@ -1,0 +1,78 @@
+{
+  "renderer": "Chromium ANGLE SwiftShader; software rendering, not a mobile performance test",
+  "captureViewport": "1024x768; mobile viewport captures 844x390 and 390x844",
+  "video": "Actual browser render; QA story clock 14x; video has no audio",
+  "stats": {
+    "fino": {
+      "calls": 79,
+      "triangles": 174082,
+      "geometries": 32,
+      "frames": 68,
+      "renderer": "WebKit WebGL"
+    },
+    "mila": {
+      "calls": 74,
+      "triangles": 171916,
+      "geometries": 26,
+      "frames": 104,
+      "renderer": "WebKit WebGL"
+    },
+    "piko": {
+      "calls": 88,
+      "triangles": 194296,
+      "geometries": 44,
+      "frames": 145,
+      "renderer": "WebKit WebGL"
+    },
+    "luna": {
+      "calls": 78,
+      "triangles": 175096,
+      "geometries": 29,
+      "frames": 186,
+      "renderer": "WebKit WebGL"
+    },
+    "nuri": {
+      "calls": 80,
+      "triangles": 177476,
+      "geometries": 27,
+      "frames": 233,
+      "renderer": "WebKit WebGL"
+    },
+    "leni": {
+      "calls": 78,
+      "triangles": 176016,
+      "geometries": 32,
+      "frames": 275,
+      "renderer": "WebKit WebGL"
+    },
+    "suri": {
+      "calls": 82,
+      "triangles": 177656,
+      "geometries": 28,
+      "frames": 316,
+      "renderer": "WebKit WebGL"
+    },
+    "suriRecorded": {
+      "phase": "ended",
+      "assists": 0,
+      "completed": [
+        {
+          "id": "suri:0",
+          "type": "FollowPath",
+          "assisted": false
+        },
+        {
+          "id": "suri:1",
+          "type": "DragToTarget",
+          "assisted": false
+        },
+        {
+          "id": "suri:2",
+          "type": "Touch",
+          "assisted": false
+        }
+      ]
+    }
+  },
+  "errors": []
+}

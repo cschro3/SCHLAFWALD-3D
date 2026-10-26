@@ -22,6 +22,9 @@ namespace Schlafwald.EditorTools
         [MenuItem("Schlafwald/1. Projekt einrichten")]
         public static void Run()
         {
+            // Unity rejects additive scene creation while any loaded scene has no saved path,
+            // including the clean default Untitled scene (isDirty alone is insufficient).
+            if (!File.Exists(ScenePath) && !SaveUntitledScenes()) return;
             CreateUrpAsset();
             ApplyPlayerSettings();
             IncludeShaders();
@@ -29,6 +32,21 @@ namespace Schlafwald.EditorTools
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             Debug.Log("[SCHLAFWALD] Projekt eingerichtet. Szene: " + ScenePath);
+        }
+
+        static bool SaveUntitledScenes()
+        {
+            for (int i = 0; i < UnityEngine.SceneManagement.SceneManager.sceneCount; i++)
+            {
+                var scene = UnityEngine.SceneManagement.SceneManager.GetSceneAt(i);
+                if (!scene.isLoaded || !string.IsNullOrEmpty(scene.path)) continue;
+                if (Application.isBatchMode)
+                    throw new BuildFailedException("[SCHLAFWALD] Ungespeicherte Szene vor der Einrichtung. Szenen zuerst speichern; keine Benutzerdaten werden verworfen.");
+                if (EditorSceneManager.SaveScene(scene)) continue;
+                Debug.LogWarning("[SCHLAFWALD] Einrichtung abgebrochen: Die unbenannte Szene wurde nicht gespeichert. Erst speichern, dann erneut einrichten.");
+                return false;
+            }
+            return true;
         }
 
         static void CreateUrpAsset()
@@ -80,9 +98,9 @@ namespace Schlafwald.EditorTools
             PlayerSettings.SetScriptingBackend(NamedBuildTarget.Android, ScriptingImplementation.IL2CPP);
             PlayerSettings.SetScriptingBackend(NamedBuildTarget.iOS, ScriptingImplementation.IL2CPP);
             PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64;
-            PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel26;
+            PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel29;
             PlayerSettings.Android.forceInternetPermission = false;   // Datenschutz: App braucht kein Netz
-            PlayerSettings.iOS.targetOSVersionString = "13.0";
+            PlayerSettings.iOS.targetOSVersionString = "16.0";
             PlayerSettings.iOS.sdkVersion = iOSSdkVersion.DeviceSDK;
             PlayerSettings.gpuSkinning = true;
             PlayerSettings.SetUseDefaultGraphicsAPIs(BuildTarget.Android, true);
@@ -110,10 +128,19 @@ namespace Schlafwald.EditorTools
         static void CreateMainScene()
         {
             Directory.CreateDirectory(Path.GetDirectoryName(ScenePath));
-            var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
-            // Absichtlich leer: AppComposer baut Wald, Tiere und Systeme zur Laufzeit (Szene bleibt austauschbar).
-            EditorSceneManager.SaveScene(scene, ScenePath);
-            EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene(ScenePath, true) };
+            if (!File.Exists(ScenePath))
+            {
+                var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Additive);
+                if (!EditorSceneManager.SaveScene(scene, ScenePath))
+                    throw new BuildFailedException("[SCHLAFWALD] Main-Szene konnte nicht gespeichert werden; die offene Szene bleibt zur Wiederherstellung erhalten.");
+                EditorSceneManager.CloseScene(scene, true);
+            }
+            // Setup/build must never overwrite an authored scene or discard other build scenes.
+            var scenes = new System.Collections.Generic.List<EditorBuildSettingsScene>(EditorBuildSettings.scenes);
+            int existing = scenes.FindIndex(s => s.path == ScenePath);
+            if (existing < 0) scenes.Insert(0, new EditorBuildSettingsScene(ScenePath, true));
+            else scenes[existing] = new EditorBuildSettingsScene(ScenePath, true);
+            EditorBuildSettings.scenes = scenes.ToArray();
         }
     }
 }

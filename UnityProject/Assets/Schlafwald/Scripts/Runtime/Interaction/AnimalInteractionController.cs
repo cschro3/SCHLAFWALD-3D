@@ -16,6 +16,7 @@ namespace Schlafwald
         float lastSparkle;
         public InteractionStep Current { get; private set; }
         public int CurrentStepIndex { get; private set; } = -1;
+        public AnimalConfig CurrentAnimalConfig { get; private set; }
         public int HintsGiven { get; private set; }
         public int AssistsGiven { get; private set; }
 
@@ -45,6 +46,7 @@ namespace Schlafwald
             var cfg = animal.Config.steps[index];
             var step = Create(cfg.type);
             Current = step; CurrentStepIndex = index;
+            CurrentAnimalConfig = animal.Config;
             var ctx = new StepContext { S = s, Cam = s.Camera, Animal = animal, Index = index, Config = cfg, Root = propsRoot };
             step.Begin(ctx);
             animal.Performance.OnStepBegin(index, cfg);
@@ -63,7 +65,9 @@ namespace Schlafwald
                 bool progressed = step.ConsumeProgress();
                 SparkleOnTouch(animal);
                 // Solange der Erzähler spricht, läuft keine Wartezeit – wir drängen nie.
-                var level = esc.Tick(dt, progressed || s.Narration.IsBusy);
+                // Speaking pauses the waiting clock; it must not reset elapsed idle time.
+                // Resetting on every hint made assistAfter unreachable without input.
+                var level = esc.Tick(dt, progressed, s.Narration.IsBusy);
                 if (level == HelpLevel.Hint)
                 {
                     HintsGiven++;
@@ -82,7 +86,11 @@ namespace Schlafwald
             yield return step.Finish();
             step.Cleanup();
             Current = null;
+            CurrentAnimalConfig = null;
             animal.Performance.OnStepComplete(index, cfg);
+            // A fast child can finish while the prompt/hint is still spoken. Never overlap it
+            // with the success line or the next prompt on the same AudioSource.
+            while (s.Narration.IsBusy) yield return null;
             var success = animal.Config.GetLines("success" + index);
             if (success.Count > 0) yield return s.Narration.SayLines(success);
         }

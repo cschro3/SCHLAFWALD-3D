@@ -1,0 +1,90 @@
+{
+  "run_id": 40215947107,
+  "url": "https://github.com/cschro3/SCHLAFWALD-3D/actions/runs/40215947107",
+  "code_commit": "f364f39db63301b18acd6afad8ec90991eaf82fd",
+  "conclusion": "success",
+  "browser_passed": 11,
+  "jobs": [
+    {
+      "id": 121236995387,
+      "name": "Rendered browser flows and offline build",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 121236995520,
+      "name": "iOS 16+ unsigned Xcode build",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 121236995562,
+      "name": "Android 10+ debug APK (no release signing)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 121236995571,
+      "name": "C# logic, API compilation, story and asset integrity",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 121236995585,
+      "name": "Unity license availability (this is not a test pass)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 121237024874,
+      "name": "Unity 2022 baseline EditMode and PlayMode",
+      "status": "completed",
+      "conclusion": "skipped"
+    },
+    {
+      "id": 121237025302,
+      "name": "Licensed Unity ${{ matrix.target }} preview build",
+      "status": "completed",
+      "conclusion": "skipped"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 12607947341,
+      "name": "schlafwald-offline-web",
+      "size_in_bytes": 3951283,
+      "digest": "sha256:b3d748bac70dcc7ba15ebbe4dbeac6090833c7d38166f5b538beda5d4bbe0d5c"
+    },
+    {
+      "id": 12607815999,
+      "name": "schlafwald-ios-build-log",
+      "size_in_bytes": 10469,
+      "digest": "sha256:d5a3d6213e85e115263de9c4600283cc807fdd0b98a6aebaa99131539479f626"
+    },
+    {
+      "id": 12607787571,
+      "name": "actual-render-captures",
+      "size_in_bytes": 10571467,
+      "digest": "sha256:83612dac180911bcc119f6e24b9402a8edf96d2527d3c4e9b7ab75c76d316ba1"
+    },
+    {
+      "id": 12607673248,
+      "name": "browser-reports",
+      "size_in_bytes": 272183,
+      "digest": "sha256:256c7db9a1b919c77fca764fabc9c71c378499b4baf891ba3cdae59fe6fc6b16"
+    },
+    {
+      "id": 12607392077,
+      "name": "logic-and-recording-reports",
+      "size_in_bytes": 10471,
+      "digest": "sha256:85f3a3b0feb3a6c3f090cd88a3f784aff50798f7707df0b80e050c36df13772c"
+    },
+    {
+      "id": 12607357075,
+      "name": "schlafwald-android-debug",
+      "size_in_bytes": 7710701,
+      "digest": "sha256:1a2e56edf721827b2ada4ca35182471d833825b075a073dfe57fbf7df9e064cc"
+    }
+  ],
+  "unity_tests": "not_run_no_activation"
+}

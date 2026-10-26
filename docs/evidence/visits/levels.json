@@ -1,0 +1,497 @@
+{
+  "type": "FFmpeg measured loudness, not subjective listening review",
+  "clips": [
+    {
+      "id": "visit_suri_01",
+      "integrated_lufs": -20.85,
+      "true_peak_db": -2.98,
+      "duration": 3.709
+    },
+    {
+      "id": "visit_suri_02",
+      "integrated_lufs": -20.61,
+      "true_peak_db": -2.4,
+      "duration": 9.482
+    },
+    {
+      "id": "visit_suri_03",
+      "integrated_lufs": -21.39,
+      "true_peak_db": -3.27,
+      "duration": 5.564
+    },
+    {
+      "id": "visit_suri_04",
+      "integrated_lufs": -20.36,
+      "true_peak_db": -4.37,
+      "duration": 4.206
+    },
+    {
+      "id": "visit_suri_05",
+      "integrated_lufs": -20.39,
+      "true_peak_db": -3.43,
+      "duration": 4.598
+    },
+    {
+      "id": "visit_suri_06",
+      "integrated_lufs": -20.67,
+      "true_peak_db": -2.44,
+      "duration": 4.362
+    },
+    {
+      "id": "visit_suri_07",
+      "integrated_lufs": -21.17,
+      "true_peak_db": -2.38,
+      "duration": 4.206
+    },
+    {
+      "id": "visit_suri_08",
+      "integrated_lufs": -21.07,
+      "true_peak_db": -2.42,
+      "duration": 4.598
+    },
+    {
+      "id": "visit_suri_09",
+      "integrated_lufs": -21.22,
+      "true_peak_db": -3.08,
+      "duration": 5.956
+    },
+    {
+      "id": "visit_suri_10",
+      "integrated_lufs": -20.31,
+      "true_peak_db": -3.61,
+      "duration": 4.989
+    },
+    {
+      "id": "visit_suri_11",
+      "integrated_lufs": -20.52,
+      "true_peak_db": -5.01,
+      "duration": 2.691
+    },
+    {
+      "id": "visit_suri_12",
+      "integrated_lufs": -20.51,
+      "true_peak_db": -2.43,
+      "duration": 4.049
+    },
+    {
+      "id": "visit_suri_13",
+      "integrated_lufs": -20.68,
+      "true_peak_db": -2.45,
+      "duration": 4.598
+    },
+    {
+      "id": "visit_suri_14",
+      "integrated_lufs": -25.41,
+      "true_peak_db": -2.41,
+      "duration": 2.769
+    },
+    {
+      "id": "visit_suri_hint1",
+      "integrated_lufs": -20.98,
+      "true_peak_db": -2.55,
+      "duration": 4.676
+    },
+    {
+      "id": "visit_suri_assist1",
+      "integrated_lufs": -21.69,
+      "true_peak_db": -1.82,
+      "duration": 5.329
+    },
+    {
+      "id": "visit_suri_hint2",
+      "integrated_lufs": -21.0,
+      "true_peak_db": -2.47,
+      "duration": 3.709
+    },
+    {
+      "id": "visit_suri_assist2",
+      "integrated_lufs": -19.9,
+      "true_peak_db": -1.62,
+      "duration": 4.284
+    },
+    {
+      "id": "visit_fino_01",
+      "integrated_lufs": -20.65,
+      "true_peak_db": -2.39,
+      "duration": 4.754
+    },
+    {
+      "id": "visit_fino_02",
+      "integrated_lufs": -20.16,
+      "true_peak_db": -2.45,
+      "duration": 7.889
+    },
+    {
+      "id": "visit_fino_03",
+      "integrated_lufs": -21.58,
+      "true_peak_db": -2.43,
+      "duration": 8.202
+    },
+    {
+      "id": "visit_fino_04",
+      "integrated_lufs": -20.81,
+      "true_peak_db": -2.59,
+      "duration": 4.676
+    },
+    {
+      "id": "visit_fino_05",
+      "integrated_lufs": -21.0,
+      "true_peak_db": -3.83,
+      "duration": 4.362
+    },
+    {
+      "id": "visit_fino_06",
+      "integrated_lufs": -21.81,
+      "true_peak_db": -5.13,
+      "duration": 4.127
+    },
+    {
+      "id": "visit_fino_07",
+      "integrated_lufs": -18.62,
+      "true_peak_db": -3.14,
+      "duration": 3.866
+    },
+    {
+      "id": "visit_fino_08",
+      "integrated_lufs": -20.39,
+      "true_peak_db": -2.33,
+      "duration": 4.284
+    },
+    {
+      "id": "visit_fino_09",
+      "integrated_lufs": -20.85,
+      "true_peak_db": -2.08,
+      "duration": 4.362
+    },
+    {
+      "id": "visit_fino_10",
+      "integrated_lufs": -19.44,
+      "true_peak_db": -2.58,
+      "duration": 4.284
+    },
+    {
+      "id": "visit_mila_01",
+      "integrated_lufs": -20.58,
+      "true_peak_db": -2.31,
+      "duration": 3.866
+    },
+    {
+      "id": "visit_mila_02",
+      "integrated_lufs": -21.48,
+      "true_peak_db": -3.43,
+      "duration": 11.076
+    },
+    {
+      "id": "visit_mila_03",
+      "integrated_lufs": -21.82,
+      "true_peak_db": -4.78,
+      "duration": 7.314
+    },
+    {
+      "id": "visit_mila_04",
+      "integrated_lufs": -20.24,
+      "true_peak_db": -2.67,
+      "duration": 4.833
+    },
+    {
+      "id": "visit_mila_05",
+      "integrated_lufs": -21.09,
+      "true_peak_db": -4.56,
+      "duration": 5.068
+    },
+    {
+      "id": "visit_mila_06",
+      "integrated_lufs": -21.22,
+      "true_peak_db": -2.43,
+      "duration": 4.049
+    },
+    {
+      "id": "visit_mila_07",
+      "integrated_lufs": -18.93,
+      "true_peak_db": -2.22,
+      "duration": 6.113
+    },
+    {
+      "id": "visit_mila_08",
+      "integrated_lufs": -21.89,
+      "true_peak_db": -2.55,
+      "duration": 2.926
+    },
+    {
+      "id": "visit_mila_09",
+      "integrated_lufs": -21.0,
+      "true_peak_db": -3.34,
+      "duration": 5.642
+    },
+    {
+      "id": "visit_piko_01",
+      "integrated_lufs": -20.94,
+      "true_peak_db": -2.36,
+      "duration": 4.284
+    },
+    {
+      "id": "visit_piko_02",
+      "integrated_lufs": -20.31,
+      "true_peak_db": -2.27,
+      "duration": 9.091
+    },
+    {
+      "id": "visit_piko_03",
+      "integrated_lufs": -19.03,
+      "true_peak_db": -3.36,
+      "duration": 6.269
+    },
+    {
+      "id": "visit_piko_04",
+      "integrated_lufs": -20.8,
+      "true_peak_db": -3.41,
+      "duration": 5.251
+    },
+    {
+      "id": "visit_piko_05",
+      "integrated_lufs": -21.41,
+      "true_peak_db": -2.38,
+      "duration": 3.788
+    },
+    {
+      "id": "visit_piko_06",
+      "integrated_lufs": -21.17,
+      "true_peak_db": -2.41,
+      "duration": 4.911
+    },
+    {
+      "id": "visit_piko_07",
+      "integrated_lufs": -19.9,
+      "true_peak_db": -2.26,
+      "duration": 4.754
+    },
+    {
+      "id": "visit_piko_08",
+      "integrated_lufs": -21.33,
+      "true_peak_db": -2.43,
+      "duration": 5.956
+    },
+    {
+      "id": "visit_piko_09",
+      "integrated_lufs": -20.87,
+      "true_peak_db": -2.18,
+      "duration": 4.127
+    },
+    {
+      "id": "visit_piko_10",
+      "integrated_lufs": -20.62,
+      "true_peak_db": -2.34,
+      "duration": 4.284
+    },
+    {
+      "id": "visit_luna_01",
+      "integrated_lufs": -21.17,
+      "true_peak_db": -2.47,
+      "duration": 5.799
+    },
+    {
+      "id": "visit_luna_02",
+      "integrated_lufs": -20.31,
+      "true_peak_db": -4.47,
+      "duration": 7.158
+    },
+    {
+      "id": "visit_luna_03",
+      "integrated_lufs": -21.5,
+      "true_peak_db": -2.79,
+      "duration": 6.269
+    },
+    {
+      "id": "visit_luna_04",
+      "integrated_lufs": -19.51,
+      "true_peak_db": -5.22,
+      "duration": 4.989
+    },
+    {
+      "id": "visit_luna_05",
+      "integrated_lufs": -21.79,
+      "true_peak_db": -2.37,
+      "duration": 5.251
+    },
+    {
+      "id": "visit_luna_06",
+      "integrated_lufs": -20.02,
+      "true_peak_db": -4.08,
+      "duration": 5.564
+    },
+    {
+      "id": "visit_luna_07",
+      "integrated_lufs": -18.59,
+      "true_peak_db": -2.37,
+      "duration": 5.068
+    },
+    {
+      "id": "visit_luna_08",
+      "integrated_lufs": -20.22,
+      "true_peak_db": -5.33,
+      "duration": 3.161
+    },
+    {
+      "id": "visit_luna_09",
+      "integrated_lufs": -19.94,
+      "true_peak_db": -1.8,
+      "duration": 4.362
+    },
+    {
+      "id": "visit_luna_10",
+      "integrated_lufs": -20.68,
+      "true_peak_db": -3.28,
+      "duration": 4.362
+    },
+    {
+      "id": "visit_nuri_01",
+      "integrated_lufs": -20.17,
+      "true_peak_db": -4.32,
+      "duration": 3.788
+    },
+    {
+      "id": "visit_nuri_02",
+      "integrated_lufs": -20.42,
+      "true_peak_db": -2.48,
+      "duration": 7.393
+    },
+    {
+      "id": "visit_nuri_03",
+      "integrated_lufs": -22.59,
+      "true_peak_db": -2.45,
+      "duration": 9.169
+    },
+    {
+      "id": "visit_nuri_04",
+      "integrated_lufs": -20.3,
+      "true_peak_db": -4.98,
+      "duration": 3.788
+    },
+    {
+      "id": "visit_nuri_05",
+      "integrated_lufs": -21.31,
+      "true_peak_db": -2.46,
+      "duration": 4.754
+    },
+    {
+      "id": "visit_nuri_06",
+      "integrated_lufs": -20.82,
+      "true_peak_db": -5.41,
+      "duration": 4.754
+    },
+    {
+      "id": "visit_nuri_07",
+      "integrated_lufs": -21.03,
+      "true_peak_db": -2.37,
+      "duration": 4.362
+    },
+    {
+      "id": "visit_nuri_08",
+      "integrated_lufs": -20.37,
+      "true_peak_db": -2.54,
+      "duration": 4.441
+    },
+    {
+      "id": "visit_nuri_09",
+      "integrated_lufs": -19.96,
+      "true_peak_db": -2.39,
+      "duration": 5.329
+    },
+    {
+      "id": "visit_nuri_10",
+      "integrated_lufs": -21.58,
+      "true_peak_db": -2.69,
+      "duration": 5.486
+    },
+    {
+      "id": "visit_leni_01",
+      "integrated_lufs": -21.34,
+      "true_peak_db": -4.84,
+      "duration": 4.519
+    },
+    {
+      "id": "visit_leni_02",
+      "integrated_lufs": -21.33,
+      "true_peak_db": -2.46,
+      "duration": 8.281
+    },
+    {
+      "id": "visit_leni_03",
+      "integrated_lufs": -20.87,
+      "true_peak_db": -2.28,
+      "duration": 5.956
+    },
+    {
+      "id": "visit_leni_04",
+      "integrated_lufs": -21.11,
+      "true_peak_db": -4.55,
+      "duration": 4.989
+    },
+    {
+      "id": "visit_leni_05",
+      "integrated_lufs": -20.53,
+      "true_peak_db": -3.89,
+      "duration": 4.911
+    },
+    {
+      "id": "visit_leni_06",
+      "integrated_lufs": -20.29,
+      "true_peak_db": -2.8,
+      "duration": 4.676
+    },
+    {
+      "id": "visit_leni_07",
+      "integrated_lufs": -22.53,
+      "true_peak_db": -5.91,
+      "duration": 5.642
+    },
+    {
+      "id": "visit_leni_08",
+      "integrated_lufs": -22.09,
+      "true_peak_db": -3.4,
+      "duration": 5.251
+    },
+    {
+      "id": "visit_leni_09",
+      "integrated_lufs": -18.06,
+      "true_peak_db": -2.24,
+      "duration": 5.329
+    },
+    {
+      "id": "visit_leni_10",
+      "integrated_lufs": -18.8,
+      "true_peak_db": -2.32,
+      "duration": 4.519
+    },
+    {
+      "id": "visit_leni_11",
+      "integrated_lufs": -21.03,
+      "true_peak_db": -1.94,
+      "duration": 4.754
+    },
+    {
+      "id": "visit_leni_12",
+      "integrated_lufs": -20.04,
+      "true_peak_db": -2.57,
+      "duration": 3.239
+    },
+    {
+      "id": "visit_leni_hint1",
+      "integrated_lufs": -20.75,
+      "true_peak_db": -4.28,
+      "duration": 3.474
+    },
+    {
+      "id": "visit_leni_assist1",
+      "integrated_lufs": -20.69,
+      "true_peak_db": -2.17,
+      "duration": 4.049
+    },
+    {
+      "id": "visit_night_goodbye",
+      "integrated_lufs": -20.45,
+      "true_peak_db": -2.09,
+      "duration": 8.359
+    }
+  ]
+}

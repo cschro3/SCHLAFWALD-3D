@@ -5,31 +5,132 @@ on:
   workflow_dispatch:
     inputs:
       unity:
-        description: "Unity-Tests ausführen (benötigt Secrets UNITY_LICENSE, UNITY_EMAIL, UNITY_PASSWORD)"
+        description: "Run licensed Unity baseline tests/builds (requires secure Unity secrets)"
         type: boolean
         default: false
 
+concurrency:
+  group: schlafwald-${{ github.workflow }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+
 jobs:
   logic:
-    name: Logik-Tests, Compile-Checks, Daten-Tools
+    name: C# logic, API compilation, story and asset integrity
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-dotnet@v4
         with: { dotnet-version: "8.0.x" }
-      - run: dotnet test tools/CoreTests
+      - run: dotnet test tools/CoreTests --logger "trx;LogFileName=core.trx" --results-directory artifacts/core
       - run: dotnet build tools/RuntimeCompileCheck
       - run: dotnet build tools/PlayModeCompileCheck
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install numpy
-      - run: python3 tools/check_camera_framing.py UnityProject/Assets/Schlafwald/Resources/Story/story_de.json
-      - run: python3 tools/export_recording_script.py /tmp/recording
+      - run: python tools/unity_metadata.py --check
+      - run: python tools/verify_assets.py
+      - run: python tools/check_camera_framing.py UnityProject/Assets/Schlafwald/Resources/Story/story_de.json
+      - run: python tools/export_recording_script.py artifacts/recording
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: logic-and-recording-reports, path: artifacts/ }
+
+  browser:
+    name: Rendered browser flows and offline build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22", cache: npm, cache-dependency-path: WebApp/package-lock.json }
+      - run: npm ci
+        working-directory: WebApp
+      - run: npm test
+        working-directory: WebApp
+      - run: node tools/sync-content.mjs && npx vite build --mode qa && node tools/offline-manifest.mjs
+        working-directory: WebApp
+      - run: npx playwright install --with-deps chromium
+        working-directory: WebApp
+      - run: npx playwright test
+        working-directory: WebApp
+      - run: SCHLAFWALD_EVIDENCE="$GITHUB_WORKSPACE/artifacts/render" node tools/capture.mjs
+        working-directory: WebApp
+      - run: SCHLAFWALD_EVIDENCE="$GITHUB_WORKSPACE/artifacts/render" node tools/capture-visits.mjs
+        working-directory: WebApp
+      - run: npm run build
+        working-directory: WebApp
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: browser-reports, path: "WebApp/test-results/\nWebApp/playwright-report/" }
+      - uses: actions/upload-artifact@v4
+        with: { name: schlafwald-offline-web, path: WebApp/dist/ }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: actual-render-captures, path: artifacts/render/ }
+
+  android:
+    name: Android 10+ debug APK (no release signing)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22", cache: npm, cache-dependency-path: WebApp/package-lock.json }
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: "21" }
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: platform-tools
+          log-accepted-android-sdk-licenses: false
+      - run: sdkmanager "platforms;android-36" "build-tools;35.0.0"
+      - run: npm ci && npm run build && npx cap sync android
+        working-directory: WebApp
+      - run: chmod +x gradlew && ./gradlew --no-daemon assembleDebug
+        working-directory: WebApp/android
+      - uses: actions/upload-artifact@v4
+        with: { name: schlafwald-android-debug, path: WebApp/android/app/build/outputs/apk/debug/*.apk }
+
+  ios:
+    name: iOS 16+ unsigned Xcode build
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22", cache: npm, cache-dependency-path: WebApp/package-lock.json }
+      - run: npm ci && npm run build && npx cap sync ios
+        working-directory: WebApp
+      - run: xcodebuild -version
+      - run: xcodebuild -project App.xcodeproj -scheme App -configuration Debug -destination 'generic/platform=iOS' -derivedDataPath build CODE_SIGNING_ALLOWED=NO build > xcode-build.log 2>&1
+        working-directory: WebApp/ios/App
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: schlafwald-ios-build-log, path: WebApp/ios/App/xcode-build.log }
+
+  unity-license:
+    name: Unity license availability (this is not a test pass)
+    runs-on: ubuntu-latest
+    outputs:
+      available: ${{ steps.check.outputs.available }}
+    steps:
+      - id: check
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        run: |
+          if [ -n "$UNITY_LICENSE" ] && [ -n "$UNITY_EMAIL" ] && [ -n "$UNITY_PASSWORD" ]; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo 'Unity: BLOCKED. No complete activation secret set. EditMode, PlayMode and Unity platform builds have NOT run.' >> "$GITHUB_STEP_SUMMARY"
+          fi
 
   unity:
-    name: Unity EditMode + PlayMode
-    if: ${{ github.event_name == 'workflow_dispatch' && inputs.unity }}
+    name: Unity 2022 baseline EditMode and PlayMode
+    needs: unity-license
+    if: ${{ needs.unity-license.outputs.available == 'true' }}
     runs-on: ubuntu-latest
+    permissions: { contents: read, checks: write }
     steps:
       - uses: actions/checkout@v4
       - uses: game-ci/unity-test-runner@v4
@@ -41,3 +142,36 @@ jobs:
           projectPath: UnityProject
           unityVersion: 2022.3.50f1
           testMode: all
+          artifactsPath: artifacts/unity-tests
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: unity-test-reports, path: artifacts/unity-tests/ }
+
+  unity-build:
+    name: Licensed Unity ${{ matrix.target }} preview build
+    needs: unity-license
+    if: ${{ needs.unity-license.outputs.available == 'true' && github.event_name == 'workflow_dispatch' && inputs.unity }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { target: Android, method: BuildAndroid }
+          - { target: iOS, method: BuildIOS }
+          - { target: WebGL, method: BuildWebGL }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          projectPath: UnityProject
+          unityVersion: 2022.3.50f1
+          targetPlatform: ${{ matrix.target }}
+          buildMethod: Schlafwald.EditorTools.BuildScript.${{ matrix.method }}
+          allowDirtyBuild: true
+      - uses: actions/upload-artifact@v4
+        with: { name: 'unity-${{ matrix.target }}-preview', path: UnityProject/Builds/ }

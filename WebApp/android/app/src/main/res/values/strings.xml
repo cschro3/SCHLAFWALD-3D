@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Schlafwald</string>
+    <string name="title_activity_main">Schlafwald</string>
+    <string name="package_name">app.schlafwald.nacht</string>
+    <string name="custom_url_scheme">app.schlafwald.nacht</string>
+</resources>

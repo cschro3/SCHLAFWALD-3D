@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-25",
+  "code_commit": "f364f39db63301b18acd6afad8ec90991eaf82fd",
+  "ci_run": 40215947107,
+  "csharp_tests": {
+    "passed": 27,
+    "failed": 0,
+    "executed": true
+  },
+  "javascript_tests": {
+    "passed": 26,
+    "failed": 0,
+    "executed": true
+  },
+  "browser_tests": {
+    "cases": 11,
+    "ci_test_step": "success",
+    "local_full_run": {
+      "passed": 10,
+      "failed": 1,
+      "reason": "Polling-based step-observation assertion corrected to actual completed rituals"
+    },
+    "local_targeted_rerun": {
+      "passed": 1,
+      "failed": 0
+    },
+    "ci_passed": 11,
+    "ci_failed": 0,
+    "ci_duration_minutes": 8.1
+  },
+  "unity_api_compilation": "passed_against_2021_reference_assemblies_not_editor",
+  "unity_editmode": "not_run_activation_blocked",
+  "unity_playmode": "not_run_activation_blocked",
+  "unity_rendering": "not_run",
+  "browser_rendering": {
+    "executed": true,
+    "original_captures": 15,
+    "renderer": "ANGLE SwiftShader WebGL2",
+    "draw_calls_range": [
+      74,
+      88
+    ],
+    "triangles_range": [
+      171916,
+      194296
+    ],
+    "visual_review": "ship_for_seven_scored_fixes_only"
+  },
+  "android": {
+    "local_build": "success",
+    "ci_build": "success",
+    "debug_signed": true,
+    "signature_v2_verified": true,
+    "internet_permission": false,
+    "all_101_audio_hashes_checked": true,
+    "device_install": "not_run"
+  },
+  "ios": {
+    "unsigned_ci_build": "success",
+    "xcode": "26.6",
+    "build_version": "17F113",
+    "signed_ipa": "not_created",
+    "device_test": "not_run"
+  },
+  "physical_devices": "not_tested",
+  "mobile_30_fps": "not_verified",
+  "locked_screen_native_audio": "not_implemented_and_not_verified",
+  "final_voice_art_family_accessibility_acceptance": "open",
+  "public_deployment": false,
+  "store_upload": false,
+  "ci_conclusion": "success",
+  "ci_render_capture": "success",
+  "ci_artifact_count": 6
+}

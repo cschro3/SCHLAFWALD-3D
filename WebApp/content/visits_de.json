@@ -1,0 +1,830 @@
+{
+  "version": 1,
+  "language": "de-DE",
+  "voiceStatus": "emma_generated_preview",
+  "animals": [
+    {
+      "id": "fino",
+      "title": "Die Decke voller Sterne",
+      "description": "Fino hat einen weichen Schatz für seine Höhle gefunden.",
+      "voiceDirection": "Warm, freundlich, ein kleines Lächeln; zum Ende müde und geborgen.",
+      "lines": [
+        {
+          "id": "visit_fino_01",
+          "phase": "intro",
+          "text": "Hallo, ich bin Fino. Komm, mach es dir bei meiner Höhle gemütlich.",
+          "speaker": "fino",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_fino_02",
+          "phase": "intro",
+          "text": "Heute habe ich auf dem Waldweg etwas Weiches gefunden. Ein Stück Moos. Es fühlte sich an wie ein kleines Kissen.",
+          "speaker": "fino",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_fino_03",
+          "phase": "intro",
+          "text": "Ich habe es bis hierher getragen. Jetzt sind meine Pfoten müde. Über meiner Höhle funkeln schon die ersten Sterne.",
+          "speaker": "fino",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_fino_04",
+          "phase": "step0",
+          "text": "Meine Decke liegt noch neben mir. Ziehst du sie ein bisschen zu mir herüber?",
+          "speaker": "fino",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_fino_05",
+          "phase": "hint",
+          "text": "Hier bin ich. Die Decke darf bis zu meinen Pfoten kuscheln.",
+          "speaker": "fino",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_fino_06",
+          "phase": "assist",
+          "text": "Wir machen es zusammen. So wird mein Bett ganz weich.",
+          "speaker": "fino",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_fino_07",
+          "phase": "outro",
+          "text": "Oh, ist das gemütlich. Ich muss schon gähnen.",
+          "speaker": "fino",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "yawn"
+        },
+        {
+          "id": "visit_fino_08",
+          "phase": "outro",
+          "text": "Ich mache mich ganz klein. Genau hier möchte ich bleiben.",
+          "speaker": "fino",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "curlUp"
+        },
+        {
+          "id": "visit_fino_09",
+          "phase": "outro",
+          "text": "Mein Schwanz wärmt meine Nase. Danke, dass du bei mir warst.",
+          "speaker": "fino",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "tailOverNose"
+        },
+        {
+          "id": "visit_fino_10",
+          "phase": "outro",
+          "text": "Gute Nacht. Vielleicht träume ich von meinem weichen Waldschatz.",
+          "speaker": "fino",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "sleep"
+        }
+      ]
+    },
+    {
+      "id": "mila",
+      "title": "Das leiseste Geräusch",
+      "description": "Mila lauscht dem Wald und findet ihre Ruhe.",
+      "voiceDirection": "Hell und sanft, neugierig beim Lauschen, am Schluss gelöst; keine quiekende Kinderstimme.",
+      "lines": [
+        {
+          "id": "visit_mila_01",
+          "phase": "intro",
+          "text": "Hallo, ich bin Mila. Setz dich zu mir ins Moos.",
+          "speaker": "mila",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_mila_02",
+          "phase": "intro",
+          "text": "Meine langen Ohren haben heute so viel gehört. Das Rascheln der Blätter. Das Summen einer Hummel. Und das leise Plumpsen eines Tannenzapfens.",
+          "speaker": "mila",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_mila_03",
+          "phase": "intro",
+          "text": "Jetzt suche ich das leiseste Geräusch im ganzen Wald. Hörst du es? Es ist mein ruhiger Atem.",
+          "speaker": "mila",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_mila_04",
+          "phase": "step0",
+          "text": "Magst du mich ein bisschen streicheln? Dann können sich auch meine Ohren ausruhen.",
+          "speaker": "mila",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_mila_05",
+          "phase": "hint",
+          "text": "Ganz langsam. So weich wie ein Blatt, das auf das Moos fällt.",
+          "speaker": "mila",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_mila_06",
+          "phase": "assist",
+          "text": "Ich kuschle mich schon einmal ein. Du darfst einfach bei mir bleiben.",
+          "speaker": "mila",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_mila_07",
+          "phase": "outro",
+          "text": "Ah. Meine Ohren werden ganz schwer. Sie haben für heute genug gehört.",
+          "speaker": "mila",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "earsDown"
+        },
+        {
+          "id": "visit_mila_08",
+          "phase": "outro",
+          "text": "Meine Augen dürfen jetzt auch Pause machen.",
+          "speaker": "mila",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "blink"
+        },
+        {
+          "id": "visit_mila_09",
+          "phase": "outro",
+          "text": "Danke für deine warme Hand. Ich lausche noch ein bisschen meinem Atem. Gute Nacht.",
+          "speaker": "mila",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "sleep"
+        }
+      ]
+    },
+    {
+      "id": "piko",
+      "title": "Mein raschelnder Blätterschatz",
+      "description": "Aus Pikos gesammelten Blättern wird ein weiches Bett.",
+      "voiceDirection": "Behaglich und etwas rund im Klang; Freude über kleine Dinge, danach leise Müdigkeit.",
+      "lines": [
+        {
+          "id": "visit_piko_01",
+          "phase": "intro",
+          "text": "Hallo, ich bin Piko. Schau mal, was ich gesammelt habe.",
+          "speaker": "piko",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_piko_02",
+          "phase": "intro",
+          "text": "Ein goldenes Blatt. Ein braunes Blatt. Und eins, das aussieht wie ein kleines Herz. Jedes hat heute im Wind getanzt.",
+          "speaker": "piko",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_piko_03",
+          "phase": "intro",
+          "text": "Jetzt sind die Blätter müde. Genau wie ich. Zusammen können sie mein weiches Bett sein.",
+          "speaker": "piko",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_piko_04",
+          "phase": "step0",
+          "text": "Legst du die Blätter zu meinem Nest? Eines nach dem anderen. Wir haben Zeit.",
+          "speaker": "piko",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_piko_05",
+          "phase": "hint",
+          "text": "Das Nest wartet hier bei mir. Ein Blatt darf noch dazu.",
+          "speaker": "piko",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_piko_06",
+          "phase": "assist",
+          "text": "Wir schieben die Blätter gemeinsam an ihren Platz. Das raschelt so schön.",
+          "speaker": "piko",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_piko_07",
+          "phase": "outro",
+          "text": "Mein Blätterschatz ist jetzt ein Bett. Ich schiebe mir noch ein Blatt zurecht.",
+          "speaker": "piko",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "nudgeLeaf"
+        },
+        {
+          "id": "visit_piko_08",
+          "phase": "outro",
+          "text": "Dann rolle ich mich ein. Meine Stacheln bleiben außen. Innen bin ich ganz warm.",
+          "speaker": "piko",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "curlBall"
+        },
+        {
+          "id": "visit_piko_09",
+          "phase": "outro",
+          "text": "Wenn du gleich ein winziges Schnaufen hörst, bin das nur ich.",
+          "speaker": "piko",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "snore"
+        },
+        {
+          "id": "visit_piko_10",
+          "phase": "outro",
+          "text": "Danke, dass du mir geholfen hast. Gute Nacht, mein lieber Besuch.",
+          "speaker": "piko",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "sleep"
+        }
+      ]
+    },
+    {
+      "id": "luna",
+      "title": "Die kleinen Sternenlichter",
+      "description": "Luna verabschiedet die Glühwürmchen in die Nacht.",
+      "voiceDirection": "Ruhig, weich und klar, behutsam staunend; keine dramatische oder geheimnisvolle Stimme.",
+      "lines": [
+        {
+          "id": "visit_luna_01",
+          "phase": "intro",
+          "text": "Guten Abend. Ich bin Luna. Von meinem Ast kann ich den ganzen Schlafwald sehen.",
+          "speaker": "luna",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_luna_02",
+          "phase": "intro",
+          "text": "Heute haben mir drei Glühwürmchen den Weg gezeigt. Sie leuchteten wie kleine Sterne zwischen den Bäumen.",
+          "speaker": "luna",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_luna_03",
+          "phase": "intro",
+          "text": "Nun ist der Mond da. Er passt auf den Wald auf. Meine kleinen Lichter dürfen sich ausruhen.",
+          "speaker": "luna",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_luna_04",
+          "phase": "step0",
+          "text": "Berührst du die Glühwürmchen ganz sanft? Dann werden ihre Lichter leiser.",
+          "speaker": "luna",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_luna_05",
+          "phase": "hint",
+          "text": "Da schwebt noch ein kleines Licht. Du kannst es ganz behutsam berühren.",
+          "speaker": "luna",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_luna_06",
+          "phase": "assist",
+          "text": "Ich helfe dir mit einem leisen Flügelschlag. Nun wird es schön ruhig.",
+          "speaker": "luna",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_luna_07",
+          "phase": "outro",
+          "text": "Meine Federn sind so weich. Ich mache sie noch ein wenig gemütlicher.",
+          "speaker": "luna",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "fluffFeathers"
+        },
+        {
+          "id": "visit_luna_08",
+          "phase": "outro",
+          "text": "Meine Augen sind heute sehr müde geworden.",
+          "speaker": "luna",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "slowBlink"
+        },
+        {
+          "id": "visit_luna_09",
+          "phase": "outro",
+          "text": "Ich kuschle meinen Kopf ins Gefieder. Der Mond bleibt noch wach.",
+          "speaker": "luna",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "headInFeathers"
+        },
+        {
+          "id": "visit_luna_10",
+          "phase": "outro",
+          "text": "Danke für deinen Besuch. Schlaf nachher auch schön. Gute Nacht.",
+          "speaker": "luna",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "sleep"
+        }
+      ]
+    },
+    {
+      "id": "nuri",
+      "title": "Mein Kuschelnüsschen",
+      "description": "Nuri sucht den kleinen Schatz, mit dem er am liebsten einschläft.",
+      "voiceDirection": "Freundlich und ein wenig verspielt, zärtlich beim Wiederfinden; zum Ende weich und ruhig.",
+      "lines": [
+        {
+          "id": "visit_nuri_01",
+          "phase": "intro",
+          "text": "Hallo, ich bin Nuri. Willkommen bei meinem Baum.",
+          "speaker": "nuri",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_nuri_02",
+          "phase": "intro",
+          "text": "Heute bin ich von Ast zu Ast gehüpft. Hoch oben sah ich eine Wolke, die aussah wie eine große Nuss.",
+          "speaker": "nuri",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_nuri_03",
+          "phase": "intro",
+          "text": "Zum Schlafen brauche ich aber nur meine kleine Kuscheleichel. Die fühlt sich so glatt und vertraut an. Wo habe ich sie bloß hingelegt?",
+          "speaker": "nuri",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_nuri_04",
+          "phase": "step0",
+          "text": "Da ist sie ja. Bringst du mein Kuschelnüsschen zu mir?",
+          "speaker": "nuri",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_nuri_05",
+          "phase": "hint",
+          "text": "Meine Pfoten warten schon. Hier bei meiner Brust ist ihr Lieblingsplatz.",
+          "speaker": "nuri",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_nuri_06",
+          "phase": "assist",
+          "text": "Wir holen sie zusammen. Nun ist mein kleiner Schatz wieder bei mir.",
+          "speaker": "nuri",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_nuri_07",
+          "phase": "outro",
+          "text": "Da bist du ja, mein Kuschelnüsschen. Ich halte dich ganz fest.",
+          "speaker": "nuri",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "holdAcorn"
+        },
+        {
+          "id": "visit_nuri_08",
+          "phase": "outro",
+          "text": "Was für ein schöner, langer Tag. Jetzt muss ich gähnen.",
+          "speaker": "nuri",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "stretchYawn"
+        },
+        {
+          "id": "visit_nuri_09",
+          "phase": "outro",
+          "text": "Mein Schwanz ist meine flauschige Decke. Darunter ist es wunderbar warm.",
+          "speaker": "nuri",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "tailBlanket"
+        },
+        {
+          "id": "visit_nuri_10",
+          "phase": "outro",
+          "text": "Danke, dass du mich besucht hast. Ich träume jetzt von meiner Wolkennuss. Gute Nacht.",
+          "speaker": "nuri",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "sleep"
+        }
+      ]
+    },
+    {
+      "id": "leni",
+      "title": "Ein Kissen für meinen Traum",
+      "description": "Leni findet ihren gemütlichen Platz auf der Lichtung.",
+      "voiceDirection": "Sanft und vertraut; lächelnd bei der Erinnerung, langsam ausklingend, verständlich statt geflüstert.",
+      "lines": [
+        {
+          "id": "visit_leni_01",
+          "phase": "intro",
+          "text": "Hallo, ich bin Leni. Schön, dass du zu meiner Lichtung gefunden hast.",
+          "speaker": "leni",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_leni_02",
+          "phase": "intro",
+          "text": "Heute habe ich einen Schmetterling begleitet. Er setzte sich auf eine Blume. Ich blieb ganz still, damit er sich ausruhen konnte.",
+          "speaker": "leni",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_leni_03",
+          "phase": "intro",
+          "text": "Jetzt sind meine Beine müde. Ich glaube, heute Nacht möchte ich von Blumen träumen.",
+          "speaker": "leni",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_leni_04",
+          "phase": "step0",
+          "text": "Legst du mir das Mooskissen zurecht? Hier vorne kann ich meinen Kopf darauf legen.",
+          "speaker": "leni",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_leni_05",
+          "phase": "hint0",
+          "text": "Das Kissen darf ganz nah zu mir. Dann wird mein Platz noch weicher.",
+          "speaker": "leni",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_leni_06",
+          "phase": "assist0",
+          "text": "Ich helfe ein wenig mit. Gemeinsam finden wir den gemütlichsten Platz.",
+          "speaker": "leni",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_leni_07",
+          "phase": "success0",
+          "text": "Ja, genau so. Das fühlt sich an wie eine kleine, weiche Wolke.",
+          "speaker": "leni",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_leni_08",
+          "phase": "step1",
+          "text": "Bleibst du noch einen Moment? Du kannst mir ganz langsam über den Rücken streicheln.",
+          "speaker": "leni",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_leni_09",
+          "phase": "outro",
+          "text": "Ich lege meine Beine vorsichtig unter mich. Für heute sind wir genug gelaufen.",
+          "speaker": "leni",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "lieDown"
+        },
+        {
+          "id": "visit_leni_10",
+          "phase": "outro",
+          "text": "Meine Ohren werden ganz locker. Hier bin ich geborgen.",
+          "speaker": "leni",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "earsRelax"
+        },
+        {
+          "id": "visit_leni_11",
+          "phase": "outro",
+          "text": "Ich sehe schon die Blumen in meinem Traum. Meine Augen fallen zu.",
+          "speaker": "leni",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "heavyLids"
+        },
+        {
+          "id": "visit_leni_12",
+          "phase": "outro",
+          "text": "Danke für deinen lieben Besuch. Gute Nacht.",
+          "speaker": "leni",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "sleep"
+        },
+        {
+          "id": "visit_leni_hint1",
+          "phase": "hint1",
+          "text": "Du kannst ganz langsam über meinen Rücken streicheln.",
+          "speaker": "leni",
+          "tone": "soft",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_leni_assist1",
+          "phase": "assist1",
+          "text": "Ich werde schon ganz ruhig. Du darfst einfach bei mir sein.",
+          "speaker": "leni",
+          "tone": "soft",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        }
+      ]
+    },
+    {
+      "id": "suri",
+      "title": "Ein Blatt für mein Häuschen",
+      "description": "Suri erzählt von ihrer Reise über den glitzernden Waldweg.",
+      "voiceDirection": "Liebevoll und neugierig, in kleinen natürlichen Sätzen; später schläfrig und geborgen. Pausen wirken lassen.",
+      "lines": [
+        {
+          "id": "visit_suri_01",
+          "phase": "intro",
+          "text": "Hallo, ich bin Suri. Schön, dass du mich besuchst.",
+          "speaker": "suri",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_suri_02",
+          "phase": "intro",
+          "text": "Heute bin ich über den Waldweg gekrochen. Auf einem Blatt lag ein Tautropfen. Darin spiegelte sich der ganze Himmel. Ganz klein.",
+          "speaker": "suri",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_suri_03",
+          "phase": "intro",
+          "text": "Ich habe ihn mit meinen Fühlern bestaunt. Jetzt werden meine Fühler langsam müde.",
+          "speaker": "suri",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device",
+          "cue": "feelersCurious"
+        },
+        {
+          "id": "visit_suri_04",
+          "phase": "step0",
+          "text": "Mein Schlafplatz ist gleich dort. Begleitest du mich ein kleines Stück?",
+          "speaker": "suri",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_suri_05",
+          "phase": "hint0",
+          "text": "Folge dem kleinen Licht. Wir kriechen ganz langsam zusammen.",
+          "speaker": "suri",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_suri_06",
+          "phase": "assist0",
+          "text": "Du darfst einfach bei mir bleiben. Ich finde den Weg ganz in Ruhe.",
+          "speaker": "suri",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_suri_07",
+          "phase": "success0",
+          "text": "Da sind wir. Unter mir ist der Stein noch ein bisschen warm.",
+          "speaker": "suri",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_suri_08",
+          "phase": "step1",
+          "text": "Ein Blatt wäre ein schönes Dach. Legst du es über meinen Schlafplatz?",
+          "speaker": "suri",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_suri_09",
+          "phase": "success1",
+          "text": "Danke. Jetzt habe ich ein grünes Dach. Und mein Häuschen habe ich ja immer dabei.",
+          "speaker": "suri",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_suri_10",
+          "phase": "step2",
+          "text": "Berührst du mein Häuschen noch einmal ganz sanft? Dann kuschle ich mich hinein.",
+          "speaker": "suri",
+          "tone": "warm",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_suri_11",
+          "phase": "outro",
+          "text": "Meine Fühler dürfen sich jetzt ausruhen.",
+          "speaker": "suri",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "retractFeelers"
+        },
+        {
+          "id": "visit_suri_12",
+          "phase": "outro",
+          "text": "Ich werde ganz klein und ziehe mich langsam zurück.",
+          "speaker": "suri",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "enterShell"
+        },
+        {
+          "id": "visit_suri_13",
+          "phase": "outro",
+          "text": "Hier drinnen ist es warm und still. Danke, dass du mich begleitet hast.",
+          "speaker": "suri",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "enterShellDeep"
+        },
+        {
+          "id": "visit_suri_14",
+          "phase": "outro",
+          "text": "Gute Nacht. Träum etwas Schönes.",
+          "speaker": "suri",
+          "tone": "soft",
+          "pauseAfter": 1.8,
+          "voiceSource": "device",
+          "cue": "shellWobble"
+        },
+        {
+          "id": "visit_suri_hint1",
+          "phase": "hint1",
+          "text": "Du kannst das Blatt über den Stein legen. Dort warten die kleinen Zweige.",
+          "speaker": "suri",
+          "tone": "soft",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_suri_assist1",
+          "phase": "assist1",
+          "text": "Wir legen das Blatt zusammen auf die Zweige. Jetzt ist mein Dach an seinem Platz.",
+          "speaker": "suri",
+          "tone": "soft",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_suri_hint2",
+          "phase": "hint2",
+          "text": "Mein rundes Häuschen wartet auf deine sanfte Hand.",
+          "speaker": "suri",
+          "tone": "soft",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        },
+        {
+          "id": "visit_suri_assist2",
+          "phase": "assist2",
+          "text": "Du darfst einfach bei mir bleiben. Ich kuschle mich schon langsam ein.",
+          "speaker": "suri",
+          "tone": "soft",
+          "pauseAfter": 1.5,
+          "voiceSource": "device"
+        }
+      ]
+    }
+  ],
+  "closing": [
+    {
+      "id": "visit_night_goodbye",
+      "text": "Unser Wald wird still. Der Mond schaut zwischen den Zweigen hindurch. Jetzt darfst auch du dich einkuscheln. Schlaf schön.",
+      "speaker": "narrator",
+      "tone": "soft",
+      "pauseAfter": 2,
+      "voiceSource": "device"
+    }
+  ]
+}

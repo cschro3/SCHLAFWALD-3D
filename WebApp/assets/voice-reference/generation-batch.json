@@ -1,0 +1,3697 @@
+{
+  "flow_id": "sncQgTKzi5gXTIjoK48G",
+  "voice_id": "RqAMJpZ689MpxoPI49H6",
+  "model_id": "eleven_v4",
+  "records": [
+    {
+      "id": "visit_suri_01",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "dPKxU5hlQUm3c8FYAXpj",
+      "session_ids": [
+        "cuAn8txovgOmzCIk73Dp",
+        "cu3GWuA2OLbYRE4lFPHw"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "dPKxU5hlQUm3c8FYAXpj",
+          "session_id": "cuAn8txovgOmzCIk73Dp",
+          "credit_costs": {
+            "RczB92tjegd8Ipu0u8GO": 59
+          }
+        },
+        {
+          "success": true,
+          "node_id": "dPKxU5hlQUm3c8FYAXpj",
+          "session_id": "cu3GWuA2OLbYRE4lFPHw",
+          "credit_costs": {
+            "UKhS0OtK8C8ecBQhLfNn": 59
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "RczB92tjegd8Ipu0u8GO",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "UKhS0OtK8C8ecBQhLfNn",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "dPKxU5hlQUm3c8FYAXpj": 2
+        }
+      }
+    },
+    {
+      "id": "visit_suri_02",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "VJC6ZhmwPfnRiofmLdUI",
+      "session_ids": [
+        "PlUFerT3fAk1GZrgO8Al",
+        "bDEE2UPdQ8iDLcQpuTEx"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "VJC6ZhmwPfnRiofmLdUI",
+          "session_id": "PlUFerT3fAk1GZrgO8Al",
+          "credit_costs": {
+            "f4HvSeHb9qsJDXGhJoHE": 138
+          }
+        },
+        {
+          "success": true,
+          "node_id": "VJC6ZhmwPfnRiofmLdUI",
+          "session_id": "bDEE2UPdQ8iDLcQpuTEx",
+          "credit_costs": {
+            "Yj3IxLHZowLgMzCh6tbO": 138
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "f4HvSeHb9qsJDXGhJoHE",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "Yj3IxLHZowLgMzCh6tbO",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "VJC6ZhmwPfnRiofmLdUI": 2
+        }
+      }
+    },
+    {
+      "id": "visit_suri_03",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "cpGV0SW37ap6mWJXmwqN",
+      "session_ids": [
+        "H4ildMPSzZCR4WCxXpDc",
+        "RFi5kebjCVSHEGne9gND"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "cpGV0SW37ap6mWJXmwqN",
+          "session_id": "H4ildMPSzZCR4WCxXpDc",
+          "credit_costs": {
+            "d2aSVtAal7bOEY8O9Xeu": 89.99999999999999
+          }
+        },
+        {
+          "success": true,
+          "node_id": "cpGV0SW37ap6mWJXmwqN",
+          "session_id": "RFi5kebjCVSHEGne9gND",
+          "credit_costs": {
+            "oATjk0w4LMCMmU4emPXG": 89.99999999999999
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "d2aSVtAal7bOEY8O9Xeu",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "oATjk0w4LMCMmU4emPXG",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "cpGV0SW37ap6mWJXmwqN": 2
+        }
+      }
+    },
+    {
+      "id": "visit_suri_04",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "YGZqaGmA9Fe0bUCKqD1Q",
+      "session_ids": [
+        "40Sl8GqqbCVAh0UaphEo",
+        "R5uTuHItHxiOoCxsZbqM"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "YGZqaGmA9Fe0bUCKqD1Q",
+          "session_id": "40Sl8GqqbCVAh0UaphEo",
+          "credit_costs": {
+            "lPdlgFlPR3Px3EhuoiJu": 80
+          }
+        },
+        {
+          "success": true,
+          "node_id": "YGZqaGmA9Fe0bUCKqD1Q",
+          "session_id": "R5uTuHItHxiOoCxsZbqM",
+          "credit_costs": {
+            "C0QwoBVC8hmIWOE9K3I7": 80
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "lPdlgFlPR3Px3EhuoiJu",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "C0QwoBVC8hmIWOE9K3I7",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "YGZqaGmA9Fe0bUCKqD1Q": 2
+        }
+      }
+    },
+    {
+      "id": "visit_suri_05",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "OqAy8tKqxIDWyngU9KME",
+      "session_ids": [
+        "L1eIe8sLpOJSHs2UeMAH",
+        "cNV2CAUWohq2Zosoq96b"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "OqAy8tKqxIDWyngU9KME",
+          "session_id": "L1eIe8sLpOJSHs2UeMAH",
+          "credit_costs": {
+            "CvSK3TuLZEt3cOgt4leO": 69
+          }
+        },
+        {
+          "success": true,
+          "node_id": "OqAy8tKqxIDWyngU9KME",
+          "session_id": "cNV2CAUWohq2Zosoq96b",
+          "credit_costs": {
+            "qPXCqoceK8I0KuiyoA39": 69
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "CvSK3TuLZEt3cOgt4leO",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "qPXCqoceK8I0KuiyoA39",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "OqAy8tKqxIDWyngU9KME": 2
+        }
+      }
+    },
+    {
+      "id": "visit_suri_06",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "Y7QOXKr8bypNnQPnd2T3",
+      "session_ids": [
+        "NS9YkYDm8q4TkVZIteGA",
+        "gTltwSNLnbc8ovHWzb9u"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "Y7QOXKr8bypNnQPnd2T3",
+          "session_id": "NS9YkYDm8q4TkVZIteGA",
+          "credit_costs": {
+            "NgLMHRNTTVa1aZ5BrJ6F": 75
+          }
+        },
+        {
+          "success": true,
+          "node_id": "Y7QOXKr8bypNnQPnd2T3",
+          "session_id": "gTltwSNLnbc8ovHWzb9u",
+          "credit_costs": {
+            "kN4SgdGcWGVq44ZForwh": 75
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "NgLMHRNTTVa1aZ5BrJ6F",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "kN4SgdGcWGVq44ZForwh",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "Y7QOXKr8bypNnQPnd2T3": 2
+        }
+      }
+    },
+    {
+      "id": "visit_suri_07",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "QbiiUrG91FhffnEIe8uE",
+      "session_ids": [
+        "CQjMwHGEeRxFYmmsREKK",
+        "42BVCdyfS6zJUIQELlXV"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "QbiiUrG91FhffnEIe8uE",
+          "session_id": "CQjMwHGEeRxFYmmsREKK",
+          "credit_costs": {
+            "Cb4w97f3mLn9vlfEqfhr": 69
+          }
+        },
+        {
+          "success": true,
+          "node_id": "QbiiUrG91FhffnEIe8uE",
+          "session_id": "42BVCdyfS6zJUIQELlXV",
+          "credit_costs": {
+            "ECNbjzYVvn9qgEeJGu6G": 69
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "Cb4w97f3mLn9vlfEqfhr",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "ECNbjzYVvn9qgEeJGu6G",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "QbiiUrG91FhffnEIe8uE": 2
+        }
+      }
+    },
+    {
+      "id": "visit_suri_08",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "RWaqTTScutNog3VJ9LOc",
+      "session_ids": [
+        "w8SX5qZk0faPESp8Mf6i",
+        "NV8M0y4aEmemHhztLzlW"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "RWaqTTScutNog3VJ9LOc",
+          "session_id": "w8SX5qZk0faPESp8Mf6i",
+          "credit_costs": {
+            "I2BsW7N8hcOG1v89JDfj": 78
+          }
+        },
+        {
+          "success": true,
+          "node_id": "RWaqTTScutNog3VJ9LOc",
+          "session_id": "NV8M0y4aEmemHhztLzlW",
+          "credit_costs": {
+            "ucnXCz8FaTtS0JWvoy3F": 78
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "I2BsW7N8hcOG1v89JDfj",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "ucnXCz8FaTtS0JWvoy3F",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "RWaqTTScutNog3VJ9LOc": 2
+        }
+      }
+    },
+    {
+      "id": "visit_suri_09",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "l0pHGZTWEH50Je07DpZ7",
+      "session_ids": [
+        "GP6ttncztOvGKObvo4lX",
+        "UefkBGIvNGVQzplqAS24"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "l0pHGZTWEH50Je07DpZ7",
+          "session_id": "GP6ttncztOvGKObvo4lX",
+          "credit_costs": {
+            "zyr3cH2pGNNTBNjFdvBk": 89.99999999999999
+          }
+        },
+        {
+          "success": true,
+          "node_id": "l0pHGZTWEH50Je07DpZ7",
+          "session_id": "UefkBGIvNGVQzplqAS24",
+          "credit_costs": {
+            "uCH4fRvkPdQGFW048Kvb": 89.99999999999999
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "zyr3cH2pGNNTBNjFdvBk",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "uCH4fRvkPdQGFW048Kvb",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "l0pHGZTWEH50Je07DpZ7": 2
+        }
+      }
+    },
+    {
+      "id": "visit_suri_10",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "feYwhdlVUND4wZtWdIgr",
+      "session_ids": [
+        "VjL0QE2qtUMemhV1FLbG",
+        "JdEvPOJPTMTEOdXOKYeK"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "feYwhdlVUND4wZtWdIgr",
+          "session_id": "VjL0QE2qtUMemhV1FLbG",
+          "credit_costs": {
+            "MCs38h24EWUfub2jDPD6": 87.99999999999999
+          }
+        },
+        {
+          "success": true,
+          "node_id": "feYwhdlVUND4wZtWdIgr",
+          "session_id": "JdEvPOJPTMTEOdXOKYeK",
+          "credit_costs": {
+            "3gJgEvCb0sUc8W0DXJu8": 87.99999999999999
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "MCs38h24EWUfub2jDPD6",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "3gJgEvCb0sUc8W0DXJu8",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "feYwhdlVUND4wZtWdIgr": 2
+        }
+      }
+    },
+    {
+      "id": "visit_suri_11",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "HYaj3E8pq7J0aZNXSMz6",
+      "session_ids": [
+        "tEDSpkq89nZEtLFy8hU9",
+        "XvoaN3p159RSYwFDS1Zt"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "HYaj3E8pq7J0aZNXSMz6",
+          "session_id": "tEDSpkq89nZEtLFy8hU9",
+          "credit_costs": {
+            "g4sRqpevwW41QHVxM6KM": 49
+          }
+        },
+        {
+          "success": true,
+          "node_id": "HYaj3E8pq7J0aZNXSMz6",
+          "session_id": "XvoaN3p159RSYwFDS1Zt",
+          "credit_costs": {
+            "jYx2BjcUc7wF6n0yn3NR": 49
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "g4sRqpevwW41QHVxM6KM",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "jYx2BjcUc7wF6n0yn3NR",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "HYaj3E8pq7J0aZNXSMz6": 2
+        }
+      }
+    },
+    {
+      "id": "visit_suri_12",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "Khb7VMy5KU2y3k4J3Z3A",
+      "session_ids": [
+        "R143lu4KcZyuKXeI26yk",
+        "azJWChMQRK9fWzv8MMB9"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "Khb7VMy5KU2y3k4J3Z3A",
+          "session_id": "R143lu4KcZyuKXeI26yk",
+          "credit_costs": {
+            "Mlgnhyq1ydMPAjNlFYsV": 60
+          }
+        },
+        {
+          "success": true,
+          "node_id": "Khb7VMy5KU2y3k4J3Z3A",
+          "session_id": "azJWChMQRK9fWzv8MMB9",
+          "credit_costs": {
+            "IAo3FvIQon2OC2bVl0vV": 60
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "Mlgnhyq1ydMPAjNlFYsV",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "IAo3FvIQon2OC2bVl0vV",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "Khb7VMy5KU2y3k4J3Z3A": 2
+        }
+      }
+    },
+    {
+      "id": "visit_suri_13",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "I5j6xPg05JJUxQNj4CQO",
+      "session_ids": [
+        "S7cC7NboZxTV0iLjIlx9",
+        "2MOF9k3cXsItWKJu1dPA"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "I5j6xPg05JJUxQNj4CQO",
+          "session_id": "S7cC7NboZxTV0iLjIlx9",
+          "credit_costs": {
+            "xGdvbMVQ2d0Fo8yuKIFC": 80
+          }
+        },
+        {
+          "success": true,
+          "node_id": "I5j6xPg05JJUxQNj4CQO",
+          "session_id": "2MOF9k3cXsItWKJu1dPA",
+          "credit_costs": {
+            "xWXQ7EJ0myr7vubczklF": 80
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "xGdvbMVQ2d0Fo8yuKIFC",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "xWXQ7EJ0myr7vubczklF",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "I5j6xPg05JJUxQNj4CQO": 2
+        }
+      }
+    },
+    {
+      "id": "visit_suri_14",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "rPM03tycy0xwIyHb9QFm",
+      "session_ids": [
+        "1p55GBZQb99WhH0bcBaS",
+        "Zj1b3WrPZir2CnBnwcpP"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "rPM03tycy0xwIyHb9QFm",
+          "session_id": "1p55GBZQb99WhH0bcBaS",
+          "credit_costs": {
+            "VazmDBgBstMXHbo0sO7H": 41
+          }
+        },
+        {
+          "success": true,
+          "node_id": "rPM03tycy0xwIyHb9QFm",
+          "session_id": "Zj1b3WrPZir2CnBnwcpP",
+          "credit_costs": {
+            "90REQsvjYictnjhx3bLl": 41
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "VazmDBgBstMXHbo0sO7H",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "90REQsvjYictnjhx3bLl",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "rPM03tycy0xwIyHb9QFm": 2
+        }
+      }
+    },
+    {
+      "id": "visit_suri_hint1",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "xKr6q9ycWsh8pnQB6Rfg",
+      "session_ids": [
+        "4rdumR9tDi8WsaioZWjF",
+        "yglcAPkOIUiTCsK4z6B9"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "xKr6q9ycWsh8pnQB6Rfg",
+          "session_id": "4rdumR9tDi8WsaioZWjF",
+          "credit_costs": {
+            "vriCU02EJ2izX4A6hnKH": 82
+          }
+        },
+        {
+          "success": true,
+          "node_id": "xKr6q9ycWsh8pnQB6Rfg",
+          "session_id": "yglcAPkOIUiTCsK4z6B9",
+          "credit_costs": {
+            "6lRCishWzmAO3Nuz1Yky": 82
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "vriCU02EJ2izX4A6hnKH",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "6lRCishWzmAO3Nuz1Yky",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "xKr6q9ycWsh8pnQB6Rfg": 2
+        }
+      }
+    },
+    {
+      "id": "visit_suri_assist1",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "XsWrgCVYYoFSylShYqKO",
+      "session_ids": [
+        "3IfJhd4eZ2pwU6UvMXDN",
+        "cycVytBBxHgafacQPJic"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "XsWrgCVYYoFSylShYqKO",
+          "session_id": "3IfJhd4eZ2pwU6UvMXDN",
+          "credit_costs": {
+            "VhKKgxE8OiU7yGCDKPnb": 89.99999999999999
+          }
+        },
+        {
+          "success": true,
+          "node_id": "XsWrgCVYYoFSylShYqKO",
+          "session_id": "cycVytBBxHgafacQPJic",
+          "credit_costs": {
+            "gGe4jbkWh1ahnJnece5b": 89.99999999999999
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "VhKKgxE8OiU7yGCDKPnb",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "gGe4jbkWh1ahnJnece5b",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "XsWrgCVYYoFSylShYqKO": 2
+        }
+      }
+    },
+    {
+      "id": "visit_suri_hint2",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "T1MojgoszViwUZxKixwv",
+      "session_ids": [
+        "C8M3CjvatqToAzg7A16Z",
+        "qEsJN22BjULOJwkHL6ku"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "T1MojgoszViwUZxKixwv",
+          "session_id": "C8M3CjvatqToAzg7A16Z",
+          "credit_costs": {
+            "h0bEeC7MGtahdcJ0rnEh": 59
+          }
+        },
+        {
+          "success": true,
+          "node_id": "T1MojgoszViwUZxKixwv",
+          "session_id": "qEsJN22BjULOJwkHL6ku",
+          "credit_costs": {
+            "AGbq2Kkz3it1qzS0uDbd": 59
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "h0bEeC7MGtahdcJ0rnEh",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "AGbq2Kkz3it1qzS0uDbd",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "T1MojgoszViwUZxKixwv": 2
+        }
+      }
+    },
+    {
+      "id": "visit_suri_assist2",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "kkCIJvspWy3M3Rf6G7al",
+      "session_ids": [
+        "zY6IJR7oNQ3T08Raw6KB",
+        "Nam0RbbkhvEoDxHtucVW"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "kkCIJvspWy3M3Rf6G7al",
+          "session_id": "zY6IJR7oNQ3T08Raw6KB",
+          "credit_costs": {
+            "8mAkIMtUnAfW8darWYwR": 79
+          }
+        },
+        {
+          "success": true,
+          "node_id": "kkCIJvspWy3M3Rf6G7al",
+          "session_id": "Nam0RbbkhvEoDxHtucVW",
+          "credit_costs": {
+            "B5JaB3BWqXkqAs851BAu": 79
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "8mAkIMtUnAfW8darWYwR",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "B5JaB3BWqXkqAs851BAu",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "kkCIJvspWy3M3Rf6G7al": 2
+        }
+      }
+    },
+    {
+      "id": "visit_fino_01",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "IW6TrRNEVgWKnvwSRJYo",
+      "session_ids": [
+        "u2wQKyOt5n5LD2z1w1l3",
+        "zQgdrdeajVClhvbHslli"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "IW6TrRNEVgWKnvwSRJYo",
+          "session_id": "u2wQKyOt5n5LD2z1w1l3",
+          "credit_costs": {
+            "QFuUKQwrLghQtqFs8Ejj": 75
+          }
+        },
+        {
+          "success": true,
+          "node_id": "IW6TrRNEVgWKnvwSRJYo",
+          "session_id": "zQgdrdeajVClhvbHslli",
+          "credit_costs": {
+            "TexKA5lzmjxzfzhugTIz": 75
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "QFuUKQwrLghQtqFs8Ejj",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "TexKA5lzmjxzfzhugTIz",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "IW6TrRNEVgWKnvwSRJYo": 2
+        }
+      }
+    },
+    {
+      "id": "visit_fino_02",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "cyWj7xRBfmAoV3xyzrZc",
+      "session_ids": [
+        "djvEuGJZYT8Bn6Sfntic",
+        "AKC3pafmxXXd0TUPLXcV"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "cyWj7xRBfmAoV3xyzrZc",
+          "session_id": "djvEuGJZYT8Bn6Sfntic",
+          "credit_costs": {
+            "eCekJPLCSnqJkNplQAXA": 122
+          }
+        },
+        {
+          "success": true,
+          "node_id": "cyWj7xRBfmAoV3xyzrZc",
+          "session_id": "AKC3pafmxXXd0TUPLXcV",
+          "credit_costs": {
+            "WdrQVx7vDqcw2Wzulos0": 122
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "eCekJPLCSnqJkNplQAXA",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "WdrQVx7vDqcw2Wzulos0",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "cyWj7xRBfmAoV3xyzrZc": 2
+        }
+      }
+    },
+    {
+      "id": "visit_fino_03",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "y8ylqWP1xpsTEbyMLfvv",
+      "session_ids": [
+        "qXWsTl3gQdRrD55QcMoh",
+        "v8lhrE4cViI9dTuLwxRy"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "y8ylqWP1xpsTEbyMLfvv",
+          "session_id": "qXWsTl3gQdRrD55QcMoh",
+          "credit_costs": {
+            "fJi35Drol76Kutrr2aAo": 123
+          }
+        },
+        {
+          "success": true,
+          "node_id": "y8ylqWP1xpsTEbyMLfvv",
+          "session_id": "v8lhrE4cViI9dTuLwxRy",
+          "credit_costs": {
+            "ELoYbzdjGIZOlFvOuEw6": 123
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "fJi35Drol76Kutrr2aAo",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "ELoYbzdjGIZOlFvOuEw6",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "y8ylqWP1xpsTEbyMLfvv": 2
+        }
+      }
+    },
+    {
+      "id": "visit_fino_04",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "HtyWiE8LKVb9QlUsFgRC",
+      "session_ids": [
+        "OL1e9k6XqLYTu97EbiVB",
+        "ajeEOU2BhY2FK6EVD6jw"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "HtyWiE8LKVb9QlUsFgRC",
+          "session_id": "OL1e9k6XqLYTu97EbiVB",
+          "credit_costs": {
+            "LFSyuKCpbOAXptSh2GAy": 85.00000000000001
+          }
+        },
+        {
+          "success": true,
+          "node_id": "HtyWiE8LKVb9QlUsFgRC",
+          "session_id": "ajeEOU2BhY2FK6EVD6jw",
+          "credit_costs": {
+            "Ghp5Squ36zPP3BjOiIVk": 85.00000000000001
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "LFSyuKCpbOAXptSh2GAy",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "Ghp5Squ36zPP3BjOiIVk",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "HtyWiE8LKVb9QlUsFgRC": 2
+        }
+      }
+    },
+    {
+      "id": "visit_fino_05",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "13HLTknzSX1NT2GF8DUj",
+      "session_ids": [
+        "dOxU7U7K4LuMFIqNfBST",
+        "LqALQT3EUhh6JHZn2o1S"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "13HLTknzSX1NT2GF8DUj",
+          "session_id": "dOxU7U7K4LuMFIqNfBST",
+          "credit_costs": {
+            "2av7HeNG2UVyeDZlGrwB": 68
+          }
+        },
+        {
+          "success": true,
+          "node_id": "13HLTknzSX1NT2GF8DUj",
+          "session_id": "LqALQT3EUhh6JHZn2o1S",
+          "credit_costs": {
+            "x8hEYZrUW7f6qKu4NO4t": 68
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "2av7HeNG2UVyeDZlGrwB",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "x8hEYZrUW7f6qKu4NO4t",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "13HLTknzSX1NT2GF8DUj": 2
+        }
+      }
+    },
+    {
+      "id": "visit_fino_06",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "mH7gnlGMffDllE07ICWX",
+      "session_ids": [
+        "kxsd69eD7rAn1qL1XKWX",
+        "j9pBTqAXXY0H1pxhogbE"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "mH7gnlGMffDllE07ICWX",
+          "session_id": "kxsd69eD7rAn1qL1XKWX",
+          "credit_costs": {
+            "gaGDecV3UDrHZF1MjbqW": 62
+          }
+        },
+        {
+          "success": true,
+          "node_id": "mH7gnlGMffDllE07ICWX",
+          "session_id": "j9pBTqAXXY0H1pxhogbE",
+          "credit_costs": {
+            "tRIoHmlUUPBwYQXhELQs": 62
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "gaGDecV3UDrHZF1MjbqW",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "tRIoHmlUUPBwYQXhELQs",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "mH7gnlGMffDllE07ICWX": 2
+        }
+      }
+    },
+    {
+      "id": "visit_fino_07",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "iBtjZ32ZpqH3qFt1NK4J",
+      "session_ids": [
+        "KYk7Vs04yvKbWJd4gRti",
+        "W64BAn4xSys5gAhlJDfR"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "iBtjZ32ZpqH3qFt1NK4J",
+          "session_id": "KYk7Vs04yvKbWJd4gRti",
+          "credit_costs": {
+            "8vouc2pLf3yStyFBaaaF": 54
+          }
+        },
+        {
+          "success": true,
+          "node_id": "iBtjZ32ZpqH3qFt1NK4J",
+          "session_id": "W64BAn4xSys5gAhlJDfR",
+          "credit_costs": {
+            "7vBe7nsVCfDAKQlMHQxi": 54
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "8vouc2pLf3yStyFBaaaF",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "7vBe7nsVCfDAKQlMHQxi",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "iBtjZ32ZpqH3qFt1NK4J": 2
+        }
+      }
+    },
+    {
+      "id": "visit_fino_08",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "JV6SmOrRD4RWPwIg5uQ1",
+      "session_ids": [
+        "mJvdCfeEgOKzEytKWm5Z",
+        "graMBQmuaiGNepwiKTZO"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "JV6SmOrRD4RWPwIg5uQ1",
+          "session_id": "mJvdCfeEgOKzEytKWm5Z",
+          "credit_costs": {
+            "FmR2mszk0noR2sNSzsrn": 66
+          }
+        },
+        {
+          "success": true,
+          "node_id": "JV6SmOrRD4RWPwIg5uQ1",
+          "session_id": "graMBQmuaiGNepwiKTZO",
+          "credit_costs": {
+            "bPI7JaKzgCVa3PY349ss": 66
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "FmR2mszk0noR2sNSzsrn",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "bPI7JaKzgCVa3PY349ss",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "JV6SmOrRD4RWPwIg5uQ1": 2
+        }
+      }
+    },
+    {
+      "id": "visit_fino_09",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "igbfK0Vh9fuTuMlDfUWi",
+      "session_ids": [
+        "yXd1UovUe17CjjeKQnHP",
+        "gDuLXjNg6SEaK62CKEcp"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "igbfK0Vh9fuTuMlDfUWi",
+          "session_id": "yXd1UovUe17CjjeKQnHP",
+          "credit_costs": {
+            "DxNgK600dR82gAf5KK28": 69
+          }
+        },
+        {
+          "success": true,
+          "node_id": "igbfK0Vh9fuTuMlDfUWi",
+          "session_id": "gDuLXjNg6SEaK62CKEcp",
+          "credit_costs": {
+            "qn0DFCmBTOX2FgqzzEX4": 69
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "DxNgK600dR82gAf5KK28",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "qn0DFCmBTOX2FgqzzEX4",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "igbfK0Vh9fuTuMlDfUWi": 2
+        }
+      }
+    },
+    {
+      "id": "visit_fino_10",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "tqsGG63HcRXyj0pjZbDX",
+      "session_ids": [
+        "GQ8yOhtZKdpq1UPTXryE",
+        "yUTH5fx40qPs5TWT4Tjz"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "tqsGG63HcRXyj0pjZbDX",
+          "session_id": "GQ8yOhtZKdpq1UPTXryE",
+          "credit_costs": {
+            "gt756ArCCc4O2GPqVZ2K": 73
+          }
+        },
+        {
+          "success": true,
+          "node_id": "tqsGG63HcRXyj0pjZbDX",
+          "session_id": "yUTH5fx40qPs5TWT4Tjz",
+          "credit_costs": {
+            "0SiMjJ5e4Vs93tgIsap7": 73
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "gt756ArCCc4O2GPqVZ2K",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "0SiMjJ5e4Vs93tgIsap7",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "tqsGG63HcRXyj0pjZbDX": 2
+        }
+      }
+    },
+    {
+      "id": "visit_mila_01",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "p6NHVKZ9Z2Yv1wtZatgQ",
+      "session_ids": [
+        "hbWVAzG98F6FA48T0mFt",
+        "qo3Xt2FLMdCfu1HTwxQ3"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "p6NHVKZ9Z2Yv1wtZatgQ",
+          "session_id": "hbWVAzG98F6FA48T0mFt",
+          "credit_costs": {
+            "PW5eiFbgOH6hYuqtrU5r": 56.00000000000001
+          }
+        },
+        {
+          "success": true,
+          "node_id": "p6NHVKZ9Z2Yv1wtZatgQ",
+          "session_id": "qo3Xt2FLMdCfu1HTwxQ3",
+          "credit_costs": {
+            "sqVzzVdBd0djjVY6fhuV": 56.00000000000001
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "PW5eiFbgOH6hYuqtrU5r",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "sqVzzVdBd0djjVY6fhuV",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "p6NHVKZ9Z2Yv1wtZatgQ": 2
+        }
+      }
+    },
+    {
+      "id": "visit_mila_02",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "qRvW1hyT3zmoP8mdu41I",
+      "session_ids": [
+        "VEg12BcsKKZ8JcnhZiqB",
+        "cjibmBmyi4ZydkbiRDVb"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "qRvW1hyT3zmoP8mdu41I",
+          "session_id": "VEg12BcsKKZ8JcnhZiqB",
+          "credit_costs": {
+            "zTSfxrbhLW5TWC7fU2AR": 151
+          }
+        },
+        {
+          "success": true,
+          "node_id": "qRvW1hyT3zmoP8mdu41I",
+          "session_id": "cjibmBmyi4ZydkbiRDVb",
+          "credit_costs": {
+            "3qFVIHzwlomkKsfgOK7l": 151
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "zTSfxrbhLW5TWC7fU2AR",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "3qFVIHzwlomkKsfgOK7l",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "qRvW1hyT3zmoP8mdu41I": 2
+        }
+      }
+    },
+    {
+      "id": "visit_mila_03",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "bJHvBtLbColFdEoiW7Ed",
+      "session_ids": [
+        "kYbJgsld7mi0gOJjUod2",
+        "PiF4L0btAKRMm81tDlrQ"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "bJHvBtLbColFdEoiW7Ed",
+          "session_id": "kYbJgsld7mi0gOJjUod2",
+          "credit_costs": {
+            "DwmGf6dCnxEg37Z01vtv": 101
+          }
+        },
+        {
+          "success": true,
+          "node_id": "bJHvBtLbColFdEoiW7Ed",
+          "session_id": "PiF4L0btAKRMm81tDlrQ",
+          "credit_costs": {
+            "Hcxsvj4R0o4oBA1kPbdk": 101
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "DwmGf6dCnxEg37Z01vtv",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "Hcxsvj4R0o4oBA1kPbdk",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "bJHvBtLbColFdEoiW7Ed": 2
+        }
+      }
+    },
+    {
+      "id": "visit_mila_04",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "H4sVueRutbL0nrQL1TW2",
+      "session_ids": [
+        "yHkt5xcqQcYBBTWDZYYE",
+        "EAGBCJF8vA5oc3welwGI"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "H4sVueRutbL0nrQL1TW2",
+          "session_id": "yHkt5xcqQcYBBTWDZYYE",
+          "credit_costs": {
+            "wDJkPLvmqAeK8mDPmzPW": 90.99999999999999
+          }
+        },
+        {
+          "success": true,
+          "node_id": "H4sVueRutbL0nrQL1TW2",
+          "session_id": "EAGBCJF8vA5oc3welwGI",
+          "credit_costs": {
+            "Yd20yXQ9XpIZzZ9t3mQ6": 90.99999999999999
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "wDJkPLvmqAeK8mDPmzPW",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "Yd20yXQ9XpIZzZ9t3mQ6",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "H4sVueRutbL0nrQL1TW2": 2
+        }
+      }
+    },
+    {
+      "id": "visit_mila_05",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "AH5MBtxc6K29kpqqXrNN",
+      "session_ids": [
+        "YdgOVh0S2hizpAmmwPQc",
+        "nLBx66uCuPqyi8cKJazf"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "AH5MBtxc6K29kpqqXrNN",
+          "session_id": "YdgOVh0S2hizpAmmwPQc",
+          "credit_costs": {
+            "LHyhgkNGhwz0J00jCxz7": 70
+          }
+        },
+        {
+          "success": true,
+          "node_id": "AH5MBtxc6K29kpqqXrNN",
+          "session_id": "nLBx66uCuPqyi8cKJazf",
+          "credit_costs": {
+            "B41uLA2MeeVEvE3NjHLS": 70
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "LHyhgkNGhwz0J00jCxz7",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "B41uLA2MeeVEvE3NjHLS",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "AH5MBtxc6K29kpqqXrNN": 2
+        }
+      }
+    },
+    {
+      "id": "visit_mila_06",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "XIXcw832gTqtI8eiZcQb",
+      "session_ids": [
+        "RLgWOq4SoOXNAlA2njvd",
+        "X88uDnzMo82ZL2CcyaUa"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "XIXcw832gTqtI8eiZcQb",
+          "session_id": "RLgWOq4SoOXNAlA2njvd",
+          "credit_costs": {
+            "IvLxirzBS5IUJNmlvqc1": 78
+          }
+        },
+        {
+          "success": true,
+          "node_id": "XIXcw832gTqtI8eiZcQb",
+          "session_id": "X88uDnzMo82ZL2CcyaUa",
+          "credit_costs": {
+            "SjCXoSMG3qyqvVJ1B01m": 78
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "IvLxirzBS5IUJNmlvqc1",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "SjCXoSMG3qyqvVJ1B01m",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "XIXcw832gTqtI8eiZcQb": 2
+        }
+      }
+    },
+    {
+      "id": "visit_mila_07",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "XuZr0YdpRW18ddor05rm",
+      "session_ids": [
+        "7xGpRUWTrmfKthIjKdTc",
+        "DTGHmxQBmCGsoMrt2uSS"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "XuZr0YdpRW18ddor05rm",
+          "session_id": "7xGpRUWTrmfKthIjKdTc",
+          "credit_costs": {
+            "ry2l2kaKVoa82WZJ8P4o": 78
+          }
+        },
+        {
+          "success": true,
+          "node_id": "XuZr0YdpRW18ddor05rm",
+          "session_id": "DTGHmxQBmCGsoMrt2uSS",
+          "credit_costs": {
+            "pEcrxoD4WcAQvkUSZcOj": 78
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "ry2l2kaKVoa82WZJ8P4o",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "pEcrxoD4WcAQvkUSZcOj",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "XuZr0YdpRW18ddor05rm": 2
+        }
+      }
+    },
+    {
+      "id": "visit_mila_08",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "Lh4hycvFHKoxb9ARgVF1",
+      "session_ids": [
+        "mOjEFQJybBLQZJrgHqs4",
+        "WvUDcWODkmcZnP0xZPt6"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "Lh4hycvFHKoxb9ARgVF1",
+          "session_id": "mOjEFQJybBLQZJrgHqs4",
+          "credit_costs": {
+            "bC2FhtjKgCe5NR2wgqr3": 52
+          }
+        },
+        {
+          "success": true,
+          "node_id": "Lh4hycvFHKoxb9ARgVF1",
+          "session_id": "WvUDcWODkmcZnP0xZPt6",
+          "credit_costs": {
+            "EKl99CV5Ub9ZbHtvlhBz": 52
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "bC2FhtjKgCe5NR2wgqr3",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "EKl99CV5Ub9ZbHtvlhBz",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "Lh4hycvFHKoxb9ARgVF1": 2
+        }
+      }
+    },
+    {
+      "id": "visit_mila_09",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "SbzW695X0VjgUzyeSlq6",
+      "session_ids": [
+        "rZ2AQ2q4s69dBYr6vbEB",
+        "zeePVjL8WrF0LEo9C90p"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "SbzW695X0VjgUzyeSlq6",
+          "session_id": "rZ2AQ2q4s69dBYr6vbEB",
+          "credit_costs": {
+            "EMo4C2MAnhD9Asqgodaq": 90.99999999999999
+          }
+        },
+        {
+          "success": true,
+          "node_id": "SbzW695X0VjgUzyeSlq6",
+          "session_id": "zeePVjL8WrF0LEo9C90p",
+          "credit_costs": {
+            "ydNOoPKJnt9AFQqzQNJ0": 90.99999999999999
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "EMo4C2MAnhD9Asqgodaq",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "ydNOoPKJnt9AFQqzQNJ0",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "SbzW695X0VjgUzyeSlq6": 2
+        }
+      }
+    },
+    {
+      "id": "visit_piko_01",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "6wFnpTGwNafKuMU6xQbS",
+      "session_ids": [
+        "CZNsTHFvMlZsL1UkE3ig",
+        "URgGKUx0bNDYFsdcCEB3"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "6wFnpTGwNafKuMU6xQbS",
+          "session_id": "CZNsTHFvMlZsL1UkE3ig",
+          "credit_costs": {
+            "X3T6gFNzNv77R40vyMKo": 64
+          }
+        },
+        {
+          "success": true,
+          "node_id": "6wFnpTGwNafKuMU6xQbS",
+          "session_id": "URgGKUx0bNDYFsdcCEB3",
+          "credit_costs": {
+            "lCY7m8MXYHY7j0PMyjr0": 64
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "X3T6gFNzNv77R40vyMKo",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "lCY7m8MXYHY7j0PMyjr0",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "6wFnpTGwNafKuMU6xQbS": 2
+        }
+      }
+    },
+    {
+      "id": "visit_piko_02",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "Yp4ucj6dKDUi48SBRS43",
+      "session_ids": [
+        "JjjI6LFe7Gb3FqM9ZLJ8",
+        "B1J2eGn0YzIljG4ADD6j"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "Yp4ucj6dKDUi48SBRS43",
+          "session_id": "JjjI6LFe7Gb3FqM9ZLJ8",
+          "credit_costs": {
+            "VgG4uM5PF8rWeFwEPewl": 126
+          }
+        },
+        {
+          "success": true,
+          "node_id": "Yp4ucj6dKDUi48SBRS43",
+          "session_id": "B1J2eGn0YzIljG4ADD6j",
+          "credit_costs": {
+            "oPLiCrVBVuirJGlCmJGF": 126
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "VgG4uM5PF8rWeFwEPewl",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "oPLiCrVBVuirJGlCmJGF",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "Yp4ucj6dKDUi48SBRS43": 2
+        }
+      }
+    },
+    {
+      "id": "visit_piko_03",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "nMyTHQ0zEycvQWjOKiiN",
+      "session_ids": [
+        "5K3T8GqABvqGqYI3jbXK",
+        "nDaRyemTRAwIiFMiCaCV"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "nMyTHQ0zEycvQWjOKiiN",
+          "session_id": "5K3T8GqABvqGqYI3jbXK",
+          "credit_costs": {
+            "5pSsIAuoa90rSZj5zL7I": 96
+          }
+        },
+        {
+          "success": true,
+          "node_id": "nMyTHQ0zEycvQWjOKiiN",
+          "session_id": "nDaRyemTRAwIiFMiCaCV",
+          "credit_costs": {
+            "sduQt3NREnEtHqmXJGdD": 96
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "5pSsIAuoa90rSZj5zL7I",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "sduQt3NREnEtHqmXJGdD",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "nMyTHQ0zEycvQWjOKiiN": 2
+        }
+      }
+    },
+    {
+      "id": "visit_piko_04",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "zFzXx1uuYAPyHNKiQ6iL",
+      "session_ids": [
+        "Awc8fRcHAWMWKCFCwDsG",
+        "NRLlQ8rgPiBBuT6jecLu"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "zFzXx1uuYAPyHNKiQ6iL",
+          "session_id": "Awc8fRcHAWMWKCFCwDsG",
+          "credit_costs": {
+            "j3kO3pjZeUEo1AydbOdI": 85.00000000000001
+          }
+        },
+        {
+          "success": true,
+          "node_id": "zFzXx1uuYAPyHNKiQ6iL",
+          "session_id": "NRLlQ8rgPiBBuT6jecLu",
+          "credit_costs": {
+            "bY2zCjKhGvqmG785fdGV": 85.00000000000001
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "j3kO3pjZeUEo1AydbOdI",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "bY2zCjKhGvqmG785fdGV",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "zFzXx1uuYAPyHNKiQ6iL": 2
+        }
+      }
+    },
+    {
+      "id": "visit_piko_05",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "tXktku6NAvhiB6TR5QcT",
+      "session_ids": [
+        "MLWBiKDgZByrWU2Gpwvs",
+        "hYIta1LLkgYWFALXYqyp"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "tXktku6NAvhiB6TR5QcT",
+          "session_id": "MLWBiKDgZByrWU2Gpwvs",
+          "credit_costs": {
+            "Oyc3l8DfqihVu8eU8ADK": 64
+          }
+        },
+        {
+          "success": true,
+          "node_id": "tXktku6NAvhiB6TR5QcT",
+          "session_id": "hYIta1LLkgYWFALXYqyp",
+          "credit_costs": {
+            "RlUnhpXQvUAUEuUxXH4P": 64
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "Oyc3l8DfqihVu8eU8ADK",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "RlUnhpXQvUAUEuUxXH4P",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "tXktku6NAvhiB6TR5QcT": 2
+        }
+      }
+    },
+    {
+      "id": "visit_piko_06",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "3szxBrBTMYDBvJbgCREz",
+      "session_ids": [
+        "D2aYg6agg5ETpIC3G1aH",
+        "CrECPTDICNOGpqWR366b"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "3szxBrBTMYDBvJbgCREz",
+          "session_id": "D2aYg6agg5ETpIC3G1aH",
+          "credit_costs": {
+            "nPoja7VJQYaBnzkI6lcc": 82
+          }
+        },
+        {
+          "success": true,
+          "node_id": "3szxBrBTMYDBvJbgCREz",
+          "session_id": "CrECPTDICNOGpqWR366b",
+          "credit_costs": {
+            "i1UCbdoCxdL8r8OVqJdW": 82
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "nPoja7VJQYaBnzkI6lcc",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "i1UCbdoCxdL8r8OVqJdW",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "3szxBrBTMYDBvJbgCREz": 2
+        }
+      }
+    },
+    {
+      "id": "visit_piko_07",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "nQFXRUsTGrzbEBgHFYe3",
+      "session_ids": [
+        "gNkBXLN2THACfsY0UIfX",
+        "3yTSReDxknwmq9oTk8fg"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "nQFXRUsTGrzbEBgHFYe3",
+          "session_id": "gNkBXLN2THACfsY0UIfX",
+          "credit_costs": {
+            "ouSPZJdPTU673qyXlycF": 86.99999999999999
+          }
+        },
+        {
+          "success": true,
+          "node_id": "nQFXRUsTGrzbEBgHFYe3",
+          "session_id": "3yTSReDxknwmq9oTk8fg",
+          "credit_costs": {
+            "5ULXHHc9LYlYpMGwmrAh": 86.99999999999999
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "ouSPZJdPTU673qyXlycF",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "5ULXHHc9LYlYpMGwmrAh",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "nQFXRUsTGrzbEBgHFYe3": 2
+        }
+      }
+    },
+    {
+      "id": "visit_piko_08",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "ZjEWPNVdPmKPtr2lRyxy",
+      "session_ids": [
+        "2lAG5qXWGNurIbU5p5Xj",
+        "J24E4J73pJwiWf2tGFqh"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "ZjEWPNVdPmKPtr2lRyxy",
+          "session_id": "2lAG5qXWGNurIbU5p5Xj",
+          "credit_costs": {
+            "H1YzuLmhNH9LtTiQcNBT": 87.99999999999999
+          }
+        },
+        {
+          "success": true,
+          "node_id": "ZjEWPNVdPmKPtr2lRyxy",
+          "session_id": "J24E4J73pJwiWf2tGFqh",
+          "credit_costs": {
+            "Uu7kPU3VYL8oKGFBMGM7": 87.99999999999999
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "H1YzuLmhNH9LtTiQcNBT",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "Uu7kPU3VYL8oKGFBMGM7",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "ZjEWPNVdPmKPtr2lRyxy": 2
+        }
+      }
+    },
+    {
+      "id": "visit_piko_09",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "iSZd0U2LWVHMlWjbQKLi",
+      "session_ids": [
+        "ZegHSN3AtjUAi40LsNIz",
+        "ZQDGg6a7fqjjDYxM1lGQ"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "iSZd0U2LWVHMlWjbQKLi",
+          "session_id": "ZegHSN3AtjUAi40LsNIz",
+          "credit_costs": {
+            "PoSgDywzdvTmsqGkoAuI": 70
+          }
+        },
+        {
+          "success": true,
+          "node_id": "iSZd0U2LWVHMlWjbQKLi",
+          "session_id": "ZQDGg6a7fqjjDYxM1lGQ",
+          "credit_costs": {
+            "h1esWxcKYdMA5ZxwPYlV": 70
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "PoSgDywzdvTmsqGkoAuI",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "h1esWxcKYdMA5ZxwPYlV",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "iSZd0U2LWVHMlWjbQKLi": 2
+        }
+      }
+    },
+    {
+      "id": "visit_piko_10",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "XvsXfzZ10at7HvqgBj6b",
+      "session_ids": [
+        "3V3RI9SOqJKXbjiHipk6",
+        "OgcxSgaOL2lBdkrZpqf8"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "XvsXfzZ10at7HvqgBj6b",
+          "session_id": "3V3RI9SOqJKXbjiHipk6",
+          "credit_costs": {
+            "RqLvVhcyauo83LPqydjv": 74
+          }
+        },
+        {
+          "success": true,
+          "node_id": "XvsXfzZ10at7HvqgBj6b",
+          "session_id": "OgcxSgaOL2lBdkrZpqf8",
+          "credit_costs": {
+            "6axW6GaCiA6jHDigcaD4": 74
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "RqLvVhcyauo83LPqydjv",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "6axW6GaCiA6jHDigcaD4",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "XvsXfzZ10at7HvqgBj6b": 2
+        }
+      }
+    },
+    {
+      "id": "visit_luna_01",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "FD8Jw9JiF2hGuhZDULDJ",
+      "session_ids": [
+        "DBFhXcIINTRDjjXepvM5",
+        "zvD6LQ1wtXnmgVcNilgw"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "FD8Jw9JiF2hGuhZDULDJ",
+          "session_id": "DBFhXcIINTRDjjXepvM5",
+          "credit_costs": {
+            "3GXNBfEFifbBb1aNCriZ": 87.99999999999999
+          }
+        },
+        {
+          "success": true,
+          "node_id": "FD8Jw9JiF2hGuhZDULDJ",
+          "session_id": "zvD6LQ1wtXnmgVcNilgw",
+          "credit_costs": {
+            "5uJrpNjuofh1M5Fk8Ztn": 87.99999999999999
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "3GXNBfEFifbBb1aNCriZ",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "5uJrpNjuofh1M5Fk8Ztn",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "FD8Jw9JiF2hGuhZDULDJ": 2
+        }
+      }
+    },
+    {
+      "id": "visit_luna_02",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "tQvANErFGot0BiDv3WEj",
+      "session_ids": [
+        "TsEnoBQWX2yBJ53cj4zH",
+        "KQbpnKC2DtmbbwzRyLTA"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "tQvANErFGot0BiDv3WEj",
+          "session_id": "TsEnoBQWX2yBJ53cj4zH",
+          "credit_costs": {
+            "k9v9Yxt0ElLtUNmgEcsZ": 114.00000000000001
+          }
+        },
+        {
+          "success": true,
+          "node_id": "tQvANErFGot0BiDv3WEj",
+          "session_id": "KQbpnKC2DtmbbwzRyLTA",
+          "credit_costs": {
+            "OnD7D5fZzRVGziYQK4bK": 114.00000000000001
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "k9v9Yxt0ElLtUNmgEcsZ",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "OnD7D5fZzRVGziYQK4bK",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "tQvANErFGot0BiDv3WEj": 2
+        }
+      }
+    },
+    {
+      "id": "visit_luna_03",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "HhoVOXMroi1a9LyiBStE",
+      "session_ids": [
+        "WhSjh8eaWaEjP96ndXBq",
+        "uKvP8ue6cpTRJ3XcJNe1"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "HhoVOXMroi1a9LyiBStE",
+          "session_id": "WhSjh8eaWaEjP96ndXBq",
+          "credit_costs": {
+            "1vDpH2Gx3kmYVKJu0UIW": 100
+          }
+        },
+        {
+          "success": true,
+          "node_id": "HhoVOXMroi1a9LyiBStE",
+          "session_id": "uKvP8ue6cpTRJ3XcJNe1",
+          "credit_costs": {
+            "ylVsOUR7AKT015eEcq8c": 100
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "1vDpH2Gx3kmYVKJu0UIW",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "ylVsOUR7AKT015eEcq8c",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "HhoVOXMroi1a9LyiBStE": 2
+        }
+      }
+    },
+    {
+      "id": "visit_luna_04",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "7WmyuiCBFJaml1l84tTx",
+      "session_ids": [
+        "drr3D0miECwL7A4s9645",
+        "VCYAxruaF80efWWwz1Or"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "7WmyuiCBFJaml1l84tTx",
+          "session_id": "drr3D0miECwL7A4s9645",
+          "credit_costs": {
+            "fsDJvLOydkEoC0YkMese": 82
+          }
+        },
+        {
+          "success": true,
+          "node_id": "7WmyuiCBFJaml1l84tTx",
+          "session_id": "VCYAxruaF80efWWwz1Or",
+          "credit_costs": {
+            "sV6WuwvMHMSIsx2brUA9": 82
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "fsDJvLOydkEoC0YkMese",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "sV6WuwvMHMSIsx2brUA9",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "7WmyuiCBFJaml1l84tTx": 2
+        }
+      }
+    },
+    {
+      "id": "visit_luna_05",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "zc0N345qXRfka4BXbjTq",
+      "session_ids": [
+        "gpgrIIUBOwC6TeE0dXuS",
+        "gzjmmFLAPUIyaYFvyphD"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "zc0N345qXRfka4BXbjTq",
+          "session_id": "gpgrIIUBOwC6TeE0dXuS",
+          "credit_costs": {
+            "C6QmhXQIYtMEEFR1UnGN": 80
+          }
+        },
+        {
+          "success": true,
+          "node_id": "zc0N345qXRfka4BXbjTq",
+          "session_id": "gzjmmFLAPUIyaYFvyphD",
+          "credit_costs": {
+            "XhND0yJp1oaFqW3E9eFJ": 80
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "C6QmhXQIYtMEEFR1UnGN",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "XhND0yJp1oaFqW3E9eFJ",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "zc0N345qXRfka4BXbjTq": 2
+        }
+      }
+    },
+    {
+      "id": "visit_luna_06",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "kCSWuq8Vc5UTqOQIbRHs",
+      "session_ids": [
+        "XgM0kcCsiDd4Vf1r9D4T",
+        "FmI2N0ZjoxZOrztZ0uAE"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "kCSWuq8Vc5UTqOQIbRHs",
+          "session_id": "XgM0kcCsiDd4Vf1r9D4T",
+          "credit_costs": {
+            "glUfz4IrvNolk96H67qG": 78
+          }
+        },
+        {
+          "success": true,
+          "node_id": "kCSWuq8Vc5UTqOQIbRHs",
+          "session_id": "FmI2N0ZjoxZOrztZ0uAE",
+          "credit_costs": {
+            "nfeA348a5eixop9CMwVy": 78
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "glUfz4IrvNolk96H67qG",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "nfeA348a5eixop9CMwVy",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "kCSWuq8Vc5UTqOQIbRHs": 2
+        }
+      }
+    },
+    {
+      "id": "visit_luna_07",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "BxWTc7GyA9r6tl9TjSaG",
+      "session_ids": [
+        "qrFKtM9PogxCG8TigDeu",
+        "l93KOEYs7vT2yeAEBQKt"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "BxWTc7GyA9r6tl9TjSaG",
+          "session_id": "qrFKtM9PogxCG8TigDeu",
+          "credit_costs": {
+            "Kftj4Evwkcu0LUbrlWE7": 78
+          }
+        },
+        {
+          "success": true,
+          "node_id": "BxWTc7GyA9r6tl9TjSaG",
+          "session_id": "l93KOEYs7vT2yeAEBQKt",
+          "credit_costs": {
+            "HTi0IwqFpTblQCWKQCGM": 78
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "Kftj4Evwkcu0LUbrlWE7",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "HTi0IwqFpTblQCWKQCGM",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "BxWTc7GyA9r6tl9TjSaG": 2
+        }
+      }
+    },
+    {
+      "id": "visit_luna_08",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "TivPda5d1uYOIkxKcQkY",
+      "session_ids": [
+        "sTlWPgR5umSg0jgmt2KU",
+        "QOvU3MH9IefMipyYfGp1"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "TivPda5d1uYOIkxKcQkY",
+          "session_id": "sTlWPgR5umSg0jgmt2KU",
+          "credit_costs": {
+            "2y8k4uyuGNkx2YPn8pME": 51
+          }
+        },
+        {
+          "success": true,
+          "node_id": "TivPda5d1uYOIkxKcQkY",
+          "session_id": "QOvU3MH9IefMipyYfGp1",
+          "credit_costs": {
+            "CWosnJs3gVcb9jxKG8CH": 51
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "2y8k4uyuGNkx2YPn8pME",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "CWosnJs3gVcb9jxKG8CH",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "TivPda5d1uYOIkxKcQkY": 2
+        }
+      }
+    },
+    {
+      "id": "visit_luna_09",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "zthTkVIhLEmQ3p9LiZD9",
+      "session_ids": [
+        "nJn8K1DRwcpY3qi9N5wM",
+        "F2mBTxkMY6cVX2dpOGtY"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "zthTkVIhLEmQ3p9LiZD9",
+          "session_id": "nJn8K1DRwcpY3qi9N5wM",
+          "credit_costs": {
+            "GnPRPZE1lxIN1aJyUoSp": 73
+          }
+        },
+        {
+          "success": true,
+          "node_id": "zthTkVIhLEmQ3p9LiZD9",
+          "session_id": "F2mBTxkMY6cVX2dpOGtY",
+          "credit_costs": {
+            "xCQ213bXlfdKW7y44mr4": 73
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "GnPRPZE1lxIN1aJyUoSp",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "xCQ213bXlfdKW7y44mr4",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "zthTkVIhLEmQ3p9LiZD9": 2
+        }
+      }
+    },
+    {
+      "id": "visit_luna_10",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "pZmxLtykzn1J2Ck8ee0Z",
+      "session_ids": [
+        "nPGa6i5XkByPqGmSAXKe",
+        "rwOc7o82PFus8vbig2qO"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "pZmxLtykzn1J2Ck8ee0Z",
+          "session_id": "nPGa6i5XkByPqGmSAXKe",
+          "credit_costs": {
+            "CtXs9iQDwI5pL92t4KDQ": 72
+          }
+        },
+        {
+          "success": true,
+          "node_id": "pZmxLtykzn1J2Ck8ee0Z",
+          "session_id": "rwOc7o82PFus8vbig2qO",
+          "credit_costs": {
+            "lXPY4crvk0gerMuV8bM8": 72
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "CtXs9iQDwI5pL92t4KDQ",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "lXPY4crvk0gerMuV8bM8",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "pZmxLtykzn1J2Ck8ee0Z": 2
+        }
+      }
+    },
+    {
+      "id": "visit_nuri_01",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "RRLw4tFUknQGvVjzFu0V",
+      "session_ids": [
+        "zLhGa4dAdUIJimBql5Ux",
+        "1rW8wgxaziQLyIzr7ayp"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "RRLw4tFUknQGvVjzFu0V",
+          "session_id": "zLhGa4dAdUIJimBql5Ux",
+          "credit_costs": {
+            "dnALTyZKPjUAFH3s3G8b": 57.00000000000001
+          }
+        },
+        {
+          "success": true,
+          "node_id": "RRLw4tFUknQGvVjzFu0V",
+          "session_id": "1rW8wgxaziQLyIzr7ayp",
+          "credit_costs": {
+            "ucveb7giP2oFZvrzUKVK": 57.00000000000001
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "dnALTyZKPjUAFH3s3G8b",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "ucveb7giP2oFZvrzUKVK",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "RRLw4tFUknQGvVjzFu0V": 2
+        }
+      }
+    },
+    {
+      "id": "visit_nuri_02",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "ebK5YqAcOVhJjLKI1iHH",
+      "session_ids": [
+        "VT56URtzSCPh2JKkTaUt",
+        "0LRO3VtJSWqQxjCokk7Z"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "ebK5YqAcOVhJjLKI1iHH",
+          "session_id": "VT56URtzSCPh2JKkTaUt",
+          "credit_costs": {
+            "IBoke8zrBkxmlEYZfaHO": 109.00000000000001
+          }
+        },
+        {
+          "success": true,
+          "node_id": "ebK5YqAcOVhJjLKI1iHH",
+          "session_id": "0LRO3VtJSWqQxjCokk7Z",
+          "credit_costs": {
+            "uMcUAQidzt7r1ITkYDEm": 109.00000000000001
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "IBoke8zrBkxmlEYZfaHO",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "uMcUAQidzt7r1ITkYDEm",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "ebK5YqAcOVhJjLKI1iHH": 2
+        }
+      }
+    },
+    {
+      "id": "visit_nuri_03",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "isayQQP2DpoCugCAM7MM",
+      "session_ids": [
+        "a3KKzTCycjr6O2P3gjtn",
+        "zHJB0Zx5hZ7Cetjssg4R"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "isayQQP2DpoCugCAM7MM",
+          "session_id": "a3KKzTCycjr6O2P3gjtn",
+          "credit_costs": {
+            "UCYazDpG9kwVwbVlCNdH": 143
+          }
+        },
+        {
+          "success": true,
+          "node_id": "isayQQP2DpoCugCAM7MM",
+          "session_id": "zHJB0Zx5hZ7Cetjssg4R",
+          "credit_costs": {
+            "mwWIVgAMPItFGtj0ZFrp": 143
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "UCYazDpG9kwVwbVlCNdH",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "mwWIVgAMPItFGtj0ZFrp",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "isayQQP2DpoCugCAM7MM": 2
+        }
+      }
+    },
+    {
+      "id": "visit_nuri_04",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "Q8RwnhRFiPtbdkqXMcuh",
+      "session_ids": [
+        "CtbHd13lt32wwf2BKdWI",
+        "ofWvtoVTqd46img3b68m"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "Q8RwnhRFiPtbdkqXMcuh",
+          "session_id": "CtbHd13lt32wwf2BKdWI",
+          "credit_costs": {
+            "XzokuY7m0NCeXUXP90LL": 63
+          }
+        },
+        {
+          "success": true,
+          "node_id": "Q8RwnhRFiPtbdkqXMcuh",
+          "session_id": "ofWvtoVTqd46img3b68m",
+          "credit_costs": {
+            "mCpBEYDk1bkYY0duNAVc": 63
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "XzokuY7m0NCeXUXP90LL",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "mCpBEYDk1bkYY0duNAVc",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "Q8RwnhRFiPtbdkqXMcuh": 2
+        }
+      }
+    },
+    {
+      "id": "visit_nuri_05",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "9hvVI51MhNJJWE6Gt26T",
+      "session_ids": [
+        "YIKSA2eutCtFEizDirSJ",
+        "0zZuRcyRsAncHY2vjqBK"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "9hvVI51MhNJJWE6Gt26T",
+          "session_id": "YIKSA2eutCtFEizDirSJ",
+          "credit_costs": {
+            "90O2R30puGPgDdbWdUDI": 81
+          }
+        },
+        {
+          "success": true,
+          "node_id": "9hvVI51MhNJJWE6Gt26T",
+          "session_id": "0zZuRcyRsAncHY2vjqBK",
+          "credit_costs": {
+            "G88MuZeAckvPfzxh6gmI": 81
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "90O2R30puGPgDdbWdUDI",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "G88MuZeAckvPfzxh6gmI",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "9hvVI51MhNJJWE6Gt26T": 2
+        }
+      }
+    },
+    {
+      "id": "visit_nuri_06",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "l98iPWFKCeSSkeBlwpWb",
+      "session_ids": [
+        "2OtYAo8isF54rJHMr7B8",
+        "YM4L1NJe3D3qdu5lQRyN"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "l98iPWFKCeSSkeBlwpWb",
+          "session_id": "2OtYAo8isF54rJHMr7B8",
+          "credit_costs": {
+            "3YiuvqlAPwVl6WHNG9EW": 76
+          }
+        },
+        {
+          "success": true,
+          "node_id": "l98iPWFKCeSSkeBlwpWb",
+          "session_id": "YM4L1NJe3D3qdu5lQRyN",
+          "credit_costs": {
+            "Ec8ch1vk4YpnC0zvmNj4": 76
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "3YiuvqlAPwVl6WHNG9EW",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "Ec8ch1vk4YpnC0zvmNj4",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "l98iPWFKCeSSkeBlwpWb": 2
+        }
+      }
+    },
+    {
+      "id": "visit_nuri_07",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "IHq6sucDDLTfI9Z6xj75",
+      "session_ids": [
+        "QtV1nuLvDGXaVmBoTbHl",
+        "cmVYvX18nJ0K1h8i79Jt"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "IHq6sucDDLTfI9Z6xj75",
+          "session_id": "QtV1nuLvDGXaVmBoTbHl",
+          "credit_costs": {
+            "1P1DR4Njczvap74AfAYK": 71
+          }
+        },
+        {
+          "success": true,
+          "node_id": "IHq6sucDDLTfI9Z6xj75",
+          "session_id": "cmVYvX18nJ0K1h8i79Jt",
+          "credit_costs": {
+            "e2UawdfpETKlwcTIRSQi": 71
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "1P1DR4Njczvap74AfAYK",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "e2UawdfpETKlwcTIRSQi",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "IHq6sucDDLTfI9Z6xj75": 2
+        }
+      }
+    },
+    {
+      "id": "visit_nuri_08",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "xi4VcL00huGty19cNBRH",
+      "session_ids": [
+        "rS4pHdBAV7h5hdsTzUcF",
+        "LVIWJ0iAiowfffO8bnKt"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "xi4VcL00huGty19cNBRH",
+          "session_id": "rS4pHdBAV7h5hdsTzUcF",
+          "credit_costs": {
+            "j3I1SiJI8zsxA4w3bV4k": 64
+          }
+        },
+        {
+          "success": true,
+          "node_id": "xi4VcL00huGty19cNBRH",
+          "session_id": "LVIWJ0iAiowfffO8bnKt",
+          "credit_costs": {
+            "JfkjnhMezArVwQrFOQr7": 64
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "j3I1SiJI8zsxA4w3bV4k",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "JfkjnhMezArVwQrFOQr7",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "xi4VcL00huGty19cNBRH": 2
+        }
+      }
+    },
+    {
+      "id": "visit_nuri_09",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "DEk0QpRAkGOWCr719a2v",
+      "session_ids": [
+        "k6quejkvQRwFBR8tC3Qx",
+        "pgWFc9ISaLZMqWZeL0pv"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "DEk0QpRAkGOWCr719a2v",
+          "session_id": "k6quejkvQRwFBR8tC3Qx",
+          "credit_costs": {
+            "lzZo5oETqwDq6JYLJlXo": 81
+          }
+        },
+        {
+          "success": true,
+          "node_id": "DEk0QpRAkGOWCr719a2v",
+          "session_id": "pgWFc9ISaLZMqWZeL0pv",
+          "credit_costs": {
+            "ySBtJmqRrasAWYa7aKnD": 81
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "lzZo5oETqwDq6JYLJlXo",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "ySBtJmqRrasAWYa7aKnD",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "DEk0QpRAkGOWCr719a2v": 2
+        }
+      }
+    },
+    {
+      "id": "visit_nuri_10",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "vAcBJxj7QlGrAGkIy1ks",
+      "session_ids": [
+        "YzCBlOt9nJEPEJP7b1jE",
+        "wamUVGWPlZGTs7MZh8ev"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "vAcBJxj7QlGrAGkIy1ks",
+          "session_id": "YzCBlOt9nJEPEJP7b1jE",
+          "credit_costs": {
+            "C4hlr6Ii6qUhyH5X1Qrq": 94
+          }
+        },
+        {
+          "success": true,
+          "node_id": "vAcBJxj7QlGrAGkIy1ks",
+          "session_id": "wamUVGWPlZGTs7MZh8ev",
+          "credit_costs": {
+            "M0anlwz5QwsRRQnGzlTg": 94
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "C4hlr6Ii6qUhyH5X1Qrq",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "M0anlwz5QwsRRQnGzlTg",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "vAcBJxj7QlGrAGkIy1ks": 2
+        }
+      }
+    },
+    {
+      "id": "visit_leni_01",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "Kn9me6IOU5Z3bXJ2hx5j",
+      "session_ids": [
+        "w0RoRhU9dS3h0j1fKfpf",
+        "oFaugYCEHPjTWXgHdzee"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "Kn9me6IOU5Z3bXJ2hx5j",
+          "session_id": "w0RoRhU9dS3h0j1fKfpf",
+          "credit_costs": {
+            "z0FXQVX00ZxPfExMgITP": 78
+          }
+        },
+        {
+          "success": true,
+          "node_id": "Kn9me6IOU5Z3bXJ2hx5j",
+          "session_id": "oFaugYCEHPjTWXgHdzee",
+          "credit_costs": {
+            "lucbu9xMB7xsvxAM6rm0": 78
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "z0FXQVX00ZxPfExMgITP",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "lucbu9xMB7xsvxAM6rm0",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "Kn9me6IOU5Z3bXJ2hx5j": 2
+        }
+      }
+    },
+    {
+      "id": "visit_leni_02",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "EBywxfORvrNQTxlWU57l",
+      "session_ids": [
+        "8Crcm3RvAKJuhn2UXURo",
+        "3aS4ApLeIzmH5YWB0sqZ"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "EBywxfORvrNQTxlWU57l",
+          "session_id": "8Crcm3RvAKJuhn2UXURo",
+          "credit_costs": {
+            "53ufO9XgwM2NTfgzhXXO": 139
+          }
+        },
+        {
+          "success": true,
+          "node_id": "EBywxfORvrNQTxlWU57l",
+          "session_id": "3aS4ApLeIzmH5YWB0sqZ",
+          "credit_costs": {
+            "36ydPkQ4DT2gm57CBW13": 139
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "53ufO9XgwM2NTfgzhXXO",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "36ydPkQ4DT2gm57CBW13",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "EBywxfORvrNQTxlWU57l": 2
+        }
+      }
+    },
+    {
+      "id": "visit_leni_03",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "Vb7SeSxD8pj95MhXNSfY",
+      "session_ids": [
+        "caxAoPQh3WYxWc3c4IdH",
+        "idxxgZnTc2GBuUvUtJMo"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "Vb7SeSxD8pj95MhXNSfY",
+          "session_id": "caxAoPQh3WYxWc3c4IdH",
+          "credit_costs": {
+            "7oEk3ks5fzYfGmKOYgji": 92
+          }
+        },
+        {
+          "success": true,
+          "node_id": "Vb7SeSxD8pj95MhXNSfY",
+          "session_id": "idxxgZnTc2GBuUvUtJMo",
+          "credit_costs": {
+            "STZDmhUQuMfIYMCs8ho6": 92
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "7oEk3ks5fzYfGmKOYgji",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "STZDmhUQuMfIYMCs8ho6",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "Vb7SeSxD8pj95MhXNSfY": 2
+        }
+      }
+    },
+    {
+      "id": "visit_leni_04",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "JDELzPzG0sbETJOIYtD8",
+      "session_ids": [
+        "V0FLCDq5mr8X189ODnUo",
+        "U29J0pdzALOKlPEMdx61"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "JDELzPzG0sbETJOIYtD8",
+          "session_id": "V0FLCDq5mr8X189ODnUo",
+          "credit_costs": {
+            "RJYfoNecyoAwEJPafeYS": 90.99999999999999
+          }
+        },
+        {
+          "success": true,
+          "node_id": "JDELzPzG0sbETJOIYtD8",
+          "session_id": "U29J0pdzALOKlPEMdx61",
+          "credit_costs": {
+            "BzstKszxYtszeIGieEu6": 90.99999999999999
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "RJYfoNecyoAwEJPafeYS",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "BzstKszxYtszeIGieEu6",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "JDELzPzG0sbETJOIYtD8": 2
+        }
+      }
+    },
+    {
+      "id": "visit_leni_05",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "tYBi9J24pGpLzz8hut3I",
+      "session_ids": [
+        "LbvUYOIdYtauyli5HDaS",
+        "w8i0Xtvet9bk1vaYO3Fa"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "tYBi9J24pGpLzz8hut3I",
+          "session_id": "LbvUYOIdYtauyli5HDaS",
+          "credit_costs": {
+            "EqoK7UtmEY7QwE5FILwF": 76
+          }
+        },
+        {
+          "success": true,
+          "node_id": "tYBi9J24pGpLzz8hut3I",
+          "session_id": "w8i0Xtvet9bk1vaYO3Fa",
+          "credit_costs": {
+            "giYxJA7QbQ7PKAm5zVo8": 76
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "EqoK7UtmEY7QwE5FILwF",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "giYxJA7QbQ7PKAm5zVo8",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "tYBi9J24pGpLzz8hut3I": 2
+        }
+      }
+    },
+    {
+      "id": "visit_leni_06",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "bZ4CBjDMb3LkOx5OrJdq",
+      "session_ids": [
+        "0R8ogXUjeOZEgslsyKXe",
+        "Gl4EnkGDHIzN3irQI7vf"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "bZ4CBjDMb3LkOx5OrJdq",
+          "session_id": "0R8ogXUjeOZEgslsyKXe",
+          "credit_costs": {
+            "6v5XUjZYpXd5Lp24ifP4": 79
+          }
+        },
+        {
+          "success": true,
+          "node_id": "bZ4CBjDMb3LkOx5OrJdq",
+          "session_id": "Gl4EnkGDHIzN3irQI7vf",
+          "credit_costs": {
+            "y3uhc8FQf0h3EC1UVptu": 79
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "6v5XUjZYpXd5Lp24ifP4",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "y3uhc8FQf0h3EC1UVptu",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "bZ4CBjDMb3LkOx5OrJdq": 2
+        }
+      }
+    },
+    {
+      "id": "visit_leni_07",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "KaLbaeAU3EGAT3BekXT6",
+      "session_ids": [
+        "vPpJclm4OzRKGo6JdkHn",
+        "wMfaS621HCBH0wJAxEqL"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "KaLbaeAU3EGAT3BekXT6",
+          "session_id": "vPpJclm4OzRKGo6JdkHn",
+          "credit_costs": {
+            "z66XvKIiG6Ee5MYR9uFY": 71
+          }
+        },
+        {
+          "success": true,
+          "node_id": "KaLbaeAU3EGAT3BekXT6",
+          "session_id": "wMfaS621HCBH0wJAxEqL",
+          "credit_costs": {
+            "FuvVlFQYKPcEqy9QrcAy": 71
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "z66XvKIiG6Ee5MYR9uFY",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "FuvVlFQYKPcEqy9QrcAy",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "KaLbaeAU3EGAT3BekXT6": 2
+        }
+      }
+    },
+    {
+      "id": "visit_leni_08",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "eRf40UB3BGA2DYeZUKRt",
+      "session_ids": [
+        "0Z1AmzNc5mP2XQjnEsCg",
+        "hOBg2mwsplgInjdRkEFC"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "eRf40UB3BGA2DYeZUKRt",
+          "session_id": "0Z1AmzNc5mP2XQjnEsCg",
+          "credit_costs": {
+            "lIaeuDcovLKOrmTrkfYS": 93
+          }
+        },
+        {
+          "success": true,
+          "node_id": "eRf40UB3BGA2DYeZUKRt",
+          "session_id": "hOBg2mwsplgInjdRkEFC",
+          "credit_costs": {
+            "afGZONnN1qlG23g2GQ2q": 93
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "lIaeuDcovLKOrmTrkfYS",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "afGZONnN1qlG23g2GQ2q",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "eRf40UB3BGA2DYeZUKRt": 2
+        }
+      }
+    },
+    {
+      "id": "visit_leni_09",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "RAvY6tsDknW4o9wZJuIj",
+      "session_ids": [
+        "DGvDm1uSMCSiTFQ3xuDH",
+        "tHsKCnPseNMoWwztlSyJ"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "RAvY6tsDknW4o9wZJuIj",
+          "session_id": "DGvDm1uSMCSiTFQ3xuDH",
+          "credit_costs": {
+            "1eQEfrpA9sD6wOK6hkVv": 86.99999999999999
+          }
+        },
+        {
+          "success": true,
+          "node_id": "RAvY6tsDknW4o9wZJuIj",
+          "session_id": "tHsKCnPseNMoWwztlSyJ",
+          "credit_costs": {
+            "kL6z2oQHsOGUaMeREeST": 86.99999999999999
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "1eQEfrpA9sD6wOK6hkVv",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "kL6z2oQHsOGUaMeREeST",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "RAvY6tsDknW4o9wZJuIj": 2
+        }
+      }
+    },
+    {
+      "id": "visit_leni_10",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "6aJI6VrF9v8reZtFmv4b",
+      "session_ids": [
+        "FrGowOeBHEsUDIBiCAbx",
+        "wCXQ22MuSafLhjY2A2jw"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "6aJI6VrF9v8reZtFmv4b",
+          "session_id": "FrGowOeBHEsUDIBiCAbx",
+          "credit_costs": {
+            "0z4HKEZIYggAMGVOkdM5": 63
+          }
+        },
+        {
+          "success": true,
+          "node_id": "6aJI6VrF9v8reZtFmv4b",
+          "session_id": "wCXQ22MuSafLhjY2A2jw",
+          "credit_costs": {
+            "8G3Xdsbebz6IKuvLGUX5": 63
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "0z4HKEZIYggAMGVOkdM5",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "8G3Xdsbebz6IKuvLGUX5",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "6aJI6VrF9v8reZtFmv4b": 2
+        }
+      }
+    },
+    {
+      "id": "visit_leni_11",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "TnQUC5rY8SXbb6ehJbZD",
+      "session_ids": [
+        "2s6xHVbvr3bNoStwMedp",
+        "P1VMP56D5DmY8OLwsNlc"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "TnQUC5rY8SXbb6ehJbZD",
+          "session_id": "2s6xHVbvr3bNoStwMedp",
+          "credit_costs": {
+            "7YSAvjg5T5tQvNCJn9GH": 74
+          }
+        },
+        {
+          "success": true,
+          "node_id": "TnQUC5rY8SXbb6ehJbZD",
+          "session_id": "P1VMP56D5DmY8OLwsNlc",
+          "credit_costs": {
+            "XKgGoSmBhAYBGSZjI6dv": 74
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "7YSAvjg5T5tQvNCJn9GH",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "XKgGoSmBhAYBGSZjI6dv",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "TnQUC5rY8SXbb6ehJbZD": 2
+        }
+      }
+    },
+    {
+      "id": "visit_leni_12",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "vhmHBLhy1DYb6sTVI8Np",
+      "session_ids": [
+        "4fri7TiwAnf0FcVCCDvq",
+        "FO2iolrw5Yg0hfdYMJSm"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "vhmHBLhy1DYb6sTVI8Np",
+          "session_id": "4fri7TiwAnf0FcVCCDvq",
+          "credit_costs": {
+            "mTzxI0bzDljS1025lMkU": 52
+          }
+        },
+        {
+          "success": true,
+          "node_id": "vhmHBLhy1DYb6sTVI8Np",
+          "session_id": "FO2iolrw5Yg0hfdYMJSm",
+          "credit_costs": {
+            "UdF3APXSVEwuK7u4bZBT": 52
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "mTzxI0bzDljS1025lMkU",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "UdF3APXSVEwuK7u4bZBT",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "vhmHBLhy1DYb6sTVI8Np": 2
+        }
+      }
+    },
+    {
+      "id": "visit_leni_hint1",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "S4NB3fU0Wg0THTsJ1dfD",
+      "session_ids": [
+        "CVm2fcRtAra5YHG2Exgz",
+        "UfPK7jY8EvEZDcuo6k6X"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "S4NB3fU0Wg0THTsJ1dfD",
+          "session_id": "CVm2fcRtAra5YHG2Exgz",
+          "credit_costs": {
+            "NjBI1LRxJXQSuhIGNMcj": 62
+          }
+        },
+        {
+          "success": true,
+          "node_id": "S4NB3fU0Wg0THTsJ1dfD",
+          "session_id": "UfPK7jY8EvEZDcuo6k6X",
+          "credit_costs": {
+            "mYkU3FRoIENWuFQMyxcN": 62
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "NjBI1LRxJXQSuhIGNMcj",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "mYkU3FRoIENWuFQMyxcN",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "S4NB3fU0Wg0THTsJ1dfD": 2
+        }
+      }
+    },
+    {
+      "id": "visit_leni_assist1",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "i9S1D8iormY5l6EJkfZN",
+      "session_ids": [
+        "MUX0J13McWxgmO8RYISN",
+        "0iO4vRMvkp27dJJAHZs0"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "i9S1D8iormY5l6EJkfZN",
+          "session_id": "MUX0J13McWxgmO8RYISN",
+          "credit_costs": {
+            "fzg1F9kEz6RgQyEdqeaH": 68
+          }
+        },
+        {
+          "success": true,
+          "node_id": "i9S1D8iormY5l6EJkfZN",
+          "session_id": "0iO4vRMvkp27dJJAHZs0",
+          "credit_costs": {
+            "Ho9dQydQyRflMBOxmun0": 68
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "fzg1F9kEz6RgQyEdqeaH",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "Ho9dQydQyRflMBOxmun0",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "i9S1D8iormY5l6EJkfZN": 2
+        }
+      }
+    },
+    {
+      "id": "visit_night_goodbye",
+      "flow_id": "sncQgTKzi5gXTIjoK48G",
+      "node_id": "y5ly8CZsdT4QJKQChoWM",
+      "session_ids": [
+        "ucsoNj74kOcxSrz1L2zB",
+        "sozKmpbqoxDaSHWuXeo2"
+      ],
+      "results": [
+        {
+          "success": true,
+          "node_id": "y5ly8CZsdT4QJKQChoWM",
+          "session_id": "ucsoNj74kOcxSrz1L2zB",
+          "credit_costs": {
+            "LttPNMDmNRYYbeJU9LX3": 131
+          }
+        },
+        {
+          "success": true,
+          "node_id": "y5ly8CZsdT4QJKQChoWM",
+          "session_id": "sozKmpbqoxDaSHWuXeo2",
+          "credit_costs": {
+            "i11rSkQRcE2H7fXiYDoh": 131
+          }
+        }
+      ],
+      "pending": [
+        {
+          "generation_id": "LttPNMDmNRYYbeJU9LX3",
+          "kind": "audio"
+        },
+        {
+          "generation_id": "i11rSkQRcE2H7fXiYDoh",
+          "kind": "audio"
+        }
+      ],
+      "summary": {
+        "nodes_run": 1,
+        "generations_started": 2,
+        "failed": 0,
+        "generations_by_node": {
+          "y5ly8CZsdT4QJKQChoWM": 2
+        }
+      }
+    }
+  ]
+}

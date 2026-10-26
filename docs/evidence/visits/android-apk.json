@@ -1,0 +1,19 @@
+{
+  "artifact_id": 12640314322,
+  "commit": "bf6f1007a4defbea5360d3cefa63e00beffeb978",
+  "apk_sha256": "576941226a2d0ec8271292f551605f18057f37efcb1c0501a1c315592e911bfc",
+  "sdk": {
+    "minSdkVersion": 29,
+    "targetSdkVersion": 36
+  },
+  "permissions": [
+    "app.schlafwald.nacht.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+  ],
+  "signing_block_ids": [
+    "0x7109871a",
+    "0x42726577"
+  ],
+  "signature_scope": "APK v2 signing block presence checked; cryptographic signature and real-device installation not independently verified here.",
+  "emma_clips_hash_verified": 82,
+  "production_qa_api_absent": true
+}

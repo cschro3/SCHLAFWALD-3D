@@ -1,0 +1,6 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="57.282363">
+<testsuite name="visits.spec.js" timestamp="2026-10-26T10:15:18.707Z" hostname="" tests="1" failures="0" skipped="0" time="29.523" errors="0">
+<testcase name="fresh Emma entry bypasses an old cached start page and empty recording manifest" classname="visits.spec.js" time="29.523">
+</testcase>
+</testsuite>
+</testsuites>

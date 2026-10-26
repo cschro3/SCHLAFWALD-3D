@@ -1,0 +1,15 @@
+{
+  "status": "user_selected_sample",
+  "selected_take": 2,
+  "selected_on": "2026-10-26",
+  "voice_name": "Emma - Warm, Clear, Expressive",
+  "voice_id": "RqAMJpZ689MpxoPI49H6",
+  "model_id": "eleven_v4",
+  "flow_id": "WZHW2JOruetndv7kbgWB",
+  "generation_id": "Sdnyrtn7A56rGWPlL7q3",
+  "session_id": "tNUZZSFcjhySuQS2GYCb",
+  "duration": 20.427755,
+  "sha256": "e8a03dc923db3f20a3700fa79368aacfae564f937dbaefb03eeed9902b43fe08",
+  "prompt": "[warmly] Hallo, ich bin Suri. Schön, dass du mich besuchst! [short pause] [curious] Heute habe ich auf einem Blatt einen Tautropfen entdeckt. Darin spiegelte sich der ganze Himmel. Ganz klein. [short pause] [gentle] Jetzt werden meine Fühler langsam müde. Bleibst du noch einen Moment bei mir? [short pause] [softly] Dann kuschle ich mich in mein Häuschen. Gute Nacht.",
+  "scope": "Approval of this audition and performance reference, not all future recordings or a commercial-license verification. Future generations can vary."
+}

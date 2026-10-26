@@ -1,18 +1,15 @@
-# Roadmap
+# Roadmap – ausführbarer Stand 25.10.2026
 
-| Phase | Inhalt | Status |
+| Bereich | Erreicht | Verbleibend |
 |---|---|---|
-| 1 Konzeption | Story, Szenenstruktur, Design, Technik | ✅ [01-Konzeption.md](01-Konzeption.md), `story_de.json` |
-| 2 Spielbarer Prototyp | echter 3D-Wald, Kamera, Erzählerstruktur, vollständig animierte Suri | ✅ **Code geschrieben** – 🟡 in Unity noch nicht geöffnet/gespielt |
-| 3 Alle Tiere | Fino, Mila, Piko, Luna, Nuri, Leni: Builder + Performance + Habitat je Tier | ⏳ |
-| 4 Story & Atmosphäre | Feinschliff Texte/Cues, Kameras je Tier, Audio-Mix, Lichtübergänge, Musik | ⏳ (Grundsystem steht) |
-| 5 Mobile Qualität | Profiling, Optimierung, Gerätetests, IMGUI → UI Toolkit | ⏳ |
-| 6 Release | Icon, Screenshots, Store-Texte, Privacy-Manifest, Build-Konfiguration | ⏳ ([Entwürfe](DATENSCHUTZ_UND_STORES.md)) |
+| Infrastruktur | bestehendes Repository erhalten; separater Branch/PR, echter Browser-Render, Android-Build, unsignierter iOS-CI-Build | Unity nur mit rechtmäßiger Aktivierung ausführbar |
+| Suri | spielbare drei Rituale, Kriechen/Fühler/Spirale, Blätterdach, Rückzug; echte Aufnahmen und Eingabetests | natürliche Timing-/Audio-Abnahme am Mobilgerät |
+| Weitere Tiere | sechs zusätzliche Modelle, Habitate, Rituale und individuelle Cues in WebApp; alle sieben gemeinsam spielbar | finale künstlerische Abnahme; Unity-Implementierungen weiterhin offen |
+| Audio | 101 lokale deutsche Sprachdateien, eigene Musik/Wind-Synthese, Lautstärken und Ausblenden | vollständige Hörabnahme, hochwertige Musik-/Foley-Abnahme |
+| Elternbereich | skalierende HTML-UI, Haltegeste/Rechenaufgabe, Einstellungen, Auswahl, Fortsetzen, Timer, Abdunkeln | reale Assistenztechnik-/Familientests |
+| Mobile | Android 10+/iOS 16+, Icons, Privacy-Manifest, API 36, echte Kompilationen | Geräteprofiling, Hintergrund-Audio, Signierung |
+| Release | echte Review-Screenshots, Icon, deutsche Store-/Datenschutzentwürfe, Lizenznachweise | Herausgeber/Kontakt, Datenschutz-URL, Store-Formulare, Freigabe/Upload |
 
-## Nächste konkrete Schritte
+Die Browser-/Capacitor-Laufzeit übernimmt unverändert die originale Story-Datei. Ihre sieben Tiere machen die sechs Unity-Flags `implemented: false` nicht nachträglich wahr. Keine unkontrollierte Migration und keine Behauptung eines Unity-Render-Passes.
 
-1. **Unity-Erstlauf (Sie):** Projekt öffnen, *Projekt einrichten*, Play – Compiler-/Shader-Fehler und visuellen Eindruck zurückmelden. Danach `.meta`-Dateien einchecken.
-2. Suri visuell/zeitlich feinjustieren (Kameras, Cue-Zeiten, Farben) anhand des echten Bilds.
-3. Phase 3 pro Tier: `XBuilder` (Teile nach Rig-Konvention), `XPerformance` (Cues aus `story_de.json`: z. B. Fino `yawn`/`curlUp`/`tailOverNose`/`sleep`), Habitat (Höhle, Moosnest, Igelnest, Ast, Eichhörnchen-Baum, Lichtung), danach `implemented: true`.
-4. Sprecher-Aufnahmen (Skript: `tools/export_recording_script.py`) und Musik.
-5. Gerätemessungen (siehe [QA.md](QA.md)), danach Optimierung.
+Nächste Release-Schritte: [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md). Ausgeführte Prüfungen: [QA.md](QA.md). Technologieentscheidung: [ENGINE_DECISION.md](ENGINE_DECISION.md).
