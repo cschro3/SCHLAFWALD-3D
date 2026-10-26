@@ -1,0 +1,354 @@
+{
+  "run_id": 40301277531,
+  "commit": "bf6f1007a4defbea5360d3cefa63e00beffeb978",
+  "scope": "GitHub job/step statuses; browser command passed, full capture/build job still running at observation.",
+  "jobs": [
+    {
+      "id": 121501631364,
+      "name": "Unity license availability (this is not a test pass)",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run if [ -n \"$UNITY_LICENSE\" ] && [ -n \"$UNITY_EMAIL\" ] && [ -n \"$UNITY_PASSWORD\" ]; then",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 121501631802,
+      "name": "Rendered browser flows and offline build",
+      "status": "in_progress",
+      "conclusion": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm ci",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm test",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node tools/sync-content.mjs && npx vite build --mode qa && node tools/offline-manifest.mjs",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npx playwright install --with-deps chromium",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npx playwright test",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run SCHLAFWALD_EVIDENCE=\"$GITHUB_WORKSPACE/artifacts/render\" node tools/capture.mjs",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "name": "Run SCHLAFWALD_EVIDENCE=\"$GITHUB_WORKSPACE/artifacts/render\" node tools/capture-visits.mjs",
+          "status": "pending",
+          "conclusion": null
+        },
+        {
+          "name": "Run npm run build",
+          "status": "pending",
+          "conclusion": null
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "pending",
+          "conclusion": null
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "pending",
+          "conclusion": null
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "pending",
+          "conclusion": null
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "pending",
+          "conclusion": null
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "pending",
+          "conclusion": null
+        }
+      ]
+    },
+    {
+      "id": 121501631819,
+      "name": "iOS 16+ unsigned Xcode build",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm ci && npm run build && npx cap sync ios",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run xcodebuild -version",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run xcodebuild -project App.xcodeproj -scheme App -configuration Debug -destination 'generic/platform=iOS' -derivedDataPath build CODE_SIGNING_ALLOWED=NO build > xcode-build.log 2>&1",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 121501631831,
+      "name": "Android 10+ debug APK (no release signing)",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-java@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run android-actions/setup-android@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run sdkmanager \"platforms;android-36\" \"build-tools;35.0.0\"",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm ci && npm run build && npx cap sync android",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run chmod +x gradlew && ./gradlew --no-daemon assembleDebug",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-java@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 121501631919,
+      "name": "C# logic, API compilation, story and asset integrity",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-dotnet@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run dotnet test tools/CoreTests --logger \"trx;LogFileName=core.trx\" --results-directory artifacts/core",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run dotnet build tools/RuntimeCompileCheck",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run dotnet build tools/PlayModeCompileCheck",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run pip install numpy",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python tools/unity_metadata.py --check",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python tools/verify_assets.py",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python tools/check_camera_framing.py UnityProject/Assets/Schlafwald/Resources/Story/story_de.json",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python tools/export_recording_script.py artifacts/recording",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-dotnet@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 121501665438,
+      "name": "Licensed Unity ${{ matrix.target }} preview build",
+      "status": "completed",
+      "conclusion": "skipped"
+    },
+    {
+      "id": 121501665545,
+      "name": "Unity 2022 baseline EditMode and PlayMode",
+      "status": "completed",
+      "conclusion": "skipped"
+    }
+  ]
+}
